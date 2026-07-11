@@ -1,0 +1,17 @@
+{
+  "SORA-ULTIMATE_FORM_POWER.description": "",
+  "SORA-ULTIMATE_FORM_POWER.smartDescription": "",
+  "SORA-ULTIMATE_FORM_POWER.title": "Ultimate Form",
+
+  "SORA-SITUATION_READY_POWER.description": "Gain Situation Points (SP) to perform Situation Commands.",
+  "SORA-SITUATION_READY_POWER.smartDescription": "You can now perform Situation Commands.",
+  "SORA-SITUATION_READY_POWER.title": "Situation Command Ready",
+
+  "SORA-REFLECT_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
+  "SORA-REFLECT_POWER.smartDescription": "Blocked damage is reflected to your attacker for 1 turn.",
+  "SORA-REFLECT_POWER.title": "Reflect",
+
+  "SORA-DAMAGE_SYPHON_POWER.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
+  "SORA-DAMAGE_SYPHON_POWER.smartDescription": "Gain [gold]SP[/gold] equal to half of damage taken.",
+  "SORA-DAMAGE_SYPHON_POWER.title": "Damage Syphon"
+}

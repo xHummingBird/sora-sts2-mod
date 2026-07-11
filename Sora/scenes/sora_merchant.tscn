@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvav8dhfb4511"]
+
+[ext_resource type="Script" uid="uid://dwgheorim4d01" path="res://SoraCode/Nodes/SoraNMerchantCharacter.cs" id="1_6vuf4"]
+[ext_resource type="Texture2D" uid="uid://e58a70uabdnq" path="res://Sora/images/spritesheets/idle/idle_normal/00_sora_idle.png" id="1_dp20p"]
+[ext_resource type="Texture2D" uid="uid://c06lnq86fuv50" path="res://Sora/images/spritesheets/idle/idle_normal/01_sora_idle.png" id="2_6vuf4"]
+[ext_resource type="Texture2D" uid="uid://eois7pfdu56f" path="res://Sora/images/spritesheets/idle/idle_normal/02_sora_idle.png" id="3_806kv"]
+[ext_resource type="Texture2D" uid="uid://doq7ggrosl201" path="res://Sora/images/spritesheets/idle/idle_normal/03_sora_idle.png" id="4_m6p7d"]
+
+[sub_resource type="Animation" id="Animation_e2xak"]
+resource_name = "merchant"
+length = 0.533
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_dp20p"), ExtResource("2_6vuf4"), ExtResource("3_806kv"), ExtResource("4_m6p7d")]
+}
+
+[sub_resource type="Animation" id="Animation_75rig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5qtd8"]
+_data = {
+&"RESET": SubResource("Animation_75rig"),
+&"merchant": SubResource("Animation_e2xak")
+}
+
+[node name="SoraMerchant" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_6vuf4")
+
+[node name="Visuals" type="Sprite2D" parent="."]
+position = Vector2(-13.333333, -46)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5qtd8")
+}
+autoplay = "merchant"

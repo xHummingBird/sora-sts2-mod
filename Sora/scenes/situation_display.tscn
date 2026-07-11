@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://byg02vhroy386"]
+
+[ext_resource type="Texture2D" uid="uid://du2thq5xxje80" path="res://Sora/images/display/SituationBar.png" id="1_l5l5o"]
+[ext_resource type="Texture2D" uid="uid://dqdl72ek30jga" path="res://Sora/images/display/SituationPoint.png" id="2_afu1k"]
+
+[node name="SituationDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 300.0
+offset_bottom = 9.0
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l5l5o")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bar1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = -8.0
+offset_right = 165.0
+offset_bottom = 46.0
+pivot_offset = Vector2(18.5, 18.5)
+texture = ExtResource("2_afu1k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bar2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 150.0
+offset_top = -8.0
+offset_right = 225.0
+offset_bottom = 46.0
+pivot_offset = Vector2(18.5, 18.5)
+texture = ExtResource("2_afu1k")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="bar3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 210.0
+offset_top = -8.0
+offset_right = 285.0
+offset_bottom = 46.0
+pivot_offset = Vector2(18.5, 18.5)
+texture = ExtResource("2_afu1k")
+expand_mode = 1
+stretch_mode = 4

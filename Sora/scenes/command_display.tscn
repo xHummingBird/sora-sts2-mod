@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://trhhwrd42glx"]
+
+[ext_resource type="Texture2D" uid="uid://b7365fc8ygbq0" path="res://Sora/images/display/SituationCommand.png" id="1_4ksar"]
+
+[node name="CommandDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 390.0
+offset_bottom = -45.0
+grow_vertical = 0
+mouse_filter = 1
+
+[node name="Command1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ksar")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CommandLabel1" type="RichTextLabel" parent="Command1"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+vertical_alignment = 1
+
+[node name="Command2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -46.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ksar")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CommandLabel2" type="RichTextLabel" parent="Command2"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+vertical_alignment = 1
+
+[node name="Command3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4ksar")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="CommandLabel3" type="RichTextLabel" parent="Command3"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+vertical_alignment = 1

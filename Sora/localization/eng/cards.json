@@ -1,0 +1,117 @@
+{
+  "SORA-STRIKE_SORA.description": "Deal {Damage:diff()} damage.",
+  "SORA-STRIKE_SORA.title": "Strike",
+
+  "SORA-FULL_COMBO.description": "Deal {Damage:diff()} damage. \nGain 4 [gold]SP[/gold].",
+  "SORA-FULL_COMBO.title": "Full Combo",
+
+  "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage.",
+  "SORA-ARS_ARCANUM.title": "Ars Arcanum",
+  
+  "SORA-DEFEND_SORA.description": "Gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-DEFEND_SORA.title": "Defend",
+
+  "SORA-SONIC_BLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nConsume 30 [gold]SP[/gold]",
+  "SORA-SONIC_BLADE.title": "Sonic Blade",
+
+  "SORA-ULTIMATE_FINISHER.description": "",
+  "SORA-ULTIMATE_FINISHER.title": "UltimateFinisher",
+
+  "SORA-SITUATION_COMMAND.description": "Perform a [gold]Situation Command[/gold].",
+  "SORA-SITUATION_COMMAND.title": "Situation Command",
+
+  "SORA-ULTIMATE_FORM.description": "",
+  "SORA-ULTIMATE_FORM.title": "UltimateForm",
+
+  "SORA-FIRE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SORA-FIRE.title": "Fire",
+
+  "SORA-JACKPOT.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-JACKPOT.title": "Jackpot",
+
+  "SORA-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. Blocked damage is reflected back to the attacker for 1 turn.",
+  "SORA-REFLECT.title": "Reflect",
+
+  "SORA-REFLEGA.description": "Gain {Block:diff()} [gold]Block[/gold]. Blocked damage is reflected back to the attacker for 1 turn.",
+  "SORA-REFLEGA.title": "Reflega",
+
+  "SORA-COUNTERGUARD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {VigorPower:diff()} [gold]Vigor[/gold].",
+  "SORA-COUNTERGUARD.title": "Counterguard",
+
+  "SORA-BLITZ.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-BLITZ.title": "Blitz",
+
+  "SORA-SONIC_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SORA-SONIC_STRIKE.title": "Sonic Strike",
+
+  "SORA-BLIZZARD.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
+  "SORA-BLIZZARD.title": "Blizzard",
+
+  "SORA-DODGE_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold]. Draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SORA-DODGE_ROLL.title": "Dodge Roll",
+
+  "SORA-THUNDER.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SORA-THUNDER.title": "Thunder",
+
+  "SORA-SLIDING_DASH.description": "Deal {Damage:diff()} damage. \nReduce this card's cost to 0 {Energy:energyIcons()}.",
+  "SORA-SLIDING_DASH.title": "Sliding Dash",
+
+  "SORA-COMBO_PLUS.description": "Deal {Damage:diff()} damage for each Attack already played this turn.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
+  "SORA-COMBO_PLUS.title": "Combo Plus",
+
+  "SORA-QUICK_SLASH.description": "Deal {Damage:diff()} damage. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SORA-QUICK_SLASH.title": "Quick Slash",
+
+  "SORA-AERIAL_DODGE.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-AERIAL_DODGE.title": "Aerial Dodge",
+
+  "SORA-COMBO_BOOST.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-COMBO_BOOST.title": "Combo Boost",
+
+  "SORA-EXPLOSION.description": "Deal {Damage:diff()} damage to random enemies [gold]{Repeat:diff()}[/gold] times.",
+  "SORA-EXPLOSION.title": "Explosion",
+
+  "SORA-GUARDBREAK.description": "Deal {Damage:diff()} damage. \nDeal [gold]50%[/gold] more damage to [gold]Vulnerable[/gold] enemies. ",
+  "SORA-GUARDBREAK.title": "Guard Break",
+
+  "SORA-POWER_OF_WAKING.description": "Shuffle ALL your cards into your Draw Pile. \nDraw 5 Cards.",
+  "SORA-POWER_OF_WAKING.title": "Power Of Waking",
+
+  "SORA-THUNDAGA.description": "Deal {Damage:diff()} damage to ALL enemies.",
+  "SORA-THUNDAGA.title": "Thundaga",
+  
+  "SORA-FIRAGA.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
+  "SORA-FIRAGA.title": "Firaga",
+
+  "SORA-BLIZZAGA.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "SORA-BLIZZAGA.title": "Blizzaga",
+
+  "SORA-COMBO_MASTER.description": "Gain {SituationReadyPower:diff()} [gold]SP[/gold]. \nNext attack cost 0 {Energy:energyIcons()}.",
+  "SORA-COMBO_MASTER.title": "Combo Master",
+
+  "SORA-AERIAL_RECOVERY.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw 1 card. \nIf you draw a Skill, gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-AERIAL_RECOVERY.title": "Aerial Recovery",
+
+  "SORA-BERSERK_CHARGE.description": "ALL Attack cards in your Hand are free to play this turn.",
+  "SORA-BERSERK_CHARGE.title": "Berserk Charge",
+
+  "SORA-BRANDISH.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nIf you have played fewer than 3 cards this turn, draw 1 card.",
+  "SORA-BRANDISH.title": "Brandish",
+
+  "SORA-FLOW_MOTION.description": "Draw 2 cards. \nIf at least one is an Attack, gain {Energy:energyIcons()}.",
+  "SORA-FLOW_MOTION.title": "Flow Motion",
+
+  "SORA-SEAL_KEYHOLE.description": "Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-SEAL_KEYHOLE.title": "Seal The Keyhole",
+
+  "SORA-FALLING_SLASH.description": "Deal {Damage:diff()} damage. \nPlay a random Attack from your Draw Pile.",
+  "SORA-FALLING_SLASH.title": "Falling Slash",
+
+  "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-DODGE_SLASH.title": "Dodge Slash",
+
+  "SORA-DAMAGE_SYPHON.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
+  "SORA-DAMAGE_SYPHON.title": "Damage Syphon"
+  
+  
+}

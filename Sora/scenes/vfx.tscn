@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://jrdiwbm4me1k"]
+
+[ext_resource type="Texture2D" uid="uid://cvw4k6v4gam4k" path="res://Sora/images/spritesheets/vfx/atk/01_atk_vfx.png" id="1_va35b"]
+[ext_resource type="Texture2D" uid="uid://bf4viu6ced27c" path="res://Sora/images/spritesheets/vfx/atk/02_atk_vfx.png" id="2_xbqf5"]
+[ext_resource type="Texture2D" uid="uid://c20tpneoajx7y" path="res://Sora/images/spritesheets/vfx/atk/03_atk_vfx.png" id="3_juktc"]
+[ext_resource type="Texture2D" uid="uid://bng4hywdueamb" path="res://Sora/images/spritesheets/vfx/atk/04_atk_vfx.png" id="4_wm5u1"]
+
+[sub_resource type="Animation" id="Animation_tafwt"]
+resource_name = "atk_vfx"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_va35b"), ExtResource("2_xbqf5"), ExtResource("3_juktc"), ExtResource("4_wm5u1")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -82)]
+}
+
+[sub_resource type="Animation" id="Animation_0uvb6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_va35b")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -82)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ewmcm"]
+_data = {
+&"RESET": SubResource("Animation_0uvb6"),
+&"atk_vfx": SubResource("Animation_tafwt")
+}
+
+[node name="Vfx" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../hit")
+libraries = {
+&"": SubResource("AnimationLibrary_ewmcm")
+}
+
+[node name="hit" type="Sprite2D" parent="."]
+position = Vector2(14, -82)
+texture = ExtResource("1_va35b")
