@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dlst5b0hcnan8"
+path="res://.godot/imported/riku_finisher (8).wav-74484086354f24c5b0ab9b5e6e9076d3.sample"
+
+[deps]
+
+source_file="res://Sora/sounds/riku/riku_finisher (8).wav"
+dest_files=["res://.godot/imported/riku_finisher (8).wav-74484086354f24c5b0ab9b5e6e9076d3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

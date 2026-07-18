@@ -41,7 +41,7 @@ public class Blizzaga() : SoraCard(2, CardType.Attack, CardRarity.Uncommon, Targ
                 foreach (var target in targets)
                 {
                     sora.PlayVfxOnTarget(
-                        play.Target,
+                        target,
                         "res://Sora/scenes/ice_vfx.tscn",
                         "ice_1"
                     );

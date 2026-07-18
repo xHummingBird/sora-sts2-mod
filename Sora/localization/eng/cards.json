@@ -5,13 +5,13 @@
   "SORA-FULL_COMBO.description": "Deal {Damage:diff()} damage. \nGain 4 [gold]SP[/gold].",
   "SORA-FULL_COMBO.title": "Full Combo",
 
-  "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage.",
+  "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage. \nConsume 60 [gold]SP[/gold].",
   "SORA-ARS_ARCANUM.title": "Ars Arcanum",
   
   "SORA-DEFEND_SORA.description": "Gain {Block:diff()} [gold]Block[/gold].",
   "SORA-DEFEND_SORA.title": "Defend",
 
-  "SORA-SONIC_BLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nConsume 30 [gold]SP[/gold]",
+  "SORA-SONIC_BLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nConsume 30 [gold]SP[/gold].",
   "SORA-SONIC_BLADE.title": "Sonic Blade",
 
   "SORA-ULTIMATE_FINISHER.description": "",
@@ -47,7 +47,7 @@
   "SORA-BLIZZARD.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold].",
   "SORA-BLIZZARD.title": "Blizzard",
 
-  "SORA-DODGE_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold]. Draw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SORA-DODGE_ROLL.description": "Gain {Block:diff()} [gold]Block[/gold]. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SORA-DODGE_ROLL.title": "Dodge Roll",
 
   "SORA-THUNDER.description": "Deal {Damage:diff()} damage to ALL enemies.",
@@ -107,11 +107,33 @@
   "SORA-FALLING_SLASH.description": "Deal {Damage:diff()} damage. \nPlay a random Attack from your Draw Pile.",
   "SORA-FALLING_SLASH.title": "Falling Slash",
 
-  "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
   "SORA-DODGE_SLASH.title": "Dodge Slash",
 
   "SORA-DAMAGE_SYPHON.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
-  "SORA-DAMAGE_SYPHON.title": "Damage Syphon"
+  "SORA-DAMAGE_SYPHON.title": "Damage Syphon",
   
+  "SORA-CLOUD_LIMIT.description": "",
+  "SORA-CLOUD_LIMIT.title": "CloudLimit",
+
+  "SORA-KAIRI_LIMIT.description": "",
+  "SORA-KAIRI_LIMIT.title": "Destiny Bond",
+
+  "SORA-RIKU_LIMIT.description": "",
+  "SORA-RIKU_LIMIT.title": "Twilight Arcanum",
   
+  "SORA-RIKU_KAIRI_LIMIT.description": "",
+  "SORA-RIKU_KAIRI_LIMIT.title": "Ragnarok",
+
+  "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold].",
+  "SORA-SHADOW_STRIKE.title": "Shadow Strike",
+
+  "SORA-DARK_FIRAGA.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold] to ALL enemies. ",
+  "SORA-DARK_FIRAGA.title": "Dark Firaga",
+
+  "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-DARK_SONIC.title": "Dark Sonic",
+
+  "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-SHADOW_BARRIER.title": "Shadow Barrier"
 }

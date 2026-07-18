@@ -8,9 +8,9 @@ public class UltimaWeapon() : SituationRelicBase
 
     public override int MaxSituationPoints => 90;
 
-    protected override int AttackSpGain => 3;
+    protected override int AttackSpGain => 4;
 
-    protected override int TurnSpGain => 3;
+    protected override int TurnSpGain => 2;
 
     protected override bool CanGenerateUltimateForm => true;
 }

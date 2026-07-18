@@ -1,0 +1,572 @@
+[gd_scene load_steps=45 format=3 uid="uid://ch2waj42rjcgq"]
+
+[ext_resource type="Texture2D" uid="uid://d3rmrn3wx3jb8" path="res://Sora/images/spritesheets/attack/riku_attack/00_dark_slash.png" id="1_1qge8"]
+[ext_resource type="Texture2D" uid="uid://bwave8qnimw1" path="res://Sora/images/spritesheets/attack/riku_attack/01_dark_slash.png" id="2_lckeb"]
+[ext_resource type="Texture2D" uid="uid://ueammk0owbxg" path="res://Sora/images/spritesheets/attack/riku_attack/02_dark_slash.png" id="3_q2v8w"]
+[ext_resource type="Texture2D" uid="uid://cwj6jmayuf516" path="res://Sora/images/spritesheets/attack/riku_attack/03_dark_slash.png" id="4_fedv6"]
+[ext_resource type="Texture2D" uid="uid://cp83o7jrgcc67" path="res://Sora/images/spritesheets/attack/riku_attack/04_dark_slash.png" id="5_40y6d"]
+[ext_resource type="Texture2D" uid="uid://dghp23o2kh3nk" path="res://Sora/images/spritesheets/attack/riku_attack/05_dark_slash.png" id="6_ysf6b"]
+[ext_resource type="Texture2D" uid="uid://cm5i84hsudjv8" path="res://Sora/images/spritesheets/attack/riku_attack/06_dark_slash.png" id="7_y311r"]
+[ext_resource type="Texture2D" uid="uid://hnvfq76178d8" path="res://Sora/images/spritesheets/attack/riku_attack/07_dark_slash.png" id="8_3gaxq"]
+[ext_resource type="Texture2D" uid="uid://dg8eojdlhp6m" path="res://Sora/images/spritesheets/attack/riku_attack/08_dark_slash.png" id="9_qt6im"]
+[ext_resource type="Texture2D" uid="uid://dr7rmlu0tf3nt" path="res://Sora/images/spritesheets/attack/riku_attack/09_dark_slash.png" id="10_57dhr"]
+[ext_resource type="Texture2D" uid="uid://cd8jeo63bc7c" path="res://Sora/images/spritesheets/attack/riku_attack/10_dark_slash.png" id="11_oq41x"]
+[ext_resource type="Texture2D" uid="uid://bllxawxghhjow" path="res://Sora/images/spritesheets/attack/riku_attack/11_dark_slash.png" id="12_k8hv3"]
+[ext_resource type="Texture2D" uid="uid://e58a70uabdnq" path="res://Sora/images/spritesheets/idle/idle_normal/00_sora_idle.png" id="13_3y4dg"]
+[ext_resource type="Texture2D" uid="uid://cccvv5tudgq5d" path="res://Sora/images/spritesheets/attack/dark_firaga/24_dark_firaga.png" id="13_58a00"]
+[ext_resource type="Texture2D" uid="uid://c44kq3rnleoaf" path="res://Sora/images/spritesheets/attack/dark_firaga/25_dark_firaga.png" id="14_lppdw"]
+[ext_resource type="Texture2D" uid="uid://yqptlqkidpfw" path="res://Sora/images/spritesheets/attack/dark_firaga/26_dark_firaga.png" id="15_5bacg"]
+[ext_resource type="Texture2D" uid="uid://2scfkraey4ax" path="res://Sora/images/spritesheets/attack/dark_firaga/27_dark_firaga.png" id="16_wy8ro"]
+[ext_resource type="Texture2D" uid="uid://tljiljyvi0j0" path="res://Sora/images/spritesheets/attack/dark_firaga/28_dark_firaga.png" id="17_cs5wo"]
+[ext_resource type="Texture2D" uid="uid://bk5x03gf1fnq3" path="res://Sora/images/spritesheets/attack/dark_firaga/29_dark_firaga.png" id="18_5267c"]
+[ext_resource type="Texture2D" uid="uid://cwmre31woi5lr" path="res://Sora/images/spritesheets/attack/dark_firaga/30_dark_firaga.png" id="19_8sk6d"]
+[ext_resource type="Texture2D" uid="uid://dgjeocxd5vcyw" path="res://Sora/images/spritesheets/attack/dark_firaga/31_dark_firaga.png" id="20_qpm13"]
+[ext_resource type="Texture2D" uid="uid://ceah1k38wf3sf" path="res://Sora/images/spritesheets/attack/dark_firaga/32_dark_firaga.png" id="21_1f8xr"]
+[ext_resource type="Texture2D" uid="uid://ch40hewcffwfm" path="res://Sora/images/spritesheets/attack/dark_firaga/33_dark_firaga.png" id="22_ul6bb"]
+[ext_resource type="Texture2D" uid="uid://dpna8tc1sttdy" path="res://Sora/images/spritesheets/attack/dark_firaga/34_dark_firaga.png" id="23_4xrmf"]
+[ext_resource type="Texture2D" uid="uid://b8axqxfofvclw" path="res://Sora/images/spritesheets/attack/dark_firaga/35_dark_firaga.png" id="24_y2vtc"]
+[ext_resource type="Texture2D" uid="uid://cnk2yuwpfbabf" path="res://Sora/images/spritesheets/attack/dark_sonic/00_dark_sonic.png" id="25_vywll"]
+[ext_resource type="Texture2D" uid="uid://nmlyu6iql6ip" path="res://Sora/images/spritesheets/attack/dark_sonic/01_dark_sonic.png" id="26_ywcys"]
+[ext_resource type="Texture2D" uid="uid://cvthn2mum0kt7" path="res://Sora/images/spritesheets/attack/dark_sonic/02_dark_sonic.png" id="27_2lbv2"]
+[ext_resource type="Texture2D" uid="uid://bdyldj6c1xiy" path="res://Sora/images/spritesheets/attack/dark_sonic/03_dark_sonic.png" id="28_4kosk"]
+[ext_resource type="Texture2D" uid="uid://c6dbl30n0iv16" path="res://Sora/images/spritesheets/attack/dark_sonic/04_dark_sonic.png" id="29_un6h1"]
+[ext_resource type="Texture2D" uid="uid://dcswor0the8lb" path="res://Sora/images/spritesheets/attack/dark_sonic/05_dark_sonic.png" id="30_qxge2"]
+[ext_resource type="Texture2D" uid="uid://bycgmgokj2ly0" path="res://Sora/images/spritesheets/attack/dark_sonic/06_dark_sonic.png" id="31_ym7av"]
+[ext_resource type="Texture2D" uid="uid://pia7iryojesv" path="res://Sora/images/spritesheets/attack/dark_sonic/07_dark_sonic.png" id="32_buuer"]
+[ext_resource type="Texture2D" uid="uid://cqdkhpvsocx1o" path="res://Sora/images/spritesheets/attack/dark_sonic/08_dark_sonic.png" id="33_kea7l"]
+[ext_resource type="Texture2D" uid="uid://b8jr20kb7xm4l" path="res://Sora/images/spritesheets/attack/dark_sonic/09_dark_sonic.png" id="34_i26d1"]
+[ext_resource type="Texture2D" uid="uid://bidrmn1y7kem0" path="res://Sora/images/spritesheets/attack/dark_sonic/10_dark_sonic.png" id="35_8vc3v"]
+[ext_resource type="Texture2D" uid="uid://dmw2i7webu56d" path="res://Sora/images/spritesheets/attack/dark_sonic/11_dark_sonic.png" id="36_7ap41"]
+[ext_resource type="Texture2D" uid="uid://dq50t5dwudg4g" path="res://Sora/images/spritesheets/attack/dark_sonic/12_dark_sonic.png" id="37_yky7m"]
+[ext_resource type="Texture2D" uid="uid://gds1ujctmslr" path="res://Sora/images/spritesheets/attack/dark_sonic/13_dark_sonic.png" id="38_yjqt3"]
+
+[sub_resource type="Animation" id="Animation_58a00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-384, -240)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/darkfiraga:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/darkfiraga:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/darkfiraga:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-392, -356)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/darkfiraga:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/darkfiraga:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("reference:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/attack:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/cast:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mj7g5"]
+resource_name = "dark_firaga"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/darkfiraga:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19999996, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("13_58a00"), ExtResource("14_lppdw"), ExtResource("15_5bacg"), ExtResource("16_wy8ro"), ExtResource("17_cs5wo"), ExtResource("18_5267c"), ExtResource("19_8sk6d"), ExtResource("20_qpm13"), ExtResource("21_1f8xr"), ExtResource("22_ul6bb"), ExtResource("23_4xrmf"), ExtResource("24_y2vtc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/darkfiraga:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/darkfiraga:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-392, -356)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/darkfiraga:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 1.0666667, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/darkfiraga:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/attack:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/cast:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/fullcombo:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("reference:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ctxmh"]
+resource_name = "shadow_strike"
+length = 0.967
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.56666666, 0.6666667, 0.76666665, 0.8666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_1qge8"), ExtResource("2_lckeb"), ExtResource("3_q2v8w"), ExtResource("4_fedv6"), ExtResource("5_40y6d"), ExtResource("6_ysf6b"), ExtResource("7_y311r"), ExtResource("8_3gaxq"), ExtResource("9_qt6im"), ExtResource("10_57dhr"), ExtResource("11_oq41x"), ExtResource("12_k8hv3"), ExtResource("12_k8hv3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.46666667, 0.8666667, 0.96666664),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.66584945),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-341, -240)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("reference:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/darkfiraga:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/attack:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/cast:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wsht0"]
+resource_name = "dark_sonic"
+length = 1.367
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.19999994, 0.2999999, 0.4, 0.49999997, 0.5666666, 0.6666666, 0.7666666, 0.8666666, 0.9666666, 1.0666666, 1.1666666, 1.2666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25_vywll"), ExtResource("26_ywcys"), ExtResource("27_2lbv2"), ExtResource("28_4kosk"), ExtResource("29_un6h1"), ExtResource("30_qxge2"), ExtResource("31_ym7av"), ExtResource("32_buuer"), ExtResource("33_kea7l"), ExtResource("34_i26d1"), ExtResource("35_8vc3v"), ExtResource("36_7ap41"), ExtResource("37_yky7m"), ExtResource("38_yjqt3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.1666666, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.66584945),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-68, -146), Vector2(-23, -146)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("reference:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/darkfiraga:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/attack:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/cast:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaol8"]
+_data = {
+&"RESET": SubResource("Animation_58a00"),
+&"dark_firaga": SubResource("Animation_mj7g5"),
+&"dark_sonic": SubResource("Animation_wsht0"),
+&"shadow_strike": SubResource("Animation_ctxmh")
+}
+
+[node name="Riku" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+
+[node name="darkfiraga" type="Sprite2D" parent="Visuals"]
+position = Vector2(-392, -356)
+scale = Vector2(-1, 1)
+
+[node name="attack" type="Sprite2D" parent="Visuals"]
+visible = false
+
+[node name="cast" type="Sprite2D" parent="Visuals"]
+visible = false
+
+[node name="fullcombo" type="Sprite2D" parent="Visuals"]
+position = Vector2(-384, -240)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xaol8")
+}
+
+[node name="reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(26, -107)
+texture = ExtResource("13_3y4dg")

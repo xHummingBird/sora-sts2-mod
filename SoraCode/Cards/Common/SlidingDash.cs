@@ -13,7 +13,7 @@ public class SlidingDash() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10, ValueProp.Move),
+        new DamageVar(9, ValueProp.Move),
         new EnergyVar(1)
     ];
 
@@ -25,12 +25,13 @@ public class SlidingDash() : SoraCard(1, CardType.Attack,
 
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
-            AudioHelper.PlayRandomAttack();
+            
             await sora.DashTo(ownerCreature, play.Target, distance: 300f);
+            AudioHelper.PlayRandomAttack();
             sora.PlayAnimation(ownerCreature, "attack");
             
             await Task.Delay((int)(0.2f * 1000f));
-            sora.DashPast(base.Owner.Creature, play.Target, null, 0.2f);
+            sora.DashPast(base.Owner.Creature, play.Target, null, 0.19f);
             SfxCmd.Play("res://Sora/sfx/swing_down.wav");
             
             sora.PlayVfxOnTarget(

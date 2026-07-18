@@ -7,12 +7,12 @@ using Sora.SoraCode.Extensions;
 
 namespace Sora.SoraCode.Cards.Uncommon;
 
-public class Thundaga() : SoraCard(1, CardType.Attack,
+public class Thundaga() : SoraCard(2, CardType.Attack,
     CardRarity.Uncommon, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10m, ValueProp.Move),
+        new DamageVar(13m, ValueProp.Move),
     ];
     
     protected override async Task OnPlay(
@@ -39,6 +39,6 @@ public class Thundaga() : SoraCard(1, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

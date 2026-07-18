@@ -7,11 +7,23 @@
   "SORA-SITUATION_READY_POWER.smartDescription": "You can now perform Situation Commands.",
   "SORA-SITUATION_READY_POWER.title": "Situation Command Ready",
 
-  "SORA-REFLECT_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
-  "SORA-REFLECT_POWER.smartDescription": "Blocked damage is reflected to your attacker for 1 turn.",
-  "SORA-REFLECT_POWER.title": "Reflect",
-
   "SORA-DAMAGE_SYPHON_POWER.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
   "SORA-DAMAGE_SYPHON_POWER.smartDescription": "Gain [gold]SP[/gold] equal to half of damage taken.",
-  "SORA-DAMAGE_SYPHON_POWER.title": "Damage Syphon"
+  "SORA-DAMAGE_SYPHON_POWER.title": "Damage Syphon",
+
+  "SORA-KAIRI_POWER.description": "",
+  "SORA-KAIRI_POWER.smartDescription": "",
+  "SORA-KAIRI_POWER.title": "Kairi's Link",
+  
+  "SORA-RIKU_POWER.description": "",
+  "SORA-RIKU_POWER.smartDescription": "",
+  "SORA-RIKU_POWER.title": "Riku's Link",
+
+  "SORA-CLOUD_POWER.description": "",
+  "SORA-CLOUD_POWER.smartDescription": "",
+  "SORA-CLOUD_POWER.title": "Cloud's Link",
+
+  "SORA-REFLECT_SORA_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
+  "SORA-REFLECT_SORA_POWER.smartDescription": "Blocked damage is reflected to your attacker for 1 turn.",
+  "SORA-REFLECT_SORA_POWER.title": "Reflect"
 }

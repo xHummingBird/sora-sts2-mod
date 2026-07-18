@@ -1,9 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://jrdiwbm4me1k"]
+[gd_scene load_steps=13 format=3 uid="uid://jrdiwbm4me1k"]
 
 [ext_resource type="Texture2D" uid="uid://cvw4k6v4gam4k" path="res://Sora/images/spritesheets/vfx/atk/01_atk_vfx.png" id="1_va35b"]
 [ext_resource type="Texture2D" uid="uid://bf4viu6ced27c" path="res://Sora/images/spritesheets/vfx/atk/02_atk_vfx.png" id="2_xbqf5"]
 [ext_resource type="Texture2D" uid="uid://c20tpneoajx7y" path="res://Sora/images/spritesheets/vfx/atk/03_atk_vfx.png" id="3_juktc"]
 [ext_resource type="Texture2D" uid="uid://bng4hywdueamb" path="res://Sora/images/spritesheets/vfx/atk/04_atk_vfx.png" id="4_wm5u1"]
+[ext_resource type="Texture2D" uid="uid://dybcr70sr04uu" path="res://Sora/images/spritesheets/vfx/riku_atk/riku_atk_1.png" id="5_tafwt"]
+[ext_resource type="Texture2D" uid="uid://fjaqh745lytx" path="res://Sora/images/spritesheets/vfx/riku_atk/riku_atk_2.png" id="6_0uvb6"]
+[ext_resource type="Texture2D" uid="uid://cjg5j23g54wcl" path="res://Sora/images/spritesheets/vfx/riku_atk/riku_atk_3.png" id="7_ewmcm"]
+[ext_resource type="Texture2D" uid="uid://burqlawefwaba" path="res://Sora/images/spritesheets/vfx/riku_atk/riku_atk_4.png" id="8_oswys"]
+
+[sub_resource type="Animation" id="Animation_0uvb6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_va35b")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -82)]
+}
 
 [sub_resource type="Animation" id="Animation_tafwt"]
 resource_name = "atk_vfx"
@@ -45,8 +88,9 @@ tracks/2/keys = {
 "values": [Vector2(14, -82)]
 }
 
-[sub_resource type="Animation" id="Animation_0uvb6"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_4jybi"]
+resource_name = "riku_atk_vfx"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,10 +98,10 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [true]
+"values": [true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -66,10 +110,10 @@ tracks/1/path = NodePath(".:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_va35b")]
+"values": [ExtResource("5_tafwt"), ExtResource("6_0uvb6"), ExtResource("7_ewmcm"), ExtResource("8_oswys")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -81,13 +125,14 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(14, -82)]
+"values": [Vector2(14, -113)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewmcm"]
 _data = {
 &"RESET": SubResource("Animation_0uvb6"),
-&"atk_vfx": SubResource("Animation_tafwt")
+&"atk_vfx": SubResource("Animation_tafwt"),
+&"riku_atk_vfx": SubResource("Animation_4jybi")
 }
 
 [node name="Vfx" type="Node2D"]

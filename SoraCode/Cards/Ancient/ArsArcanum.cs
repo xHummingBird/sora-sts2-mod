@@ -9,7 +9,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Mechanics.SituationCommand;
 
-namespace Sora.SoraCode.Cards.Basic;
+namespace Sora.SoraCode.Cards.Ancient;
 
 public class ArsArcanum() : SoraCard(3, CardType.Attack,
     CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
@@ -32,7 +32,7 @@ public class ArsArcanum() : SoraCard(3, CardType.Attack,
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
-            await sora.DashTo(ownerCreature, play.Target, distance: 410f);
+            await sora.DashTo(ownerCreature, play.Target, distance: 390f);
             AudioHelper.PlayRandomFormchange();
             
             float duration = sora.PlayAnimation(ownerCreature, "ars_arcanum").total;

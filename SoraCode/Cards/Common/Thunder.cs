@@ -12,7 +12,7 @@ public class Thunder() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(6m, ValueProp.Move),
+        new DamageVar(5m, ValueProp.Move),
     ];
     
     protected override async Task OnPlay(

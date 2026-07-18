@@ -13,7 +13,7 @@ public class Reflega() : SoraCard(2, CardType.Skill, CardRarity.Rare,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(20m, ValueProp.Move),
+        new BlockVar(18m, ValueProp.Move),
         new PowerVar<ReflectPower>(1m),
     ];
     
@@ -26,5 +26,10 @@ public class Reflega() : SoraCard(2, CardType.Skill, CardRarity.Rare,
     {
         await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, play);
         await PowerCmd.Apply<ReflectPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+    }
+    
+    protected override void OnUpgrade()
+    {
+        DynamicVars["Block"].UpgradeValueBy(6m);
     }
 }

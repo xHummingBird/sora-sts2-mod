@@ -67,11 +67,6 @@ public class Sora : PlaceholderCharacterModel
     public override CardPoolModel CardPool => ModelDb.CardPool<SoraCardPool>();
     public override RelicPoolModel RelicPool => ModelDb.RelicPool<SoraRelicPool>();
     public override PotionPoolModel PotionPool => ModelDb.PotionPool<SoraPotionPool>();
-
-    /*  PlaceholderCharacterModel will utilize placeholder basegame assets for most of your character assets until you
-        override all the other methods that define those assets.
-        These are just some of the simplest assets, given some placeholders to differentiate your character with.
-        You don't have to, but you're suggested to rename these images. */
     
     public override CustomEnergyCounter? CustomEnergyCounter =>
 	    new CustomEnergyCounter(EnergyCounterPaths, new Color(0.2f, 0.2f, 0.2f), new Color(1f, 1f, 1f));
@@ -107,7 +102,7 @@ public class Sora : PlaceholderCharacterModel
     
     public override NCreatureVisuals? CreateCustomVisuals()
     {
-        // SoraAssets.EnsurePreloaded();
+        Optimisation.EnsurePreloaded();
         return NodeFactory<NCreatureVisuals>.CreateFromScene(CustomVisualScenePath);
     }
     
@@ -551,7 +546,7 @@ public class Sora : PlaceholderCharacterModel
 
 			uint choiceId = RunManager.Instance.PlayerChoiceSynchronizer.ReserveChoiceId(player);
 
-			await context.SignalPlayerChoiceBegun(PlayerChoiceOptions.None);
+			await context.SignalPlayerChoiceBegun(player, PlayerChoiceOptions.None);
 
 			CardModel? result;
 			

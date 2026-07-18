@@ -10,7 +10,7 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class SituationCommand() : SoraCard(0, CardType.Attack,
+public class SituationCommand() : SoraCard(1, CardType.Attack,
     CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
     protected override bool IsPlayable => base.Owner.HasPower<SituationReadyPower>();
@@ -29,27 +29,43 @@ public class SituationCommand() : SoraCard(0, CardType.Attack,
             .OfType<SituationRelicBase>()
             .FirstOrDefault();
         await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
+        
+        relic?.MarkSituationReadyConsumedThisTurn();
+        
         if (relic?.SituationPoints >= 60)
         {
-            relic.SpendSituationPoints(60);
-            var arsArcanum =
-                base.CombatState.CreateCard<ArsArcanum>(Owner);
+            List<CardModel> cards;
+            var arsArcanum = base.CombatState.CreateCard<ArsArcanum>(Owner);
+            var sonicBlade = base.CombatState.CreateCard<SonicBlade>(Owner);
 
-            await CardCmd.AutoPlay(
-                choiceContext,
+            cards = new()
+            {
+                sonicBlade,
                 arsArcanum,
-                play.Target);
+            };
+            CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
+
+            if (cardModel is SonicBlade)
+            {
+                relic.SpendSituationPoints(30);
+                await CardCmd.AutoPlay(choiceContext, cardModel, null);
+            }
+            else
+            {
+                relic.SpendSituationPoints(60);
+                await CardCmd.AutoPlay(choiceContext, cardModel, play.Target);
+            }
         }
         
         else if (relic?.SituationPoints >= 30)
         {
             relic.SpendSituationPoints(30);
-            var arsArcanum =
+            var sonicBlade =
                 base.CombatState.CreateCard<SonicBlade>(Owner);
 
             await CardCmd.AutoPlay(
                 choiceContext,
-                arsArcanum,
+                sonicBlade,
                 null);
         }
     }

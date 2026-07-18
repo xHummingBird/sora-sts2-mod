@@ -8,7 +8,7 @@ public class KingdomKey() : SituationRelicBase
 
     public override int MaxSituationPoints => 60;
 
-    protected override int AttackSpGain => 2;
+    protected override int AttackSpGain => 3;
 
     protected override int TurnSpGain => 2;
 

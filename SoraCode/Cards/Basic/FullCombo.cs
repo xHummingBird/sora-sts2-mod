@@ -34,7 +34,7 @@ public class FullCombo() : SoraCard(2, CardType.Attack,
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
-            await sora.DashTo(ownerCreature, play.Target, distance: 360f);
+            await sora.DashTo(ownerCreature, play.Target, distance: 350f);
             AudioHelper.PlayRandomAttack();
             
             float duration = sora.PlayAnimation(ownerCreature, "full_combo").total;

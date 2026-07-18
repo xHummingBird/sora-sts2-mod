@@ -12,13 +12,12 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class FallingSlash() : SoraCard(1, CardType.Attack,
+public class FallingSlash() : SoraCard(2, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(12, ValueProp.Move),
-        
     ];
     
     protected override async Task OnPlay(

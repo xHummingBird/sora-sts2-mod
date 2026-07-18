@@ -6,8 +6,11 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Context;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using MegaCrit.Sts2.Core.Nodes.HoverTips;
+using Sora.SoraCode.Cards.Ancient;
 using Sora.SoraCode.Powers;
 using Sora.SoraCode.Relics;
 
@@ -37,9 +40,19 @@ public partial class SituationCommandDisplay : Control
     private Tween? _command2Tween;
     private Tween? _command3Tween;
     
+    private IHoverTip? _command1HoverTip;
+    private IHoverTip? _command2HoverTip;
+    private IHoverTip? _command3HoverTip;
+    
     private const string SonicBladeKey = "SORA-SONIC_BLADE.title";
     private const string ArsArcanumKey = "SORA-ARS_ARCANUM.title";
-    
+    private const string UltimateFormKey = "SORA-ULTIMATE_FORM.title";
+    private const string UltimateFinisherKey =  "SORA-ULTIMATE_FINISHER.title";
+
+    private const string RikuCommandKey = "SORA-RIKU_COMMAND.title";
+    private const string KairiCommandKey = "SORA-KAIRI_COMMAND.title";
+    private const string RikuKairiCommandKey = "SORA-RIKU_KAIRI_COMMAND.title";
+    private const string CloudCommandKey = "SORA-CLOUD_COMMAND.title";
     
     private const bool DebugForceVisible = false;
 
@@ -89,6 +102,7 @@ public partial class SituationCommandDisplay : Control
                 tree,
                 SceneTree.SignalName.ProcessFrame);
         }
+        
 
         if (_player == null)
         {
@@ -156,7 +170,7 @@ public partial class SituationCommandDisplay : Control
         ApplyCommandFont(_command1Label);
         ApplyCommandFont(_command2Label);
         ApplyCommandFont(_command3Label);
-
+        
         if (_command1 == null ||
             _command2 == null ||
             _command3 == null ||
@@ -170,12 +184,70 @@ public partial class SituationCommandDisplay : Control
             QueueFree();
             return;
         }
+        
+        _command1.MouseFilter = MouseFilterEnum.Pass;
+        _command2.MouseFilter = MouseFilterEnum.Pass;
+        _command3.MouseFilter = MouseFilterEnum.Pass;
+
+        _command1.MouseEntered +=
+            () => OnCommandHovered(_command1, _command1HoverTip);
+
+        _command2.MouseEntered +=
+            () => OnCommandHovered(_command2, _command2HoverTip);
+
+        _command3.MouseEntered +=
+            () => OnCommandHovered(_command3, _command3HoverTip);
+
+        _command1.MouseExited +=
+            () => OnCommandUnhovered(_command1);
+
+        _command2.MouseExited +=
+            () => OnCommandUnhovered(_command2);
+
+        _command3.MouseExited +=
+            () => OnCommandUnhovered(_command3);
 
         HideAllCommands();
 
         CallDeferred(nameof(UpdateCommandPivots));
 
         UpdateDisplay();
+    }
+    private void OnCommandHovered(
+        Control? command,
+        IHoverTip? hoverTip)
+    {
+        if (command == null ||
+            hoverTip == null)
+        {
+            return;
+        }
+        
+        NHoverTipSet.Clear();
+
+        var tip =
+            NHoverTipSet.CreateAndShow(
+                command,
+                hoverTip);
+
+        if (tip != null)
+        {
+            tip.MouseFilter =
+                MouseFilterEnum.Ignore;
+
+            tip.GlobalPosition =
+                command.GlobalPosition +
+                new Vector2(40f, -420f);
+        }
+    }
+    
+    private void OnCommandUnhovered(
+        Control? command)
+    {
+        if (command != null)
+        {
+            NHoverTipSet.Remove(command);
+        }
     }
     
     private static void ApplyCommandFont(
@@ -310,21 +382,120 @@ public partial class SituationCommandDisplay : Control
         _command3.Scale = Vector2.One;
     }
 
-    private List<string> GetCurrentCommands(
-        SituationRelicBase relic)
+    private List<string> GetCurrentCommands(SituationRelicBase relic)
+{
+    List<string> commands =
+    [
+        string.Empty,
+        string.Empty,
+        string.Empty
+    ];
+
+    _command1HoverTip = null;
+    _command2HoverTip = null;
+    _command3HoverTip = null;
+
+    var creature =
+        relic.Owner.Creature;
+
+    bool hasRiku =
+        creature.HasPower<RikuPower>();
+
+    bool hasKairi =
+        creature.HasPower<KairiPower>();
+
+    bool hasCloud =
+        creature.HasPower<CloudPower>();
+
+    bool ultimateForm =
+        creature.HasPower<UltimateFormPower>();
+
+    if (relic.SituationPoints >= 60)
     {
-        List<string> commands = [];
-
-        if (relic.SituationPoints >= 60)
+        if (hasRiku && hasKairi)
         {
-            commands.Add(ArsArcanumKey);
-        }
-        else if (relic.SituationPoints >= 30)
-        {
-            commands.Add(SonicBladeKey);
-        }
+            commands[0] =
+                RikuKairiCommandKey;
 
-        return commands;
+            _command1HoverTip =
+                HoverTipFactory.FromCard<RikuKairiLimit>();
+        }
+        else if (hasRiku)
+        {
+            commands[0] =
+                RikuCommandKey;
+
+            _command1HoverTip =
+                HoverTipFactory.FromCard<RikuLimit>();
+        }
+        else if (hasKairi)
+        {
+            commands[0] =
+                KairiCommandKey;
+
+            _command1HoverTip =
+                HoverTipFactory.FromCard<KairiLimit>();
+        }
+        else
+        {
+            commands[0] =
+                SonicBladeKey;
+
+            _command1HoverTip =
+                HoverTipFactory.FromCard<SonicBlade>();
+        }
+    }
+    else if (relic.SituationPoints >= 30)
+    {
+        if (ultimateForm)
+        {
+            commands[0] =
+                UltimateFinisherKey;
+
+            _command1HoverTip =
+                HoverTipFactory.FromCard<UltimateFinisher>();
+        }
+        else
+        {
+            commands[0] =
+                SonicBladeKey;
+
+            _command1HoverTip =
+                HoverTipFactory.FromCard<SonicBlade>();
+        }
+    }
+
+    if (relic.SituationPoints >= 60)
+    {
+        if (hasCloud)
+        {
+            commands[1] =
+                CloudCommandKey;
+
+            _command2HoverTip =
+                HoverTipFactory.FromCard<CloudLimit>();
+        }
+        else
+        {
+            commands[1] =
+                ArsArcanumKey;
+
+            _command2HoverTip =
+                HoverTipFactory.FromCard<ArsArcanum>();
+        }
+    }
+
+    if (!ultimateForm &&
+        relic.UltimateFormUnlocked)
+    {
+        commands[2] =
+            UltimateFormKey;
+
+        _command3HoverTip =
+            HoverTipFactory.FromCard<UltimateForm>();
+    }
+
+    return commands;
     }
 
     private void ApplyCommands(
@@ -579,6 +750,14 @@ public partial class SituationCommandDisplay : Control
         _command1Tween = null;
         _command2Tween = null;
         _command3Tween = null;
+        
+        NHoverTipSet.Remove(_command1);
+        NHoverTipSet.Remove(_command2);
+        NHoverTipSet.Remove(_command3);
+
+        _command1HoverTip = null;
+        _command2HoverTip = null;
+        _command3HoverTip = null;
 
         _display = null;
 

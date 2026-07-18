@@ -1,9 +1,9 @@
 {
-  "SORA-KINGDOM_KEY.description": "Gain 2 [gold]SP[/gold] at the start of your turn. Gain 2 [gold]SP[/gold] when you attack.",
+  "SORA-KINGDOM_KEY.description": "Gain 2 [gold]SP[/gold] at the start of your turn. Gain 3 [gold]SP[/gold] when you attack.",
   "SORA-KINGDOM_KEY.flavor": "May Your Heart Be Your Guiding Key",
   "SORA-KINGDOM_KEY.title": "Kingdom Key",
 
   "SORA-ULTIMA_WEAPON.description": "",
   "SORA-ULTIMA_WEAPON.flavor": "",
-  "SORA-ULTIMA_WEAPON.title": "UltimaWeapon"
+  "SORA-ULTIMA_WEAPON.title": "Ultima Weapon"
 }

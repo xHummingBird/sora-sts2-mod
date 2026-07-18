@@ -39,7 +39,7 @@ public abstract class SituationRelicBase : SoraRelic
 
     public abstract int MaxSituationPoints { get; }
 
-    protected virtual int AttackSpGain => 2;
+    protected virtual int AttackSpGain => 3;
 
     protected virtual int TurnSpGain => 2;
 
@@ -83,7 +83,16 @@ public abstract class SituationRelicBase : SoraRelic
         {
             AssertMutable();
 
-            _situationPoints = Math.Clamp(value, 0, MaxSituationPoints);
+            int maxSp =
+                base.Owner.Creature.HasPower<UltimateFormPower>()
+                    ? UltimateFinisherThreshold
+                    : MaxSituationPoints;
+
+            _situationPoints =
+                Math.Clamp(
+                    value,
+                    0,
+                    maxSp);
 
             UpdateDisplay();
         }
@@ -311,11 +320,17 @@ public abstract class SituationRelicBase : SoraRelic
 
     public int GetMaxSituationPointsForUI()
     {
+        if (base.Owner.Creature.HasPower<UltimateFormPower>())
+            return UltimateFinisherThreshold;
+
         return MaxSituationPoints;
     }
 
     public int GetArrowProgressForUI()
     {
+        if (base.Owner.Creature.HasPower<UltimateFormPower>())
+            return Math.Clamp(SituationPoints, 0, 30);
+        
         if (SituationPoints < SonicThreshold)
             return SituationPoints;
 
