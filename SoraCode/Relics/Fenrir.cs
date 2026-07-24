@@ -1,6 +1,6 @@
 ﻿namespace Sora.SoraCode.Relics;
 
-public class BusterSword
+public class Fenrir
 {
     
 }

@@ -135,7 +135,20 @@
   "SORA-DARK_SONIC.title": "Dark Sonic",
 
   "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
-  "SORA-SHADOW_BARRIER.title": "Shadow Barrier"
-  
-  
+  "SORA-SHADOW_BARRIER.title": "Shadow Barrier",
+
+  "SORA-KEYBLADE_MASTERY.description": "Gain {StrenghtPower:diff()} [gold]Strength[/gold].",
+  "SORA-KEYBLADE_MASTERY.title": "Keyblade Mastery",
+
+  "SORA-LUCKY_EMBLEM.description": "Gain {Block:diff()} [gold]Block[/gold].\nPermanently increase this card's [gold]Block[/gold] by {Increase:diff()}.",
+  "SORA-LUCKY_EMBLEM.title": "Lucky Emblem",
+
+  "SORA-SECOND_CHANCE.description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
+  "SORA-SECOND_CHANCE.title": "Second Chance",
+
+  "SORA-MY_FRIENDS_ARE_MY_POWER.description": "Attacks deal 1 additional damage for each active [gold]Link[/gold].",
+  "SORA-MY_FRIENDS_ARE_MY_POWER.title": "My Friends Are My Power!",
+
+  "SORA-ONCE_MORE.description": "Gain {Block:diff()} [gold]Block[/gold]. \nIf you have less than [gold]50%[/gold] HP, gain {SituationReadyPower:diff()} [gold]SP[/gold]. ",
+  "SORA-ONCE_MORE.title": "Once More"
 }

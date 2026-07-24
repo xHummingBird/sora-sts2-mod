@@ -1,6 +1,6 @@
 ﻿namespace Sora.SoraCode.Powers;
 
-public class SituationBoost
+public class SituationBoostPower
 {
     
 }

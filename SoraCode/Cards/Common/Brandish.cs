@@ -6,10 +6,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 
-namespace Sora.SoraCode.Cards.Uncommon;
+namespace Sora.SoraCode.Cards.Common;
 
 public class Brandish() : SoraCard(0, CardType.Skill,
-    CardRarity.Uncommon, TargetType.Self)
+    CardRarity.Common, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

@@ -14,8 +14,7 @@ public class SecondChance() : SoraCard(2, CardType.Power,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new BlockVar(25m, ValueProp.Move),
-        new PowerVar<SituationReadyPower>(12m)
+        new PowerVar<SecondChancePower>(1m)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -25,21 +24,13 @@ public class SecondChance() : SoraCard(2, CardType.Power,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await CommonActions.CardBlock(this, play);
         SfxCmd.Play("res://Sora/sounds/mada.wav");
-        if (base.Owner.Creature.CurrentHp * 2 < base.Owner.Creature.MaxHp)
-        {
-            SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
-            if (relic != null)
-            {
-                relic.GainSituationPoints((int)DynamicVars["SituationReadyPower"].BaseValue);
-            }
-        }
+        await PowerCmd.Apply<SecondChancePower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+       
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(5m);
-        DynamicVars["SituationReadyPower"].UpgradeValueBy(3m);
+        base.EnergyCost.UpgradeBy(-1);
     }
 }

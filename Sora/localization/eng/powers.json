@@ -31,11 +31,16 @@
   "SORA-FRIENDSHIP_POWER.smartDescription": "Attacks deal {Amount} additional damage for each active [gold]Link[/gold].",
   "SORA-FRIENDSHIP_POWER.title": "Friendship",
 
-  "SORA-MICKEY_POWER.description": "Gain 1 Additional ",
+  "SORA-MICKEY_POWER.description": "",
   "SORA-MICKEY_POWER.smartDescription": "",
   "SORA-MICKEY_POWER.title": "Mickey's Link",
 
   "SORA-YENSID_POWER.description": "",
   "SORA-YENSID_POWER.smartDescription": "",
-  "SORA-YENSID_POWER.title": "Yensid's Link"
+  "SORA-YENSID_POWER.title": "Yensid's Link",
+
+  "SORA-SECOND_CHANCE_POWER.description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
+  "SORA-SECOND_CHANCE_POWER.smartDescription": "The first {Amount:plural:time|[blue]{}[/blue] times} you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
+  "SORA-SECOND_CHANCE_POWER.title": "SecondChancePower"
+  
 }
