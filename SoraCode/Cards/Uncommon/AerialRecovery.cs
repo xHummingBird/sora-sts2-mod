@@ -10,7 +10,7 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Uncommon;
 
-public class AerialRecovery() : SoraCard(1, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+public class AerialRecovery() : SoraCard(0, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
 {
     public override bool GainsBlock => true;
     

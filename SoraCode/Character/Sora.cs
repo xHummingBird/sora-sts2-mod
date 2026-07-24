@@ -15,14 +15,17 @@ using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.Hooks;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Nodes;
+using MegaCrit.Sts2.Core.Nodes.Audio;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Screens.CardSelection;
+using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.Saves;
@@ -586,6 +589,53 @@ public class Sora : PlaceholderCharacterModel
 			await context.SignalPlayerChoiceEnded();
 
 			return result;
+		}
+	}
+	
+	[HarmonyPatch(typeof(SfxCmd), nameof(SfxCmd.Play), new[] { typeof(string), typeof(float) })]
+	public static class SuppressVanillaBlockHitSfxPatch
+	{
+		private const string VanillaBlockHitSfx = "event:/sfx/block_hit";
+
+		private static bool Prefix(string sfx)
+		{
+			// Stop the vanilla block_hit here.
+			// We will replay either vanilla or Sora's version from NBlockSparkVfx.Create,
+			// where we actually know who the target is.
+			if (sfx == VanillaBlockHitSfx)
+				return false;
+
+			return true;
+		}
+	}
+
+	[HarmonyPatch(typeof(NBlockSparkVfx), nameof(NBlockSparkVfx.Create), new[] { typeof(Creature) })]
+	public static class SoraTargetBlockHitSfxPatch
+	{
+		private const string VanillaBlockHitSfx = "event:/sfx/block_hit";
+
+		// Change this to your actual FMOD event.
+		private const string SoraBlockHitSfx = "res://Sora/sfx/block.wav";
+
+		private static void Prefix(Creature target)
+		{
+			if (NonInteractiveMode.IsActive)
+				return;
+
+			if (CombatManager.Instance.IsEnding)
+				return;
+
+			string sfx = IsSora(target)
+				? SoraBlockHitSfx
+				: VanillaBlockHitSfx;
+
+			NAudioManager.Instance?.PlayOneShot(sfx);
+		}
+
+		private static bool IsSora(Creature creature)
+		{
+			return creature is { IsPlayer: true }
+			       && creature.Player?.Character is Sora; // change Sora to your actual class name if different
 		}
 	}
 }

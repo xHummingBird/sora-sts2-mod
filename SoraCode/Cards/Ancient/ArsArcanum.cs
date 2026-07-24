@@ -11,7 +11,7 @@ using Sora.SoraCode.Mechanics.SituationCommand;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class ArsArcanum() : SoraCard(3, CardType.Attack,
+public class ArsArcanum() : SoraCard(0, CardType.Attack,
     CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
@@ -37,11 +37,11 @@ public class ArsArcanum() : SoraCard(3, CardType.Attack,
             
             float duration = sora.PlayAnimation(ownerCreature, "ars_arcanum").total;
             if (duration > 0f)
-                await Task.Delay((int)(1.067f * 1000f));
+                await Task.Delay((int)(1.167f * 1000f));
             AudioHelper.PlayRandomAttack();
             SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.233f * 1000f));
+            await Task.Delay((int)(0.133f * 1000f));
             SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             AudioHelper.PlayRandomAttack();

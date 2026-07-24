@@ -20,14 +20,12 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
     [
         new DamageVar(5, ValueProp.Move),
         new PowerVar<VulnerablePower>(1),
-        new PowerVar<WeakPower>(1)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<RikuPower>(),
         HoverTipFactory.FromPower<VulnerablePower>(),
-        HoverTipFactory.FromPower<WeakPower>()
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -60,8 +58,6 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
             .WithHitFx(null, "res://Sora/sfx/riku/riku_hit_hard (2).wav")
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, base.DynamicVars.Vulnerable.BaseValue,
-            base.Owner.Creature, this);
-        await PowerCmd.Apply<WeakPower>(choiceContext, play.Target, base.DynamicVars.Weak.BaseValue,
             base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
         

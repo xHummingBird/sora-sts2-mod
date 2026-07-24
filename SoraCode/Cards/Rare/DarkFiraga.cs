@@ -12,6 +12,7 @@ using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Mechanics.Companion;
+using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Rare;
 
@@ -22,7 +23,6 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
     [
         new DamageVar(14, ValueProp.Move),
         new PowerVar<VulnerablePower>(1),
-        new PowerVar<WeakPower>(1)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -32,8 +32,8 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
+        HoverTipFactory.FromPower<RikuPower>(),
         HoverTipFactory.FromPower<VulnerablePower>(),
-        HoverTipFactory.FromPower<WeakPower>()
     ];
     
     protected override async Task OnPlay(
@@ -83,15 +83,12 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue,
             base.Owner.Creature, this);
-        await PowerCmd.Apply<WeakPower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue,
-            base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(4m);
-        DynamicVars.Weak.UpgradeValueBy(1m);
         DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }

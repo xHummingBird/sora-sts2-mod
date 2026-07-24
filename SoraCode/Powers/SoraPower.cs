@@ -7,7 +7,14 @@ namespace Sora.SoraCode.Powers;
 
 public abstract class SoraPower : CustomPowerModel
 {
-    //Loads from Sora/images/powers/your_power.png
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
-    public override string CustomBigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+    protected virtual string IconSuffix => "";
+
+    protected string IconFileName =>
+        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}{IconSuffix}.png";
+
+    public override string CustomPackedIconPath =>
+        IconFileName.BigPowerImagePath();
+
+    public override string CustomBigIconPath =>
+        $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
 }

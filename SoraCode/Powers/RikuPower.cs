@@ -14,6 +14,8 @@ public class RikuPower : SoraPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
     
+    protected override string IconSuffix => "_small";
+    
     public override bool AllowNegative => false;
 
     public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,

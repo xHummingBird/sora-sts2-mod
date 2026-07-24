@@ -49,10 +49,10 @@ public partial class SituationCommandDisplay : Control
     private const string UltimateFormKey = "SORA-ULTIMATE_FORM.title";
     private const string UltimateFinisherKey =  "SORA-ULTIMATE_FINISHER.title";
 
-    private const string RikuCommandKey = "SORA-RIKU_COMMAND.title";
-    private const string KairiCommandKey = "SORA-KAIRI_COMMAND.title";
-    private const string RikuKairiCommandKey = "SORA-RIKU_KAIRI_COMMAND.title";
-    private const string CloudCommandKey = "SORA-CLOUD_COMMAND.title";
+    private const string RikuCommandKey = "SORA-RIKU_LIMIT.title";
+    private const string KairiCommandKey = "SORA-KAIRI_LIMIT.title";
+    private const string RikuKairiCommandKey = "SORA-RIKU_KAIRI_LIMIT.title";
+    private const string CloudCommandKey = "SORA-CLOUD_LIMIT.title";
     
     private const bool DebugForceVisible = false;
 

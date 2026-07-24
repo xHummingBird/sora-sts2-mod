@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://d38id2mhqv8db"]
+[gd_scene load_steps=217 format=3 uid="uid://d38id2mhqv8db"]
 
 [ext_resource type="Texture2D" uid="uid://cf84b4155tnx" path="res://Sora/images/spritesheets/attack/ars_arcanum/00_ars_arcanum.png" id="1_dsh2f"]
 [ext_resource type="Texture2D" uid="uid://e58a70uabdnq" path="res://Sora/images/spritesheets/idle/idle_normal/00_sora_idle.png" id="2_84kho"]
@@ -131,6 +131,72 @@
 [ext_resource type="Texture2D" uid="uid://bfm8hwri1c38u" path="res://Sora/images/spritesheets/attack/sonic_blade/sonic_blade_6.png" id="129_vi4pi"]
 [ext_resource type="Texture2D" uid="uid://6okaifikax8w" path="res://Sora/images/spritesheets/attack/sonic_blade/sonic_blade_7.png" id="130_hmvoq"]
 [ext_resource type="Texture2D" uid="uid://bl6p5f8udhldj" path="res://Sora/images/spritesheets/attack/sonic_blade/sonic_blade_8.png" id="131_gadqq"]
+[ext_resource type="Texture2D" uid="uid://bey56tw5xy61h" path="res://Sora/images/spritesheets/attack/dark_arcanum/00_riku_limit.png" id="132_yqvkv"]
+[ext_resource type="Texture2D" uid="uid://bvdbqk74wbk6u" path="res://Sora/images/spritesheets/attack/dark_arcanum/01_riku_limit.png" id="133_tvwvw"]
+[ext_resource type="Texture2D" uid="uid://dojh51rsim70p" path="res://Sora/images/spritesheets/attack/dark_arcanum/02_riku_limit.png" id="134_d55ml"]
+[ext_resource type="Texture2D" uid="uid://c0djbxijptmmx" path="res://Sora/images/spritesheets/attack/dark_firaga/02_dark_firaga.png" id="134_gadqq"]
+[ext_resource type="Texture2D" uid="uid://blh6y1nxlik6p" path="res://Sora/images/spritesheets/attack/dark_arcanum/03_riku_limit.png" id="135_7saqn"]
+[ext_resource type="Texture2D" uid="uid://bkdxjyqqf6s37" path="res://Sora/images/spritesheets/attack/dark_firaga/03_dark_firaga.png" id="135_ppp6f"]
+[ext_resource type="Texture2D" uid="uid://c2mh32fecbosv" path="res://Sora/images/spritesheets/attack/dark_firaga/04_dark_firaga.png" id="136_b1aly"]
+[ext_resource type="Texture2D" uid="uid://buls55pe1cdin" path="res://Sora/images/spritesheets/attack/dark_arcanum/04_riku_limit.png" id="136_xpbei"]
+[ext_resource type="Texture2D" uid="uid://d3c701n2rieoj" path="res://Sora/images/spritesheets/attack/dark_arcanum/05_riku_limit.png" id="137_1rn6c"]
+[ext_resource type="Texture2D" uid="uid://cblk4d3desyop" path="res://Sora/images/spritesheets/attack/dark_arcanum/06_riku_limit.png" id="138_r7ca8"]
+[ext_resource type="Texture2D" uid="uid://ckm02kiteawun" path="res://Sora/images/spritesheets/attack/dark_arcanum/07_riku_limit.png" id="139_xwew3"]
+[ext_resource type="Texture2D" uid="uid://di06jufiybmpq" path="res://Sora/images/spritesheets/attack/dark_arcanum/08_riku_limit.png" id="140_2nen2"]
+[ext_resource type="Texture2D" uid="uid://qmruxs4vcrh6" path="res://Sora/images/spritesheets/attack/dark_arcanum/09_riku_limit.png" id="141_ll18c"]
+[ext_resource type="Texture2D" uid="uid://c7k33en4ohsyw" path="res://Sora/images/spritesheets/attack/dark_arcanum/10_riku_limit.png" id="142_bm6pp"]
+[ext_resource type="Texture2D" uid="uid://dx4y2m4nnttw4" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/01_riku_limit.png" id="144_2p3fb"]
+[ext_resource type="Texture2D" uid="uid://bl7cumf5oouw7" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/02_riku_limit.png" id="145_kluug"]
+[ext_resource type="Texture2D" uid="uid://ddn3pkfdyitkj" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/03_riku_limit.png" id="146_7w2i8"]
+[ext_resource type="Texture2D" uid="uid://dxiyongq1woyc" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/04_riku_limit.png" id="147_3vjcf"]
+[ext_resource type="Texture2D" uid="uid://cmjy6gxuvg48t" path="res://Sora/images/spritesheets/attack/dark_firaga/05_dark_firaga.png" id="148_kgw72"]
+[ext_resource type="Texture2D" uid="uid://bkfebywyfy2mg" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/05_riku_limit.png" id="148_xnmfv"]
+[ext_resource type="Texture2D" uid="uid://35t4rxj6bqc4" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/06_riku_limit.png" id="149_81r1o"]
+[ext_resource type="Texture2D" uid="uid://0k3d0r3fmwy5" path="res://Sora/images/spritesheets/attack/dark_firaga/06_dark_firaga.png" id="149_bdw2n"]
+[ext_resource type="Texture2D" uid="uid://ctk8llp373fb8" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/07_riku_limit.png" id="150_y5t1m"]
+[ext_resource type="Texture2D" uid="uid://4qw0u6k3fgb4" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/08_riku_limit.png" id="151_3l8uo"]
+[ext_resource type="Texture2D" uid="uid://fus3wai3ngmw" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/00_riku_limit.png" id="151_mi05e"]
+[ext_resource type="Texture2D" uid="uid://2qy2bx6flbkx" path="res://Sora/images/spritesheets/attack/dark_firaga/08_dark_firaga.png" id="151_pyrid"]
+[ext_resource type="Texture2D" uid="uid://bxiqnil172sqk" path="res://Sora/images/spritesheets/attack/dark_firaga/09_dark_firaga.png" id="152_41ysd"]
+[ext_resource type="Texture2D" uid="uid://klhim1opiow0" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/09_riku_limit.png" id="152_gj6qm"]
+[ext_resource type="Texture2D" uid="uid://dfchobci11j7l" path="res://Sora/images/spritesheets/attack/dark_firaga/10_dark_firaga.png" id="153_8ihg8"]
+[ext_resource type="Texture2D" uid="uid://btsdp53vqqph8" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/10_riku_limit.png" id="153_rvh54"]
+[ext_resource type="Texture2D" uid="uid://cidmu3perhofo" path="res://Sora/images/spritesheets/attack/dark_firaga/11_dark_firaga.png" id="154_5nur1"]
+[ext_resource type="Texture2D" uid="uid://bo0gxddtja7ja" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/11_riku_limit.png" id="154_petb8"]
+[ext_resource type="Texture2D" uid="uid://c71ma3ptkqo8h" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/12_riku_limit.png" id="155_0k1ba"]
+[ext_resource type="Texture2D" uid="uid://bwb6dlw4vbqe2" path="res://Sora/images/spritesheets/attack/dark_firaga/12_dark_firaga.png" id="155_xjg82"]
+[ext_resource type="Texture2D" uid="uid://dfixpo3bukdr4" path="res://Sora/images/spritesheets/attack/dark_firaga/13_dark_firaga.png" id="156_2p3fb"]
+[ext_resource type="Texture2D" uid="uid://b0y3x45jonob6" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/13_riku_limit.png" id="156_wrahg"]
+[ext_resource type="Texture2D" uid="uid://dvr75h0kiglhe" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/14_riku_limit.png" id="157_4ckrh"]
+[ext_resource type="Texture2D" uid="uid://ddpexw4gj4cgf" path="res://Sora/images/spritesheets/attack/dark_firaga/14_dark_firaga.png" id="157_kluug"]
+[ext_resource type="Texture2D" uid="uid://drbfpi2mobn1n" path="res://Sora/images/spritesheets/attack/dark_firaga/15_dark_firaga.png" id="158_7w2i8"]
+[ext_resource type="Texture2D" uid="uid://y0eiuywbylyl" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/15_riku_limit.png" id="158_84i1l"]
+[ext_resource type="Texture2D" uid="uid://b4popxh05yyt1" path="res://Sora/images/spritesheets/attack/dark_firaga/16_dark_firaga.png" id="159_3vjcf"]
+[ext_resource type="Texture2D" uid="uid://cnq4gfr6j11j0" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/16_riku_limit.png" id="159_eoiuo"]
+[ext_resource type="Texture2D" uid="uid://cnxbmxkymrnxk" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/17_riku_limit.png" id="160_5tj5g"]
+[ext_resource type="Texture2D" uid="uid://dpr12x52yq7wm" path="res://Sora/images/spritesheets/attack/dark_firaga/17_dark_firaga.png" id="160_xnmfv"]
+[ext_resource type="Texture2D" uid="uid://h670le7hq3x5" path="res://Sora/images/spritesheets/attack/dark_firaga/18_dark_firaga.png" id="161_81r1o"]
+[ext_resource type="Texture2D" uid="uid://bfv5o0ao6wygu" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/18_riku_limit.png" id="161_we8ip"]
+[ext_resource type="Texture2D" uid="uid://0xg6vmfqs0e2" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/19_riku_limit.png" id="162_jadlb"]
+[ext_resource type="Texture2D" uid="uid://wj51txdi3bkh" path="res://Sora/images/spritesheets/attack/dark_firaga/19_dark_firaga.png" id="162_y5t1m"]
+[ext_resource type="Texture2D" uid="uid://dbdpa41627bfi" path="res://Sora/images/spritesheets/attack/dark_firaga/20_dark_firaga.png" id="163_3l8uo"]
+[ext_resource type="Texture2D" uid="uid://bmlrn1q2fog3s" path="res://Sora/images/spritesheets/attack/dark_arcanum_2/23_riku_limit.png" id="163_xjg82"]
+[ext_resource type="Texture2D" uid="uid://dcvcl1ptdjw7" path="res://Sora/images/spritesheets/attack/dark_firaga/21_dark_firaga.png" id="164_gj6qm"]
+[ext_resource type="Texture2D" uid="uid://c2pjlg5usvtni" path="res://Sora/images/spritesheets/attack/dark_firaga/22_dark_firaga.png" id="165_rvh54"]
+[ext_resource type="Texture2D" uid="uid://dpt5pmdavl70y" path="res://Sora/images/spritesheets/attack/dark_firaga/23_dark_firaga.png" id="166_petb8"]
+[ext_resource type="Texture2D" uid="uid://cccvv5tudgq5d" path="res://Sora/images/spritesheets/attack/dark_firaga/24_dark_firaga.png" id="167_0k1ba"]
+[ext_resource type="Texture2D" uid="uid://c44kq3rnleoaf" path="res://Sora/images/spritesheets/attack/dark_firaga/25_dark_firaga.png" id="168_wrahg"]
+[ext_resource type="Texture2D" uid="uid://yqptlqkidpfw" path="res://Sora/images/spritesheets/attack/dark_firaga/26_dark_firaga.png" id="169_4ckrh"]
+[ext_resource type="Texture2D" uid="uid://2scfkraey4ax" path="res://Sora/images/spritesheets/attack/dark_firaga/27_dark_firaga.png" id="170_84i1l"]
+[ext_resource type="Texture2D" uid="uid://tljiljyvi0j0" path="res://Sora/images/spritesheets/attack/dark_firaga/28_dark_firaga.png" id="171_eoiuo"]
+[ext_resource type="Texture2D" uid="uid://bk5x03gf1fnq3" path="res://Sora/images/spritesheets/attack/dark_firaga/29_dark_firaga.png" id="172_5tj5g"]
+[ext_resource type="Texture2D" uid="uid://cwmre31woi5lr" path="res://Sora/images/spritesheets/attack/dark_firaga/30_dark_firaga.png" id="173_we8ip"]
+[ext_resource type="Texture2D" uid="uid://dgjeocxd5vcyw" path="res://Sora/images/spritesheets/attack/dark_firaga/31_dark_firaga.png" id="174_jadlb"]
+[ext_resource type="Texture2D" uid="uid://ceah1k38wf3sf" path="res://Sora/images/spritesheets/attack/dark_firaga/32_dark_firaga.png" id="175_ex6mf"]
+[ext_resource type="Texture2D" uid="uid://ch40hewcffwfm" path="res://Sora/images/spritesheets/attack/dark_firaga/33_dark_firaga.png" id="176_tjljs"]
+[ext_resource type="Texture2D" uid="uid://dpna8tc1sttdy" path="res://Sora/images/spritesheets/attack/dark_firaga/34_dark_firaga.png" id="177_q6lvq"]
+[ext_resource type="Texture2D" uid="uid://b8axqxfofvclw" path="res://Sora/images/spritesheets/attack/dark_firaga/35_dark_firaga.png" id="178_1drih"]
+[ext_resource type="Texture2D" uid="uid://dxi47aj5a7pk3" path="res://Sora/images/spritesheets/attack/dark_firaga/36_dark_firaga.png" id="179_7ssuh"]
 
 [sub_resource type="Animation" id="Animation_sexs2"]
 length = 0.001
@@ -506,6 +572,78 @@ tracks/30/keys = {
 "update": 0,
 "values": [-16.692]
 }
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Visuals/companion:texture")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Visuals/companion:position")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(623, -354)]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Visuals/companion:modulate")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Visuals/companion:visible")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Visuals/companion:z_index")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Visuals/companion:scale")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_6b8y0"]
 resource_name = "ars_arcanum"
@@ -789,6 +927,18 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-9.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Visuals/companion:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_p10tl"]
@@ -2019,6 +2169,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/companion:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_p8vlg"]
 resource_name = "quick_slash"
@@ -2605,6 +2767,362 @@ tracks/9/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_xjg82"]
+resource_name = "dark_arcanum_2"
+length = 4.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/attack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.23333333, 0.26666665, 0.3333334, 0.40000007, 0.43333337, 0.46666673, 0.5, 0.6, 0.66666675, 0.73333335, 0.8000001, 0.8666667, 0.9333335, 0.9666668, 1.0666666, 1.1666665, 1.2333333, 1.3, 1.3666667, 1.4333333, 1.5, 1.5666667, 1.6333333, 1.7, 1.7666667, 1.8333334, 1.8666667, 1.9, 1.9333333, 1.9666666, 1.9999999, 2.0666666, 2.1333332, 2.1666665, 2.1999998, 2.233333, 2.3000002, 2.3666668, 2.4, 2.4333334, 2.4666667, 2.5, 2.5666666, 2.6333332, 2.6999998, 2.7666664, 2.833333, 2.8999996, 2.9666667, 3.0333333, 3.1, 3.1666665, 3.233333, 3.2999997, 3.3666663, 3.4333334, 3.5, 3.5666666, 3.6333332, 3.6999998, 3.7666664, 3.833333, 3.8999996, 4.0333333, 4.1666665, 4.3, 4.4333334, 4.5666666, 4.633334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_dsh2f"), ExtResource("2_jqg7w"), ExtResource("3_xb570"), ExtResource("4_mw2iw"), ExtResource("5_b206t"), ExtResource("6_34wkm"), ExtResource("7_uemhs"), ExtResource("8_7enfi"), ExtResource("9_ti4ni"), ExtResource("10_23d3t"), ExtResource("11_a43xo"), ExtResource("12_853lv"), ExtResource("13_mr48q"), ExtResource("14_aer84"), ExtResource("15_vqj47"), ExtResource("16_qw2tq"), ExtResource("17_ak3sa"), ExtResource("18_40cxu"), ExtResource("19_84664"), ExtResource("20_qplmm"), ExtResource("21_ya10j"), ExtResource("22_6qwov"), ExtResource("23_m84fn"), ExtResource("24_7em2b"), ExtResource("25_fcfe2"), ExtResource("26_vkxif"), ExtResource("27_rk5c8"), ExtResource("28_vqmh0"), ExtResource("29_5o8wq"), ExtResource("30_euram"), ExtResource("31_b3p2s"), ExtResource("32_tvb04"), ExtResource("33_o6f8a"), ExtResource("34_hcct3"), ExtResource("35_npwk5"), ExtResource("36_3u52n"), ExtResource("37_hne3w"), ExtResource("38_hs5bq"), ExtResource("39_02hko"), ExtResource("40_84kho"), ExtResource("41_tqp5a"), ExtResource("42_rfpnk"), ExtResource("43_g0wd0"), ExtResource("44_vjjmw"), ExtResource("45_p10tl"), ExtResource("46_a5n2u"), ExtResource("47_hdngg"), ExtResource("48_aai8o"), ExtResource("49_uhlcf"), ExtResource("50_8ijof"), ExtResource("51_jk7fd"), ExtResource("52_4wte6"), ExtResource("53_7ak5e"), ExtResource("54_utegx"), ExtResource("55_jvndp"), ExtResource("56_juo3i"), ExtResource("57_o4irj"), ExtResource("58_3lmrk"), ExtResource("59_awmn2"), ExtResource("60_e2f4c"), ExtResource("61_8pvj0"), ExtResource("62_yvyla"), ExtResource("63_x8elv"), ExtResource("64_xr871"), ExtResource("65_ojuwr"), ExtResource("66_oh5iw"), ExtResource("67_uwhmc"), ExtResource("68_anjoy"), ExtResource("69_p05t3"), ExtResource("70_y7os1"), ExtResource("71_853yg"), ExtResource("111_6gw0g")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/attack:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/attack:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.4, 2.5, 4.633333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(94, -286), Vector2(-58, -286), Vector2(-138, -286), Vector2(111, -141)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/attack:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/companion:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.09999998, 0.16666666, 0.23333332, 0.29999998, 0.36666664, 0.43333334, 0.5, 0.56666666, 0.6333333, 0.7, 0.76666665, 0.8333333, 0.9, 0.96666664, 1.0666667, 1.1666666, 1.2333333, 1.3, 1.3666667, 1.4333333, 1.5, 1.5666667, 1.6333333, 1.7, 1.7666667, 1.8333334, 1.9, 1.9333333, 2, 2.0666666, 2.1666667, 2.2, 2.2666667, 2.3333333, 2.4, 2.4333334, 2.4666667, 2.5, 2.5333333, 2.5666666, 2.6333334, 2.7, 2.7666667, 2.8333335, 2.9, 2.9666667, 3.0333333, 3.1, 3.1666667, 3.2333333, 3.3333333, 3.4333332, 3.5333333, 3.6333332, 3.733333, 3.7666667, 3.8333333, 3.8999999, 3.9666662, 4.0333333, 4.1, 4.1666665, 4.233333, 4.3, 4.4, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("132_yqvkv"), ExtResource("133_tvwvw"), ExtResource("134_d55ml"), ExtResource("135_7saqn"), ExtResource("136_xpbei"), ExtResource("137_1rn6c"), ExtResource("138_r7ca8"), ExtResource("139_xwew3"), ExtResource("140_2nen2"), ExtResource("141_ll18c"), ExtResource("142_bm6pp"), ExtResource("151_mi05e"), ExtResource("144_2p3fb"), ExtResource("145_kluug"), ExtResource("146_7w2i8"), ExtResource("147_3vjcf"), ExtResource("148_xnmfv"), ExtResource("149_81r1o"), ExtResource("150_y5t1m"), ExtResource("151_3l8uo"), ExtResource("152_gj6qm"), ExtResource("153_rvh54"), ExtResource("154_petb8"), ExtResource("155_0k1ba"), ExtResource("156_wrahg"), ExtResource("157_4ckrh"), ExtResource("158_84i1l"), ExtResource("159_eoiuo"), ExtResource("160_5tj5g"), ExtResource("161_we8ip"), ExtResource("162_jadlb"), ExtResource("163_xjg82"), ExtResource("134_gadqq"), ExtResource("135_ppp6f"), ExtResource("136_b1aly"), ExtResource("148_kgw72"), ExtResource("149_bdw2n"), ExtResource("151_pyrid"), ExtResource("152_41ysd"), ExtResource("153_8ihg8"), ExtResource("154_5nur1"), ExtResource("155_xjg82"), ExtResource("156_2p3fb"), ExtResource("157_kluug"), ExtResource("158_7w2i8"), ExtResource("159_3vjcf"), ExtResource("160_xnmfv"), ExtResource("161_81r1o"), ExtResource("162_y5t1m"), ExtResource("163_3l8uo"), ExtResource("164_gj6qm"), ExtResource("165_rvh54"), ExtResource("166_petb8"), ExtResource("167_0k1ba"), ExtResource("168_wrahg"), ExtResource("169_4ckrh"), ExtResource("170_84i1l"), ExtResource("171_eoiuo"), ExtResource("172_5tj5g"), ExtResource("173_we8ip"), ExtResource("174_jadlb"), ExtResource("175_ex6mf"), ExtResource("176_tjljs"), ExtResource("177_q6lvq"), ExtResource("178_1drih"), ExtResource("179_7ssuh")]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.1489813,
+"start_offset": 0.0,
+"stream": ExtResource("73_f0xwb")
+}, {
+"end_offset": 0.16494358,
+"start_offset": 0.0,
+"stream": ExtResource("74_aihsi")
+}, {
+"end_offset": 0.24209462,
+"start_offset": 0.0,
+"stream": ExtResource("75_qe6kq")
+}],
+"times": PackedFloat32Array(1.1333333, 1.5333333, 2.3666666)
+}
+tracks/5/use_blend = true
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.42832118,
+"start_offset": 0.0,
+"stream": ExtResource("76_eviig")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("73_f0xwb")
+}],
+"times": PackedFloat32Array(0.2, 2.7666667)
+}
+tracks/6/use_blend = true
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer2D")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.17026435,
+"start_offset": 0.0,
+"stream": ExtResource("74_aihsi")
+}, {
+"end_offset": 0.26071724,
+"start_offset": 0.013301902,
+"stream": ExtResource("77_8spht")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("74_aihsi")
+}],
+"times": PackedFloat32Array(1.2666667, 1.7466352, 2.8666666)
+}
+tracks/7/use_blend = true
+tracks/8/type = "audio"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AudioStreamPlayer2D")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"clips": [{
+"end_offset": 0.22613232,
+"start_offset": 0.0,
+"stream": ExtResource("78_6gw0g")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("82_hs5bq")
+}],
+"times": PackedFloat32Array(1.4333333, 2.9666667)
+}
+tracks/8/use_blend = true
+tracks/9/type = "audio"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AudioStreamPlayer2D")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"clips": [{
+"end_offset": 0.063849136,
+"start_offset": 0.0,
+"stream": ExtResource("80_24jf4")
+}, {
+"end_offset": 0.07981142,
+"start_offset": 0.0,
+"stream": ExtResource("80_24jf4")
+}, {
+"end_offset": 0.066509515,
+"start_offset": 0.0026603804,
+"stream": ExtResource("80_24jf4")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("78_6gw0g")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("79_cpmh3")
+}],
+"times": PackedFloat32Array(1.1, 1.4, 1.6333333, 1.9333333, 3)
+}
+tracks/9/use_blend = true
+tracks/10/type = "audio"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2D")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"clips": [{
+"end_offset": 0.09045293,
+"start_offset": 0.0,
+"stream": ExtResource("81_aqt2j")
+}, {
+"end_offset": 0.08513217,
+"start_offset": 0.0,
+"stream": ExtResource("81_aqt2j")
+}, {
+"end_offset": 0.08513217,
+"start_offset": 0.0,
+"stream": ExtResource("81_aqt2j")
+}, {
+"end_offset": 0.08513217,
+"start_offset": 0.0,
+"stream": ExtResource("81_aqt2j")
+}, {
+"end_offset": 0.15164167,
+"start_offset": 0.0,
+"stream": ExtResource("74_aihsi")
+}],
+"times": PackedFloat32Array(1.2333333, 1.5, 1.9, 2.3333333, 3.1333334)
+}
+tracks/10/use_blend = true
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("73_f0xwb")
+}, {
+"end_offset": 0.063849136,
+"start_offset": 0.0,
+"stream": ExtResource("80_24jf4")
+}],
+"times": PackedFloat32Array(1.6666666, 2.7333333)
+}
+tracks/11/use_blend = true
+tracks/12/type = "audio"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer2D")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("80_24jf4")
+}, {
+"end_offset": 0.063849136,
+"start_offset": 0.0,
+"stream": ExtResource("80_24jf4")
+}],
+"times": PackedFloat32Array(1.7333333, 2.8333333)
+}
+tracks/12/use_blend = true
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Visuals/dash:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Visuals/idle:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Visuals/attack:z_index")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 4.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-9.0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Visuals/companion:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0.100000024, 0.8333333, 1.4333333, 1.6333333, 2.2666667, 2.3333333, 2.4, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(-136, -167), Vector2(105, -294), Vector2(58, -294), Vector2(-32, -294), Vector2(255, -412), Vector2(201, -412), Vector2(97, -412), Vector2(19, -412)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Visuals/companion:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.09999998, 0.43333334, 4.3, 4.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Visuals/companion:z_index")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Visuals/companion:visible")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 4.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Visuals/companion:scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tui5a"]
 _data = {
 &"RESET": SubResource("Animation_sexs2"),
@@ -2613,6 +3131,7 @@ _data = {
 &"blitz": SubResource("Animation_sblrp"),
 &"block_normal": SubResource("Animation_cpmh3"),
 &"cast_normal": SubResource("Animation_24jf4"),
+&"dark_arcanum_2": SubResource("Animation_xjg82"),
 &"dash_normal": SubResource("Animation_yvyla"),
 &"dead": SubResource("Animation_aqt2j"),
 &"dodge_slash": SubResource("Animation_y16gq"),
@@ -2629,6 +3148,12 @@ _data = {
 [node name="Sora" type="Node2D"]
 
 [node name="Visuals" type="Sprite2D" parent="."]
+
+[node name="companion" type="Sprite2D" parent="Visuals"]
+visible = false
+z_index = 1
+position = Vector2(623, -354)
+scale = Vector2(-1, 1)
 
 [node name="attack" type="Sprite2D" parent="Visuals"]
 visible = false

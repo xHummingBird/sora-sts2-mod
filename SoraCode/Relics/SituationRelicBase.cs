@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BaseLib.Extensions;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -13,6 +14,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 using Sora.SoraCode.Cards;
 using Sora.SoraCode.Cards.Ancient;
+using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Mechanics.SituationCommand;
 using Sora.SoraCode.Powers;
 
@@ -131,17 +133,28 @@ public abstract class SituationRelicBase : SoraRelic
 
         CardModel card = cardPlay.Card;
 
+        if (card is ICompanionCard)
+        {
+            
+        }
         
         if (ShouldGainSpFromCard(card))
         {
-            GainSituationPoints(AttackSpGain);
+            GainSituationPoints(
+                AttackSpGain +
+                (card.Owner.HasPower<RikuPower>() ? 1 : 0));
         }
-        
+
+        if (card.Type is CardType.Skill &&
+            card.Owner.HasPower<KairiPower>())
+        {
+            GainSituationPoints(1);
+        }
+
         await CheckSituationCommands(
             choiceContext,
             base.Owner.Creature,
-            card
-        );
+            card);
     }
 
     public override async Task AfterSideTurnStart(
@@ -158,6 +171,11 @@ public abstract class SituationRelicBase : SoraRelic
         _situationReadyConsumedThisTurn = false;
 
         GainSituationPoints(TurnSpGain);
+
+        if (base.Owner.Creature.HasPower<MickeyPower>())
+        {
+            GainSituationPoints(2 * base.Owner.Creature.GetPowerAmount<MickeyPower>());
+        }
 
         await CheckSituationCommands(
             null,

@@ -28,38 +28,72 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
         var relic = Owner.Relics
             .OfType<SituationRelicBase>()
             .FirstOrDefault();
+
         await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
-        
+
         relic?.MarkSituationReadyConsumedThisTurn();
-        
-        if (relic?.SituationPoints >= 60)
+
+        if (relic == null)
+            return;
+
+        if (relic.SituationPoints >= 60)
         {
-            List<CardModel> cards;
-            var arsArcanum = base.CombatState.CreateCard<ArsArcanum>(Owner);
-            var sonicBlade = base.CombatState.CreateCard<SonicBlade>(Owner);
+            CardModel finisher =
+                base.CombatState.CreateCard<SonicBlade>(Owner);
 
-            cards = new()
+            // Companion replacements
+            if (Owner.Creature.HasPower<RikuPower>())
             {
-                sonicBlade,
-                arsArcanum,
-            };
-            CardModel cardModel = await CardSelectCmd.FromChooseACardScreen(choiceContext, cards.ToList(), base.Owner, canSkip: false);
+                finisher =
+                    base.CombatState.CreateCard<RikuLimit>(Owner);
+            }
 
-            if (cardModel is SonicBlade)
+            // Future companions
+            // else if (Owner.Creature.HasPower<KairiPower>())
+            // {
+            //     finisher =
+            //         base.CombatState.CreateCard<KairiLimit>(Owner);
+            // }
+
+            var arsArcanum =
+                base.CombatState.CreateCard<ArsArcanum>(Owner);
+
+            var cards = new List<CardModel>
+            {
+                finisher,
+                arsArcanum
+            };
+
+            var selectedCard =
+                await CardSelectCmd.FromChooseACardScreen(
+                    choiceContext,
+                    cards,
+                    Owner,
+                    canSkip: false);
+
+            if (selectedCard is SonicBlade)
             {
                 relic.SpendSituationPoints(30);
-                await CardCmd.AutoPlay(choiceContext, cardModel, null);
+
+                await CardCmd.AutoPlay(
+                    choiceContext,
+                    selectedCard,
+                    null);
             }
             else
             {
                 relic.SpendSituationPoints(60);
-                await CardCmd.AutoPlay(choiceContext, cardModel, play.Target);
+
+                await CardCmd.AutoPlay(
+                    choiceContext,
+                    selectedCard,
+                    play.Target);
             }
         }
-        
-        else if (relic?.SituationPoints >= 30)
+        else if (relic.SituationPoints >= 30)
         {
             relic.SpendSituationPoints(30);
+
             var sonicBlade =
                 base.CombatState.CreateCard<SonicBlade>(Owner);
 

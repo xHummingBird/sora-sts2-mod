@@ -17,6 +17,17 @@ public static class AudioHelper
         "res://Sora/sounds/attack_6.wav",
     };
     
+    private static readonly string[] rikuAttackSfx =
+    {
+        "res://Sora/sounds/riku/riku_atk (1).wav",
+        "res://Sora/sounds/riku/riku_atk (2).wav",
+        "res://Sora/sounds/riku/riku_atk (3).wav",
+        "res://Sora/sounds/riku/riku_atk (4).wav",
+        "res://Sora/sounds/riku/riku_atk (5).wav",
+        "res://Sora/sounds/riku/riku_atk (6).wav"
+        
+    };
+    
     private static readonly string[] finalAttackSfx =
     {
         "res://Sora/sounds/finalhit_1.wav",
@@ -26,7 +37,6 @@ public static class AudioHelper
         "res://Sora/sounds/finalhit_5.wav",
         "res://Sora/sounds/finalhit_6.wav",
         "res://Sora/sounds/finalhit_7.wav",
-        "res://Sora/sounds/finalhit_8.wav",
         "res://Sora/sounds/finalhit_9.wav",
     };
 
@@ -136,6 +146,11 @@ public static class AudioHelper
     public static void PlayRandomRiku()
     {
         PlayRandom(callRikuSfx);
+    }
+
+    public static void PlayRandomRikuAtk()
+    {
+        PlayRandom(rikuAttackSfx);
     }
 
     public static void PlayRandomKairi()

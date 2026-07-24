@@ -11,12 +11,12 @@
   "SORA-DAMAGE_SYPHON_POWER.smartDescription": "Gain [gold]SP[/gold] equal to half of damage taken.",
   "SORA-DAMAGE_SYPHON_POWER.title": "Damage Syphon",
 
-  "SORA-KAIRI_POWER.description": "",
-  "SORA-KAIRI_POWER.smartDescription": "",
+  "SORA-KAIRI_POWER.description": "Gain 1 [gold]SP[/gold] from using [gold]Skills[/gold] for 3 turns. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]Trinity Limit[/gold] instead.",
+  "SORA-KAIRI_POWER.smartDescription": "Gain 1 [gold]SP[/gold] from using [gold]Skills[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Riku's Link[/gold], add [gold]Trinity Limit[/gold] instead.",
   "SORA-KAIRI_POWER.title": "Kairi's Link",
   
-  "SORA-RIKU_POWER.description": "",
-  "SORA-RIKU_POWER.smartDescription": "",
+  "SORA-RIKU_POWER.description": "Gain 1 additional [gold]SP[/gold] from attacks for 3 turns. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]Trinity Limit[/gold] instead.",
+  "SORA-RIKU_POWER.smartDescription": "Gain 1 additional [gold]SP[/gold] from attacks for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Eternal Session[/gold] to your command or [gold]Trinity Limit[/gold] if you have [gold]Kairi's Link[/gold].",
   "SORA-RIKU_POWER.title": "Riku's Link",
 
   "SORA-CLOUD_POWER.description": "",
@@ -25,5 +25,17 @@
 
   "SORA-REFLECT_SORA_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
   "SORA-REFLECT_SORA_POWER.smartDescription": "Blocked damage is reflected to your attacker for 1 turn.",
-  "SORA-REFLECT_SORA_POWER.title": "Reflect"
+  "SORA-REFLECT_SORA_POWER.title": "Reflect",
+
+  "SORA-FRIENDSHIP_POWER.description": "Attacks deal 1 additional damage for each active [gold]Link[/gold]. ",
+  "SORA-FRIENDSHIP_POWER.smartDescription": "Attacks deal {Amount} additional damage for each active [gold]Link[/gold].",
+  "SORA-FRIENDSHIP_POWER.title": "Friendship",
+
+  "SORA-MICKEY_POWER.description": "Gain 1 Additional ",
+  "SORA-MICKEY_POWER.smartDescription": "",
+  "SORA-MICKEY_POWER.title": "Mickey's Link",
+
+  "SORA-YENSID_POWER.description": "",
+  "SORA-YENSID_POWER.smartDescription": "",
+  "SORA-YENSID_POWER.title": "Yensid's Link"
 }

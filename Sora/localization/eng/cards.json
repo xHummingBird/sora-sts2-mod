@@ -83,7 +83,7 @@
   "SORA-FIRAGA.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SORA-FIRAGA.title": "Firaga",
 
-  "SORA-BLIZZAGA.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "SORA-BLIZZAGA.description": "Deal {Damage:diff()} damage and apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
   "SORA-BLIZZAGA.title": "Blizzaga",
 
   "SORA-COMBO_MASTER.description": "Gain {SituationReadyPower:diff()} [gold]SP[/gold]. \nNext attack cost 0 {Energy:energyIcons()}.",
@@ -119,21 +119,23 @@
   "SORA-KAIRI_LIMIT.description": "",
   "SORA-KAIRI_LIMIT.title": "Destiny Bond",
 
-  "SORA-RIKU_LIMIT.description": "",
-  "SORA-RIKU_LIMIT.title": "Twilight Arcanum",
+  "SORA-RIKU_LIMIT.description": "Deal {Damage:diff()} damage. \nDouble the enemy's [gold]Vulnerable[/gold]. \nConsume 60 [gold]SP[/gold].",
+  "SORA-RIKU_LIMIT.title": "Eternal Session",
   
   "SORA-RIKU_KAIRI_LIMIT.description": "",
   "SORA-RIKU_KAIRI_LIMIT.title": "Ragnarok",
 
-  "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold].",
+  "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-SHADOW_STRIKE.title": "Shadow Strike",
 
-  "SORA-DARK_FIRAGA.description": "Deal {Damage:diff()} damage to ALL enemies. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold] and [gold]Weak[/gold] to ALL enemies. ",
+  "SORA-DARK_FIRAGA.description": "Deal {Damage:diff()} damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_FIRAGA.title": "Dark Firaga",
 
-  "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_SONIC.title": "Dark Sonic",
 
-  "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-SHADOW_BARRIER.title": "Shadow Barrier"
+  
+  
 }

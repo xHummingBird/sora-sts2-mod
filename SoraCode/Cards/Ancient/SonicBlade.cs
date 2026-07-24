@@ -94,7 +94,7 @@ public class SonicBlade() : SoraCard(
             }
 
             const float leftDistance = 400f;
-            const float rightDistance = 220f;
+            const float rightDistance = 350f;
 
             Vector2 leftSidePosition = new Vector2(
                 leftMostEnemyBottom.Value.X - leftDistance,

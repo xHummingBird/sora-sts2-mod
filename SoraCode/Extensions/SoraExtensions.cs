@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes.Cards;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using Sora.SoraCode.Character;
+using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Extensions;
 
@@ -91,6 +92,28 @@ public class SoraExtensions
                     source);
             }
         }
+        
+        public static int CountActiveLinks(Creature creature)
+        {
+            int count = 0;
+            
+            if (creature.HasPower<RikuPower>())
+                count++;
+            
+            if (creature.HasPower<KairiPower>())
+                count++;
+            
+            if (creature.HasPower<CloudPower>())
+                count++;
+            
+            if (creature.HasPower<MickeyPower>())
+                count++;
+            
+            if (creature.HasPower<YensidPower>())
+                count++;
+            
+            return count;
+        }
     }
     
     async Task ComboHit(
@@ -107,53 +130,5 @@ public class SoraExtensions
 
         if (delaySeconds > 0)
             await Task.Delay((int)(delaySeconds * 1000f));
-    }
-    
-}
-[HarmonyPatch(typeof(NEnergyCounter), nameof(NEnergyCounter._Ready))]
-public static class SoraEnergyCounterPatch
-{
-    public static void Postfix(
-        NEnergyCounter __instance)
-    {
-        var state =
-            CombatManager.Instance?.DebugOnlyGetState();
-
-        var player =
-            state?.Players.FirstOrDefault(
-                p => LocalContext.IsMe(p));
-
-        if (player?.Character is not Character.Sora)
-            return;
-
-        var label =
-            __instance.GetNodeOrNull<MegaLabel>(
-                "Label");
-
-        if (label != null)
-        {
-            label.Position += new Vector2(0, 4);
-        }
-    }
-}
-
-[HarmonyPatch(typeof(NCard), "_Ready")]
-public static class SoraCardEnergyPatch
-{
-    static void Postfix(NCard __instance)
-    {
-        var model = __instance.Model;
-
-        if (model?.Pool is not SoraCardPool)
-            return;
-
-        var energyLabel =
-            __instance.GetNodeOrNull<MegaLabel>(
-                "%EnergyLabel");
-
-        if (energyLabel != null)
-        {
-            energyLabel.Position += new Vector2(0, 4);
-        }
     }
 }

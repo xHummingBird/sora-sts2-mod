@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
+using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Rare;
 
@@ -14,18 +15,18 @@ public class Reflega() : SoraCard(2, CardType.Skill, CardRarity.Rare,
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new BlockVar(18m, ValueProp.Move),
-        new PowerVar<ReflectPower>(1m),
+        new PowerVar<ReflectSoraPower>(1m),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<ReflectPower>(),
+        HoverTipFactory.FromPower<ReflectSoraPower>(),
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         await CreatureCmd.GainBlock(base.Owner.Creature, base.DynamicVars.Block, play);
-        await PowerCmd.Apply<ReflectPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
+        await PowerCmd.Apply<ReflectSoraPower>(choiceContext, base.Owner.Creature, 1m, base.Owner.Creature, this);
     }
     
     protected override void OnUpgrade()
