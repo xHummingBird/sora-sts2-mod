@@ -1,6 +1,38 @@
 {
-  "SORA-ULTIMATE_FORM_POWER.description": "",
-  "SORA-ULTIMATE_FORM_POWER.smartDescription": "",
+  "SORA-FINISH_BOOST_POWER.description": "The third attack you play each turn deals more damage.",
+  "SORA-FINISH_BOOST_POWER.smartDescription": "The third attack you play each turn deals [blue]{Amount}[/blue]% more damage.",
+  "SORA-FINISH_BOOST_POWER.title": "Finish Boost",
+
+  "SORA-SYNCH_BLADE_POWER.description": "Whenever you play an attack, deal damage to a random enemy.",
+  "SORA-SYNCH_BLADE_POWER.smartDescription": "Whenever you play an attack, deal [blue]{Amount}[/blue] damage to a random enemy.",
+  "SORA-SYNCH_BLADE_POWER.title": "Synch Blade",
+
+  "SORA-DUAL_WIELD_POWER.description": "Each turn, the first attack card you play is played an additional time.",
+  "SORA-DUAL_WIELD_POWER.smartDescription": "Each turn, the first attack card you play is played an additional time.",
+  "SORA-DUAL_WIELD_POWER.title": "Dual Wield",
+
+  "SORA-NEGATIVE_COMBO_POWER.description": "Reduce SP gained per turn by 1. Gain Strength each turn.",
+  "SORA-NEGATIVE_COMBO_POWER.smartDescription": "Reduce [gold]SP[/gold] gained per turn by 1. Gain [blue]{Amount}[/blue] [gold]Strength[/gold] each turn.",
+  "SORA-NEGATIVE_COMBO_POWER.title": "Negative Combo",
+
+  "SORA-SEVEN_LIGHTS_POWER.description": "The first time you play a Companion card each turn, gain Energy.",
+  "SORA-SEVEN_LIGHTS_POWER.smartDescription": "The first time you play a [gold]Companion[/gold] card each turn, gain [blue]{Amount}[/blue] [gold]Energy[/gold].",
+  "SORA-SEVEN_LIGHTS_POWER.title": "Seven Lights",
+
+  "SORA-BOND_OF_LIGHT_POWER.description": "Each time you play a Companion card, draw 1 card.",
+  "SORA-BOND_OF_LIGHT_POWER.smartDescription": "Each time you play a [gold]Companion[/gold] card, draw 1 card.",
+  "SORA-BOND_OF_LIGHT_POWER.title": "Bond of Light",
+
+  "SORA-SITUATION_BOOST_POWER.description": "Whenever you play a card that costs 2 or more Energy, gain 5 SP.",
+  "SORA-SITUATION_BOOST_POWER.smartDescription": "Whenever you play a card that costs 2 or more [gold]Energy[/gold], gain 5 [gold]SP[/gold].",
+  "SORA-SITUATION_BOOST_POWER.title": "Situation Boost",
+
+  "SORA-POWER_OF_WAKING_POWER.description": "At the start of your turn, return a random attack card from your discard pile to your hand.",
+  "SORA-POWER_OF_WAKING_POWER.smartDescription": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
+  "SORA-POWER_OF_WAKING_POWER.title": "Power of Waking",
+
+  "SORA-ULTIMATE_FORM_POWER.description": "In Ultimate Form. Build SP to perform Ultimate Finishers.",
+  "SORA-ULTIMATE_FORM_POWER.smartDescription": "In [gold]Ultimate Form[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}.",
   "SORA-ULTIMATE_FORM_POWER.title": "Ultimate Form",
 
   "SORA-SITUATION_READY_POWER.description": "Gain Situation Points (SP) to perform Situation Commands.",
@@ -19,8 +51,8 @@
   "SORA-RIKU_POWER.smartDescription": "Gain 1 additional [gold]SP[/gold] from attacks for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Eternal Session[/gold] to your command or [gold]Trinity Limit[/gold] if you have [gold]Kairi's Link[/gold].",
   "SORA-RIKU_POWER.title": "Riku's Link",
 
-  "SORA-CLOUD_POWER.description": "",
-  "SORA-CLOUD_POWER.smartDescription": "",
+  "SORA-CLOUD_POWER.description": "An active Link.",
+  "SORA-CLOUD_POWER.smartDescription": "An active Link for [blue]{Amount}[/blue] {Amount:plural:turn|turns}.",
   "SORA-CLOUD_POWER.title": "Cloud's Link",
 
   "SORA-REFLECT_SORA_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
@@ -31,12 +63,12 @@
   "SORA-FRIENDSHIP_POWER.smartDescription": "Attacks deal {Amount} additional damage for each active [gold]Link[/gold].",
   "SORA-FRIENDSHIP_POWER.title": "Friendship",
 
-  "SORA-MICKEY_POWER.description": "",
-  "SORA-MICKEY_POWER.smartDescription": "",
+  "SORA-MICKEY_POWER.description": "Gain 1 extra Energy each turn. Gain additional SP at the start of your turn.",
+  "SORA-MICKEY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] extra Energy each turn. Gain additional [gold]SP[/gold] at the start of your turn.",
   "SORA-MICKEY_POWER.title": "Mickey's Link",
 
-  "SORA-YENSID_POWER.description": "",
-  "SORA-YENSID_POWER.smartDescription": "",
+  "SORA-YENSID_POWER.description": "At the start of your turn, upgrade a random card in your hand.",
+  "SORA-YENSID_POWER.smartDescription": "At the start of your turn, upgrade a random card in your hand.",
   "SORA-YENSID_POWER.title": "Yensid's Link",
 
   "SORA-SECOND_CHANCE_POWER.description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",

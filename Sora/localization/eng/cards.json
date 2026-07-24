@@ -1,4 +1,55 @@
 {
+  "SORA-AERIAL_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain 1 [gold]SP[/gold] for each enemy hit.",
+  "SORA-AERIAL_SWEEP.title": "Aerial Sweep",
+
+  "SORA-SLAPSHOT.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {BlockPerEnemy:diff()} [gold]Block[/gold] for each enemy hit.",
+  "SORA-SLAPSHOT.title": "Slapshot",
+
+  "SORA-DAMAGE_CONTROL.description": "Gain {Block:diff()} [gold]Block[/gold]. \nHeal HP equal to {HealPercent:diff()}% of your missing HP.",
+  "SORA-DAMAGE_CONTROL.title": "Damage Control",
+
+  "SORA-TREASURE_HUNTER.description": "Draw {Cards:diff()} {Cards:plural:card|cards}. \nGain {Sp:diff()} [gold]SP[/gold].",
+  "SORA-TREASURE_HUNTER.title": "Treasure Hunter",
+
+  "SORA-FORMCHANGE.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Ultimate Form[/gold] for 3 turns. \nIf already in [gold]Ultimate Form[/gold], extend it by 2 turns instead.",
+  "SORA-FORMCHANGE.title": "Formchange",
+
+  "SORA-ULTIMATE_COMBO.description": "Deal {Damage:diff()} damage. \nGain [gold]Ultimate Form[/gold] for 2 turns. \nIf already in [gold]Ultimate Form[/gold], extend it by 1 turn instead.",
+  "SORA-ULTIMATE_COMBO.title": "Ultimate Combo",
+
+  "SORA-HEART_RECOVERY.description": "Gain [gold]Kairi's Link[/gold] for 3 turns. \nAll [gold]Skills[/gold] in your hand cost 0 this turn.",
+  "SORA-HEART_RECOVERY.title": "Heart Recovery",
+
+  "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold]. \nGain {Sp:diff()} [gold]SP[/gold].",
+  "SORA-KINGS_GUIDANCE.title": "King's Guidance",
+
+  "SORA-NEGATIVE_COMBO.description": "Reduce [gold]SP[/gold] gained per turn by 1. \nGain {NegativeComboPower:diff()} [gold]Strength[/gold] each turn.",
+  "SORA-NEGATIVE_COMBO.title": "Negative Combo",
+
+  "SORA-SEVEN_LIGHTS.description": "The first time you play a [gold]Companion[/gold] card each turn, gain 1 [gold]Energy[/gold].",
+  "SORA-SEVEN_LIGHTS.title": "Seven Lights",
+
+  "SORA-SYNCH_BLADE.description": "Whenever you play an [gold]Attack[/gold], deal {SynchBladePower:diff()} damage to a random enemy.",
+  "SORA-SYNCH_BLADE.title": "Synch Blade",
+
+  "SORA-DUAL_WIELD.description": "Each turn, the first [gold]Attack[/gold] card you play is played an additional time.",
+  "SORA-DUAL_WIELD.title": "Dual Wield",
+
+  "SORA-FINISH_BOOST.description": "The third [gold]Attack[/gold] you play each turn deals {FinishBoostPower:diff()}% more damage.",
+  "SORA-FINISH_BOOST.title": "Finish Boost",
+
+  "SORA-ONE_HEART.description": "Gain {Block:diff()} [gold]Block[/gold] and {BlockPerLink:diff()} [gold]Block[/gold] for each active [gold]Link[/gold].",
+  "SORA-ONE_HEART.title": "One Heart",
+
+  "SORA-YENSIDS_BLESSING.description": "At the start of your turn, upgrade a random card in your hand.",
+  "SORA-YENSIDS_BLESSING.title": "Yen Sid's Blessing",
+
+  "SORA-SITUATION_BOOST.description": "Whenever you play a card that costs 2 or more [gold]Energy[/gold], gain 5 [gold]SP[/gold].",
+  "SORA-SITUATION_BOOST.title": "Situation Boost",
+
+  "SORA-BOND_OF_LIGHT.description": "Each time you play a [gold]Companion[/gold] card, draw 1 card.",
+  "SORA-BOND_OF_LIGHT.title": "Bond of Light",
+
   "SORA-STRIKE_SORA.description": "Deal {Damage:diff()} damage.",
   "SORA-STRIKE_SORA.title": "Strike",
 
@@ -20,8 +71,8 @@
   "SORA-SITUATION_COMMAND.description": "Perform a [gold]Situation Command[/gold].",
   "SORA-SITUATION_COMMAND.title": "Situation Command",
 
-  "SORA-ULTIMATE_FORM.description": "",
-  "SORA-ULTIMATE_FORM.title": "UltimateForm",
+  "SORA-ULTIMATE_FORM.description": "Gain [gold]Ultimate Form[/gold] for {Turns:diff()} turns.",
+  "SORA-ULTIMATE_FORM.title": "Ultimate Form",
 
   "SORA-FIRE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
   "SORA-FIRE.title": "Fire",
@@ -74,7 +125,7 @@
   "SORA-GUARDBREAK.description": "Deal {Damage:diff()} damage. \nDeal [gold]50%[/gold] more damage to [gold]Vulnerable[/gold] enemies. ",
   "SORA-GUARDBREAK.title": "Guard Break",
 
-  "SORA-POWER_OF_WAKING.description": "Shuffle ALL your cards into your Draw Pile. \nDraw 5 Cards.",
+  "SORA-POWER_OF_WAKING.description": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
   "SORA-POWER_OF_WAKING.title": "Power Of Waking",
 
   "SORA-THUNDAGA.description": "Deal {Damage:diff()} damage to ALL enemies.",

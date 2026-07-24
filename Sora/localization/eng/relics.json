@@ -1,4 +1,32 @@
 {
+  "SORA-BRAVEHEART.description": "At the start of your turn, if you have [gold]Riku's Link[/gold], gain 4 [gold]Vigor[/gold].",
+  "SORA-BRAVEHEART.flavor": "A keyblade forged from bonds of courage.",
+  "SORA-BRAVEHEART.title": "Braveheart",
+
+  "SORA-DESTINYS_EMBRACE.description": "At the start of your turn, if you have [gold]Kairi's Link[/gold], heal 2 HP.",
+  "SORA-DESTINYS_EMBRACE.flavor": "A flowery keyblade wielded by Kairi.",
+  "SORA-DESTINYS_EMBRACE.title": "Destiny's Embrace",
+
+  "SORA-FENRIR.description": "At the start of combat, gain [gold]Cloud's Link[/gold].",
+  "SORA-FENRIR.flavor": "A heavy blade bearing a wolf's fang.",
+  "SORA-FENRIR.title": "Fenrir",
+
+  "SORA-OBLIVION.description": "At the start of combat, gain [gold]Riku's Link[/gold].",
+  "SORA-OBLIVION.flavor": "A keyblade born of darkness.",
+  "SORA-OBLIVION.title": "Oblivion",
+
+  "SORA-OATHKEEPER.description": "At the start of combat, gain [gold]Kairi's Link[/gold].",
+  "SORA-OATHKEEPER.flavor": "A keyblade born of a treasured promise.",
+  "SORA-OATHKEEPER.title": "Oathkeeper",
+
+  "SORA-WAYFINDER.description": "[gold]Situation Commands[/gold] cost 0 and are [gold]upgraded[/gold].",
+  "SORA-WAYFINDER.flavor": "A lucky charm to guide you home.",
+  "SORA-WAYFINDER.title": "Wayfinder",
+
+  "SORA-STARLIGHT.description": "Start each combat with 5 [gold]SP[/gold].",
+  "SORA-STARLIGHT.flavor": "A keyblade that shines with distant light.",
+  "SORA-STARLIGHT.title": "Starlight",
+
   "SORA-KINGDOM_KEY.description": "Gain 2 [gold]SP[/gold] at the start of your turn. Gain 3 [gold]SP[/gold] when you attack.",
   "SORA-KINGDOM_KEY.flavor": "May Your Heart Be Your Guiding Key",
   "SORA-KINGDOM_KEY.title": "Kingdom Key",

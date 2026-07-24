@@ -5,33 +5,34 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Sora.SoraCode.Powers;
 
-namespace Sora.SoraCode.Cards.Uncommon;
+namespace Sora.SoraCode.Cards.Rare;
 
-public class BondOfLight() : SoraCard(2, CardType.Power,
-    CardRarity.Uncommon, TargetType.Self)
+public class FinishBoost() : SoraCard(2, CardType.Power,
+    CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<BondOfLIghtPower>(1),
+        // 50 stacks = +50% damage on the third attack each turn.
+        new PowerVar<FinishBoostPower>(50),
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<BondOfLIghtPower>(),
+        HoverTipFactory.FromPower<FinishBoostPower>(),
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<BondOfLIghtPower>(
+        await PowerCmd.Apply<FinishBoostPower>(
             choiceContext,
             base.Owner.Creature,
-            DynamicVars["BondOfLIghtPower"].BaseValue,
+            DynamicVars["FinishBoostPower"].BaseValue,
             base.Owner.Creature,
             this);
     }
 
     protected override void OnUpgrade()
     {
-        base.EnergyCost.UpgradeBy(-1);
+        DynamicVars["FinishBoostPower"].UpgradeValueBy(25m);
     }
 }
