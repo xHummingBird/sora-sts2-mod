@@ -19,7 +19,7 @@ public class Braveheart : SoraRelic
         PlayerChoiceContext choiceContext,
         Player player)
     {
-        if (player != base.Owner.Player)
+        if (player != base.Owner)
             return;
 
         if (!base.Owner.Creature.HasPower<RikuPower>())

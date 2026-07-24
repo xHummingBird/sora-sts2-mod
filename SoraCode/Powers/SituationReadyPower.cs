@@ -22,7 +22,7 @@ public class SituationReadyPower : SoraPower
         if (base.Owner.Player?.GetRelic<Wayfinder>() != null)
         {
             card.EnergyCost.SetCustomBaseCost(0);
-            await CardCmd.Upgrade(card, default);
+            CardCmd.Upgrade(card, default);
         }
 
         await Task.Delay((int)(0.50f * 1000f));

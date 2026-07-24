@@ -24,7 +24,7 @@ public class Starlight : SoraRelic
         PlayerChoiceContext choiceContext,
         Player player)
     {
-        if (_appliedThisCombat || player != base.Owner.Player)
+        if (_appliedThisCombat || player != base.Owner)
             return Task.CompletedTask;
 
         _appliedThisCombat = true;

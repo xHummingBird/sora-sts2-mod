@@ -31,8 +31,8 @@
   "SORA-POWER_OF_WAKING_POWER.smartDescription": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
   "SORA-POWER_OF_WAKING_POWER.title": "Power of Waking",
 
-  "SORA-ULTIMATE_FORM_POWER.description": "In Ultimate Form. Build SP to perform Ultimate Finishers.",
-  "SORA-ULTIMATE_FORM_POWER.smartDescription": "In [gold]Ultimate Form[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}.",
+  "SORA-ULTIMATE_FORM_POWER.description": "Attacks deal 75% more damage. Build SP to perform [gold]Ultimate Finisher[/gold].",
+  "SORA-ULTIMATE_FORM_POWER.smartDescription": "In [gold]Ultimate Form[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. Attacks deal [gold]75%[/gold] more damage.",
   "SORA-ULTIMATE_FORM_POWER.title": "Ultimate Form",
 
   "SORA-SITUATION_READY_POWER.description": "Gain Situation Points (SP) to perform Situation Commands.",

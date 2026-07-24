@@ -26,7 +26,8 @@ public class FinishBoostPower : SoraPower
         decimal amount,
         ValueProp props,
         Creature? dealer,
-        CardModel? cardSource)
+        CardModel? cardSource,
+        CardPlay? cardPlay)
     {
         if (dealer != base.Owner)
             return 1m;

@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Nodes.CommonUi;
 
 namespace Sora.SoraCode.Powers;
 
@@ -23,18 +24,22 @@ public class YensidPower : SoraPower
     {
         if (player != base.Owner.Player)
             return;
-
-        CardModel? card =
-            PileType.Hand.GetPile(base.Owner.Player).Cards
-                .ToList()
-                .StableShuffle(base.Owner.Player.RunState.Rng.Shuffle)
-                .FirstOrDefault();
-
-        if (card == null)
+        
+        var cards =
+        PileType.Hand.GetPile(base.Owner.Player)
+            .Cards
+            .Where(c => c.IsUpgradable)
+            .TakeRandom(base.Amount, base.Owner.Player.RunState.Rng.CombatCardSelection)
+            .ToList();
+        
+        if (cards.Count == 0)
             return;
 
         Flash();
 
-        await CardCmd.Upgrade(card, default);
+        foreach (CardModel item in cards)
+        {
+            CardCmd.Upgrade(item);
+        }
     }
 }

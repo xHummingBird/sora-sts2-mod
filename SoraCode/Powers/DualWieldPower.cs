@@ -18,45 +18,32 @@ public class DualWieldPower : SoraPower
 
     public override PowerStackType StackType => PowerStackType.Single;
 
-    public override int ModifyCardPlayCount(
-        CardModel card,
-        Creature target,
-        int playCount)
+    public override int ModifyCardPlayCount(CardModel card, Creature? target, int playCount)
     {
         if (card.Owner.Creature != base.Owner)
             return playCount;
 
-        if (card.Type != CardType.Attack)
+        if (card.Type is not CardType.Attack)
             return playCount;
 
-        // No attack has fully resolved this turn yet, so this is the first one.
-        if (_attacksPlayedThisTurn != 0)
+        int numAttackPlayedThisTurn = CombatManager.Instance.History.CardPlaysStarted.Count(
+            e =>
+                e.Actor == base.Owner &&
+                e.CardPlay.IsFirstInSeries &&
+                e.HappenedThisTurn(base.CombatState) &&
+                e.CardPlay.Card.Type is CardType.Attack
+        );
+
+        if (numAttackPlayedThisTurn >= base.Amount)
             return playCount;
 
         return playCount + 1;
     }
 
-    public override async Task AfterCardPlayed(
-        PlayerChoiceContext choiceContext,
-        CardPlay cardPlay)
+
+    public override Task AfterModifyingCardPlayCount(CardModel card)
     {
-        if (cardPlay.Card.Owner.Creature == base.Owner &&
-            cardPlay.Card.Type == CardType.Attack)
-        {
-            _attacksPlayedThisTurn++;
-        }
-
-        await Task.CompletedTask;
-    }
-
-    public override async Task AfterSideTurnStart(
-        CombatSide side,
-        IReadOnlyList<Creature> participants,
-        ICombatState combatState)
-    {
-        if (side == base.Owner.Side)
-            _attacksPlayedThisTurn = 0;
-
-        await Task.CompletedTask;
+        Flash();
+        return Task.CompletedTask;
     }
 }
