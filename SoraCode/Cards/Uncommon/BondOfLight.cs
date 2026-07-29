@@ -12,20 +12,20 @@ public class BondOfLight() : SoraCard(2, CardType.Power,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<BondOfLIghtPower>(1),
+        new PowerVar<BondOfLightPower>(1),
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<BondOfLIghtPower>(),
+        HoverTipFactory.FromPower<BondOfLightPower>(),
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<BondOfLIghtPower>(
+        await PowerCmd.Apply<BondOfLightPower>(
             choiceContext,
             base.Owner.Creature,
-            DynamicVars["BondOfLIghtPower"].BaseValue,
+            DynamicVars["BondOfLightPower"].BaseValue,
             base.Owner.Creature,
             this);
     }

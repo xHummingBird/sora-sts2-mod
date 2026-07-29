@@ -168,7 +168,7 @@
   "SORA-CLOUD_LIMIT.title": "CloudLimit",
 
   "SORA-KAIRI_LIMIT.description": "",
-  "SORA-KAIRI_LIMIT.title": "Destiny Bond",
+  "SORA-KAIRI_LIMIT.title": "Seven Wishes",
 
   "SORA-RIKU_LIMIT.description": "Deal {Damage:diff()} damage. \nDouble the enemy's [gold]Vulnerable[/gold]. \nConsume 60 [gold]SP[/gold].",
   "SORA-RIKU_LIMIT.title": "Eternal Session",
@@ -188,7 +188,7 @@
   "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-SHADOW_BARRIER.title": "Shadow Barrier",
 
-  "SORA-KEYBLADE_MASTERY.description": "Gain {StrenghtPower:diff()} [gold]Strength[/gold].",
+  "SORA-KEYBLADE_MASTERY.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
   "SORA-KEYBLADE_MASTERY.title": "Keyblade Mastery",
 
   "SORA-LUCKY_EMBLEM.description": "Gain {Block:diff()} [gold]Block[/gold].\nPermanently increase this card's [gold]Block[/gold] by {Increase:diff()}.",

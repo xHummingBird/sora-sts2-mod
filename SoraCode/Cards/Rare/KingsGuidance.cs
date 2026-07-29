@@ -4,13 +4,14 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using Sora.SoraCode.Extensions;
+using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Powers;
 using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Rare;
 
 public class KingsGuidance() : SoraCard(2, CardType.Power,
-    CardRarity.Rare, TargetType.Self)
+    CardRarity.Rare, TargetType.Self), ICompanionCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

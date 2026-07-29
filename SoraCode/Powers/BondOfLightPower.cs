@@ -8,11 +8,11 @@ using Sora.SoraCode.Mechanics.Companion;
 namespace Sora.SoraCode.Powers;
 
 // Each time you play a Companion card, draw a card.
-public class BondOfLIghtPower : SoraPower
+public class BondOfLightPower : SoraPower
 {
     public override PowerType Type => PowerType.Buff;
 
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override async Task AfterCardPlayed(
         PlayerChoiceContext choiceContext,
@@ -26,6 +26,6 @@ public class BondOfLIghtPower : SoraPower
 
         Flash();
 
-        await CardPileCmd.Draw(choiceContext, 1, base.Owner.Player);
+        await CardPileCmd.Draw(choiceContext, Amount, base.Owner.Player);
     }
 }

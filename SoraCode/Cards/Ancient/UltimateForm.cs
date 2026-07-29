@@ -6,12 +6,13 @@ using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Sora.SoraCode.Extensions;
+using Sora.SoraCode.Mechanics.SituationCommand;
 using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
 public class UltimateForm() : SoraCard(0, CardType.Skill,
-    CardRarity.Ancient, TargetType.Self)
+    CardRarity.Ancient, TargetType.Self), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -27,19 +28,35 @@ public class UltimateForm() : SoraCard(0, CardType.Skill,
     {
         var ownerCreature = Owner?.Creature;
 
-        if (ownerCreature != null && Owner?.Character is Character.Sora sora)
+        if (ownerCreature == null)
+            return;
+
+        bool hasUltimate = ownerCreature.HasPower<UltimateFormPower>();
+
+        if (Owner?.Character is Character.Sora sora && !hasUltimate)
         {
             AudioHelper.PlayRandomFormchange();
-            sora.PlayAnimation(ownerCreature, "cast");
-            await Task.Delay((int)(0.2f * 1000f));
-        }
+            sora.PlayAnimation(ownerCreature, "ultimate_form");
+            SfxCmd.Play("res://Sora/sfx/ultimate_form.mp3");
 
-        await PowerCmd.Apply<UltimateFormPower>(
-            choiceContext,
-            base.Owner.Creature,
-            DynamicVars["Turns"].BaseValue,
-            base.Owner.Creature,
-            this);
+            PowerCmd.Apply<UltimateFormPower>(
+                choiceContext,
+                ownerCreature,
+                DynamicVars["Turns"].BaseValue,
+                ownerCreature,
+                this);
+            await Task.Delay(2265);
+            sora.PlayAnimation(ownerCreature, "idle_ultimate");
+        }
+        else
+        {
+            await PowerCmd.Apply<UltimateFormPower>(
+                choiceContext,
+                ownerCreature,
+                DynamicVars["Turns"].BaseValue,
+                ownerCreature,
+                this);
+        }
     }
 
     protected override void OnUpgrade()

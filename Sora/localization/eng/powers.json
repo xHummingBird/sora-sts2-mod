@@ -7,20 +7,20 @@
   "SORA-SYNCH_BLADE_POWER.smartDescription": "Whenever you play an attack, deal [blue]{Amount}[/blue] damage to a random enemy.",
   "SORA-SYNCH_BLADE_POWER.title": "Synch Blade",
 
-  "SORA-DUAL_WIELD_POWER.description": "Each turn, the first attack card you play is played an additional time.",
-  "SORA-DUAL_WIELD_POWER.smartDescription": "Each turn, the first attack card you play is played an additional time.",
+  "SORA-DUAL_WIELD_POWER.description": "Each turn, the first attack card you play is played an extra time.",
+  "SORA-DUAL_WIELD_POWER.smartDescription": "Each turn, {Amount:plural:attack card you play each turn is|[blue]{}[/blue] attack cards you play each turn are} played an extra time.",
   "SORA-DUAL_WIELD_POWER.title": "Dual Wield",
 
   "SORA-NEGATIVE_COMBO_POWER.description": "Reduce SP gained per turn by 1. Gain Strength each turn.",
   "SORA-NEGATIVE_COMBO_POWER.smartDescription": "Reduce [gold]SP[/gold] gained per turn by 1. Gain [blue]{Amount}[/blue] [gold]Strength[/gold] each turn.",
   "SORA-NEGATIVE_COMBO_POWER.title": "Negative Combo",
 
-  "SORA-SEVEN_LIGHTS_POWER.description": "The first time you play a Companion card each turn, gain Energy.",
-  "SORA-SEVEN_LIGHTS_POWER.smartDescription": "The first time you play a [gold]Companion[/gold] card each turn, gain [blue]{Amount}[/blue] [gold]Energy[/gold].",
+  "SORA-SEVEN_LIGHTS_POWER.description": "The first time you play a Companion card each turn, gain [gold]Energy[/gold].",
+  "SORA-SEVEN_LIGHTS_POWER.smartDescription": "The first time you play a [gold]Companion[/gold] card each turn, gain [blue]{Amount}[/blue] {energyPrefix:energyIcons(1)}.",
   "SORA-SEVEN_LIGHTS_POWER.title": "Seven Lights",
 
   "SORA-BOND_OF_LIGHT_POWER.description": "Each time you play a Companion card, draw 1 card.",
-  "SORA-BOND_OF_LIGHT_POWER.smartDescription": "Each time you play a [gold]Companion[/gold] card, draw 1 card.",
+  "SORA-BOND_OF_LIGHT_POWER.smartDescription": "Each time you play a [gold]Companion[/gold] card, draw {Amount} {Amount:plural:card|cards}.",
   "SORA-BOND_OF_LIGHT_POWER.title": "Bond of Light",
 
   "SORA-SITUATION_BOOST_POWER.description": "Whenever you play a card that costs 2 or more Energy, gain 5 SP.",
