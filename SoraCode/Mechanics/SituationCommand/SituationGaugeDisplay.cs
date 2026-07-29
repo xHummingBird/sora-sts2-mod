@@ -36,6 +36,14 @@ public partial class SituationGaugeDisplay : Control
     
     private IHoverTip? _hoverTip;
 
+    private Control? _activeTip;
+
+    private List<SoraHoverTipText.TextTarget> _tipTextTargets = [];
+
+    private int _renderedTipSp = int.MinValue;
+
+    private int _renderedTipMaxSp = int.MinValue;
+
     public override void _Ready()
     {
         Instance = this;
@@ -142,8 +150,10 @@ public partial class SituationGaugeDisplay : Control
     public override void _Process(double delta)
     {
         UpdateDisplay();
+
+        RenderTipValues();
     }
-    
+
     private void OnHovered()
     {
         if (_hoverTip == null)
@@ -156,20 +166,111 @@ public partial class SituationGaugeDisplay : Control
                 this,
                 _hoverTip);
 
-        if (tip != null)
-        {
-            tip.GlobalPosition =
-                GlobalPosition +
-                new Vector2(-75f, -450f);
+        if (tip == null)
+            return;
 
-            tip.MouseFilter =
-                MouseFilterEnum.Ignore;
-        }
+        tip.GlobalPosition =
+            GlobalPosition +
+            new Vector2(-75f, -450f);
+
+        tip.MouseFilter =
+            MouseFilterEnum.Ignore;
+
+        TrackTip(tip);
     }
 
     private void OnUnhovered()
     {
         NHoverTipSet.Remove(this);
+
+        ForgetTip();
+    }
+
+    private void TrackTip(Control tip)
+    {
+        _activeTip = tip;
+
+        _tipTextTargets =
+            SoraHoverTipText.CollectTargets(tip);
+
+        _renderedTipSp = int.MinValue;
+        _renderedTipMaxSp = int.MinValue;
+
+        RenderTipValues();
+
+        /*
+         * The tip's labels can be populated a frame after creation, so try
+         * once more if there was nothing to fill in yet.
+         */
+        Callable.From(() =>
+        {
+            if (_activeTip != tip)
+                return;
+
+            if (!IsInstanceValid(tip))
+                return;
+
+            if (_tipTextTargets.Count == 0)
+            {
+                _tipTextTargets =
+                    SoraHoverTipText.CollectTargets(tip);
+            }
+
+            RenderTipValues();
+        }).CallDeferred();
+    }
+
+    private void ForgetTip()
+    {
+        _activeTip = null;
+
+        _tipTextTargets = [];
+
+        _renderedTipSp = int.MinValue;
+        _renderedTipMaxSp = int.MinValue;
+    }
+
+    private void RenderTipValues()
+    {
+        if (_activeTip == null)
+            return;
+
+        if (!IsInstanceValid(_activeTip))
+        {
+            ForgetTip();
+            return;
+        }
+
+        if (_tipTextTargets.Count == 0)
+            return;
+
+        var relic =
+            _player?.Relics
+                .OfType<SituationRelicBase>()
+                .FirstOrDefault();
+
+        if (relic == null)
+            return;
+
+        int situationPoints =
+            relic.GetSituationPointsForUI();
+
+        int maxSituationPoints =
+            relic.GetMaxSituationPointsForUI();
+
+        if (situationPoints == _renderedTipSp &&
+            maxSituationPoints == _renderedTipMaxSp)
+        {
+            return;
+        }
+
+        _renderedTipSp = situationPoints;
+        _renderedTipMaxSp = maxSituationPoints;
+
+        SoraHoverTipText.Render(
+            _tipTextTargets,
+            situationPoints,
+            maxSituationPoints);
     }
 
     private void UpdateDisplay()
@@ -345,6 +446,8 @@ public partial class SituationGaugeDisplay : Control
         
         NHoverTipSet.Remove(this);
         _hoverTip = null;
+
+        ForgetTip();
     }
 }
 
