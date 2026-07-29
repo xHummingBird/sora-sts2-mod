@@ -1,6 +1,11 @@
-﻿namespace Sora.SoraCode.Relics;
+﻿using MegaCrit.Sts2.Core.Entities.Relics;
 
-public class Wayfinder
+namespace Sora.SoraCode.Relics;
+
+// Situation Commands generated while you hold this relic cost 0 and are
+// upgraded. The actual effect is applied in SituationReadyPower, which creates
+// the Situation Command cards.
+public class Wayfinder : SoraRelic
 {
-    
+    public override RelicRarity Rarity => RelicRarity.Uncommon;
 }

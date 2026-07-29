@@ -170,7 +170,15 @@ public abstract class SituationRelicBase : SoraRelic
         
         _situationReadyConsumedThisTurn = false;
 
-        GainSituationPoints(TurnSpGain);
+        int turnSpGain = TurnSpGain;
+
+        // Negative Combo reduces the SP gained per turn by 1.
+        if (base.Owner.Creature.HasPower<NegativeComboPower>())
+        {
+            turnSpGain -= 1;
+        }
+
+        GainSituationPoints(turnSpGain);
 
         if (base.Owner.Creature.HasPower<MickeyPower>())
         {

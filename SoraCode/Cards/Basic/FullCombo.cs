@@ -38,8 +38,8 @@ public class FullCombo() : SoraCard(2, CardType.Attack,
             AudioHelper.PlayRandomAttack();
             
             float duration = sora.PlayAnimation(ownerCreature, "full_combo").total;
-            if (duration > 0f)
-                await Task.Delay((int)(0.13f * 1000f));
+            
+            await Task.Delay((int)(0.13f * 1000f));
             SoraExtensions.CombatHelpers.FakeHit(play.Target, SoraExtensions.SwingSfx.SwingDown, SoraExtensions.HitSfx.HitDown);
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             await Task.Delay((int)(0.266f * 1000f));

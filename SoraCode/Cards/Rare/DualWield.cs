@@ -1,6 +1,37 @@
-﻿namespace Sora.SoraCode.Cards.Rare;
+﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using Sora.SoraCode.Powers;
 
-public class DualWield
+namespace Sora.SoraCode.Cards.Rare;
+
+public class DualWield() : SoraCard(3, CardType.Power,
+    CardRarity.Rare, TargetType.Self)
 {
-    
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new PowerVar<DualWieldPower>(1),
+    ];
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    [
+        HoverTipFactory.FromPower<DualWieldPower>(),
+    ];
+
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
+    {
+        await PowerCmd.Apply<DualWieldPower>(
+            choiceContext,
+            base.Owner.Creature,
+            DynamicVars["DualWieldPower"].BaseValue,
+            base.Owner.Creature,
+            this);
+    }
+
+    protected override void OnUpgrade()
+    {
+        base.EnergyCost.UpgradeBy(-1);
+    }
 }
