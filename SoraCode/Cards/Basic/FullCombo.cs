@@ -36,27 +36,53 @@ public class FullCombo() : SoraCard(2, CardType.Attack,
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
             await sora.DashTo(ownerCreature, play.Target, distance: 350f);
             AudioHelper.PlayRandomAttack();
-            
-            float duration = sora.PlayAnimation(ownerCreature, "full_combo").total;
-            
-            await Task.Delay((int)(0.13f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, SoraExtensions.SwingSfx.SwingDown, SoraExtensions.HitSfx.HitDown);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.266f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.3333f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, SoraExtensions.SwingSfx.SwingDown, hitOverride:"res://Sora/sfx/hit_medium.wav");
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.4f * 1000f));
-            AudioHelper.PlayRandomFinalAttack();
-            await Task.Delay((int)(0.467f * 1000f));
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await CommonActions.CardAttack(this, play.Target)
-                .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_hard.wav")
-                .Execute(choiceContext);
-            await Task.Delay((int)(0.36f * 1000f));
-            await sora.Retreat(ownerCreature);
+            if (!ownerCreature.HasPower<UltimateFormPower>())
+            {
+                float duration = sora.PlayAnimation(ownerCreature, "full_combo").total;
+
+                await Task.Delay((int)(0.13f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target, SoraExtensions.SwingSfx.SwingDown,
+                    SoraExtensions.HitSfx.HitDown);
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+                await Task.Delay((int)(0.266f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target);
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+                await Task.Delay((int)(0.3333f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target, SoraExtensions.SwingSfx.SwingDown,
+                    hitOverride: "res://Sora/sfx/hit_medium.wav");
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+                await Task.Delay((int)(0.4f * 1000f));
+                AudioHelper.PlayRandomFinalAttack();
+                await Task.Delay((int)(0.467f * 1000f));
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+                await CommonActions.CardAttack(this, play.Target)
+                    .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_hard.wav")
+                    .Execute(choiceContext);
+                await Task.Delay((int)(0.36f * 1000f));
+                await sora.Retreat(ownerCreature);
+            }
+            else
+            {
+                sora.PlayAnimation(ownerCreature, "ultimate_combo");
+                await Task.Delay((int)(0.133f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target, swingOverride: "res://Sora/sfx/ultimate_swing_1.wav", hitOverride: "res://Sora/sfx/ultimate_hit_1.wav");
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
+                await Task.Delay((int)(0.266f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target, swingOverride: "res://Sora/sfx/ultimate_swing_2.wav", hitOverride: "res://Sora/sfx/ultimate_hit_2.wav");
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
+                await Task.Delay((int)(0.233f * 1000f));
+                AudioHelper.PlayRandomFinalAttack();
+                await Task.Delay((int)(0.3f * 1000f));
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
+                SfxCmd.Play("res://Sora/sfx/ultimate_thrust.wav");
+                CommonActions.CardAttack(this, play.Target)
+                    .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/ultimate_hit_3.wav")
+                    .Execute(choiceContext);
+                await Task.Delay((int)(0.7f * 1000f));
+                await sora.Retreat(ownerCreature, null, true, 0.01f);
+                await Task.Delay((int)(0.133f * 1000f));
+            }
+
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
             SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
             

@@ -50,11 +50,7 @@
   "SORA-RIKU_POWER.description": "Gain 1 additional [gold]SP[/gold] from attacks for 3 turns. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]Trinity Limit[/gold] instead.",
   "SORA-RIKU_POWER.smartDescription": "Gain 1 additional [gold]SP[/gold] from attacks for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Eternal Session[/gold] to your command or [gold]Trinity Limit[/gold] if you have [gold]Kairi's Link[/gold].",
   "SORA-RIKU_POWER.title": "Riku's Link",
-
-  "SORA-CLOUD_POWER.description": "An active Link.",
-  "SORA-CLOUD_POWER.smartDescription": "An active Link for [blue]{Amount}[/blue] {Amount:plural:turn|turns}.",
-  "SORA-CLOUD_POWER.title": "Cloud's Link",
-
+  
   "SORA-REFLECT_SORA_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
   "SORA-REFLECT_SORA_POWER.smartDescription": "Blocked damage is reflected to your attacker for 1 turn.",
   "SORA-REFLECT_SORA_POWER.title": "Reflect",
@@ -68,11 +64,11 @@
   "SORA-MICKEY_POWER.title": "Mickey's Link",
 
   "SORA-YENSID_POWER.description": "At the start of your turn, upgrade a random card in your hand.",
-  "SORA-YENSID_POWER.smartDescription": "At the start of your turn, upgrade a random card in your hand.",
+  "SORA-YENSID_POWER.smartDescription": "At the start of your turn, upgrade {Amount} {Amount:plural:random card|random cards} in your hand.",
   "SORA-YENSID_POWER.title": "Yensid's Link",
 
   "SORA-SECOND_CHANCE_POWER.description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
   "SORA-SECOND_CHANCE_POWER.smartDescription": "The first {Amount:plural:time|[blue]{}[/blue] times} you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
-  "SORA-SECOND_CHANCE_POWER.title": "SecondChancePower"
+  "SORA-SECOND_CHANCE_POWER.title": "Second Chance"
   
 }

@@ -116,13 +116,16 @@ public static class SoraEmbarkPatch
 
         var lobby = (StartRunLobby)AccessTools
             .Field(typeof(NCharacterSelectScreen), "_lobby")
-            .GetValue(__instance);
+            .GetValue(__instance)!;
 
         // Leave multiplayer untouched
         if (lobby.NetService.Type != NetGameType.Singleplayer)
             return true;
 
-        if (lobby.LocalPlayer.character is not Character.Sora)
+        var localPlayer = lobby.Players
+            .FirstOrDefault(p => p.id == lobby.NetService.NetId);
+
+        if (localPlayer.character is not Character.Sora)
             return true;
 
         _isRunning = true;

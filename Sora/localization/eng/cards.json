@@ -5,9 +5,6 @@
   "SORA-SLAPSHOT.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {BlockPerEnemy:diff()} [gold]Block[/gold] for each enemy hit.",
   "SORA-SLAPSHOT.title": "Slapshot",
 
-  "SORA-DAMAGE_CONTROL.description": "Gain {Block:diff()} [gold]Block[/gold]. \nHeal HP equal to {HealPercent:diff()}% of your missing HP.",
-  "SORA-DAMAGE_CONTROL.title": "Damage Control",
-
   "SORA-TREASURE_HUNTER.description": "Draw {Cards:diff()} {Cards:plural:card|cards}. \nGain {Sp:diff()} [gold]SP[/gold].",
   "SORA-TREASURE_HUNTER.title": "Treasure Hunter",
 
@@ -38,7 +35,7 @@
   "SORA-FINISH_BOOST.description": "The third [gold]Attack[/gold] you play each turn deals {FinishBoostPower:diff()}% more damage.",
   "SORA-FINISH_BOOST.title": "Finish Boost",
 
-  "SORA-ONE_HEART.description": "Gain {Block:diff()} [gold]Block[/gold] and {BlockPerLink:diff()} [gold]Block[/gold] for each active [gold]Link[/gold].",
+  "SORA-ONE_HEART.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold] and {VigorPerLink:diff()} [gold]Vigor[/gold] for each active [gold]Link[/gold].",
   "SORA-ONE_HEART.title": "One Heart",
 
   "SORA-YENSIDS_BLESSING.description": "At the start of your turn, upgrade a random card in your hand.",
@@ -189,7 +186,7 @@
   "SORA-SHADOW_BARRIER.title": "Shadow Barrier",
 
   "SORA-KEYBLADE_MASTERY.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
-  "SORA-KEYBLADE_MASTERY.title": "Keyblade Mastery",
+  "SORA-KEYBLADE_MASTERY.title": "Mark of Mastery",
 
   "SORA-LUCKY_EMBLEM.description": "Gain {Block:diff()} [gold]Block[/gold].\nPermanently increase this card's [gold]Block[/gold] by {Increase:diff()}.",
   "SORA-LUCKY_EMBLEM.title": "Lucky Emblem",

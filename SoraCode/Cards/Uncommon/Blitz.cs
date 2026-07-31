@@ -30,12 +30,24 @@ public class Blitz() : SoraCard(1, CardType.Attack,
         CardPlay play)
     {
         var ownerCreature = Owner?.Creature;
+        
+        string hitSfx = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "res://Sora/sfx/ultimate_hit_1.wav"
+            : "res://Sora/sfx/hit_medium.wav";
+        
+        string attackAnim = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "attack_ultimate"
+            : "blitz";
+        
+        string attackVfx = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "hit_ultimate"
+            : "atk_vfx";
 
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             AudioHelper.PlayRandomAttack();
             
-            sora.PlayAnimation(ownerCreature, "blitz");
+            sora.PlayAnimation(ownerCreature, attackAnim);
             
             await Task.Delay((int)(0.2f * 1000f));
             
@@ -44,11 +56,11 @@ public class Blitz() : SoraCard(1, CardType.Attack,
             sora.PlayVfxOnTarget(
                 play.Target,
                 "res://Sora/scenes/vfx.tscn",
-                "atk_vfx"
+                attackVfx
             );
         }
         await CommonActions.CardAttack(this, play.Target)
-            .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_medium.wav")
+            .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
         SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
             
