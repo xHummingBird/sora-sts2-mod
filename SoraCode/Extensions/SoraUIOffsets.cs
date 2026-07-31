@@ -28,9 +28,9 @@ public static class SoraUiOffsets
      * How far down to nudge the text, in pixels.
      * Positive = down, negative = up.
      */
-    public const float CardEnergyCostDown = 2f;
+    public const float CardEnergyCostDown = 0f; //disabled for now until I figure out how to only affect Sora
 
-    public const float EnergyCounterTextDown = 3f;
+    public const float EnergyCounterTextDown = 10f;
 
     /*
      * Set to true to print the node trees these offsets are applied to.

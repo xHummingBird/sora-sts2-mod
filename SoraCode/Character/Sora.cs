@@ -381,7 +381,8 @@ public class Sora : PlaceholderCharacterModel
     public async Task Retreat(
         Creature player,
         string? animation = "retreat",
-        bool goIdle = true)
+        bool goIdle = true,
+        float duration = 0.3f)
     {
         var node = NCombatRoom.Instance?.GetCreatureNode(player);
         if (node == null || !_originalPosition.HasValue) return;
@@ -390,7 +391,7 @@ public class Sora : PlaceholderCharacterModel
             PlayAnimation(player, animation);
 
         var tween = node.CreateTween();
-        tween.TweenProperty(node, "global_position", _originalPosition.Value, 0.3f)
+        tween.TweenProperty(node, "global_position", _originalPosition.Value, duration)
             .SetTrans(Tween.TransitionType.Quad)
             .SetEase(Tween.EaseType.InOut);
 

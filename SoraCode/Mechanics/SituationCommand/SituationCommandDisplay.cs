@@ -52,7 +52,6 @@ public partial class SituationCommandDisplay : Control
     private const string RikuCommandKey = "SORA-RIKU_LIMIT.title";
     private const string KairiCommandKey = "SORA-KAIRI_LIMIT.title";
     private const string RikuKairiCommandKey = "SORA-RIKU_KAIRI_LIMIT.title";
-    private const string CloudCommandKey = "SORA-CLOUD_LIMIT.title";
     
     private const bool DebugForceVisible = false;
 
@@ -404,9 +403,6 @@ public partial class SituationCommandDisplay : Control
     bool hasKairi =
         creature.HasPower<KairiPower>();
 
-    bool hasCloud =
-        creature.HasPower<CloudPower>();
-
     bool ultimateForm =
         creature.HasPower<UltimateFormPower>();
 
@@ -467,22 +463,11 @@ public partial class SituationCommandDisplay : Control
 
     if (relic.SituationPoints >= 60)
     {
-        if (hasCloud)
-        {
-            commands[1] =
-                CloudCommandKey;
-
-            _command2HoverTip =
-                HoverTipFactory.FromCard<CloudLimit>();
-        }
-        else
-        {
             commands[1] =
                 ArsArcanumKey;
 
             _command2HoverTip =
                 HoverTipFactory.FromCard<ArsArcanum>();
-        }
     }
 
     if (!ultimateForm &&
@@ -509,7 +494,6 @@ public partial class SituationCommandDisplay : Control
          * For now Sonic/Ars only uses Command1.
          * Later:
          * commands[0] = Kairi/Riku/Ars slot
-         * commands[1] = Cloud slot
          * commands[2] = Ultimate slot
          */
         ApplyCommandSlot(

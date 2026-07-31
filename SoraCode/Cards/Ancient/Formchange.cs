@@ -14,12 +14,10 @@ namespace Sora.SoraCode.Cards.Ancient;
 public class Formchange() : SoraCard(2, CardType.Skill,
     CardRarity.Ancient, TargetType.Self)
 {
-    private const int BaseTurns = 3;
-    private const int ExtendTurns = 2;
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(8m, ValueProp.Move),
+        new DynamicVar("Turns", 3),
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -34,26 +32,33 @@ public class Formchange() : SoraCard(2, CardType.Skill,
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        var ownerCreature = Owner?.Creature;
-
-        if (ownerCreature != null && Owner?.Character is Character.Sora sora)
-        {
-            AudioHelper.PlayRandomFormchange();
-            sora.PlayAnimation(ownerCreature, "cast");
-            await Task.Delay((int)(0.2f * 1000f));
-        }
-
         await CommonActions.CardBlock(this, play);
-
-        var creature = base.Owner.Creature;
-        int turns = creature.HasPower<UltimateFormPower>() ? ExtendTurns : BaseTurns;
-
-        await PowerCmd.Apply<UltimateFormPower>(
-            choiceContext,
-            creature,
-            turns,
-            creature,
-            this);
+        await Task.Delay((int)(0.1f * 1000f));
+        var ownerCreature = Owner?.Creature;
+        bool hasUltimate = ownerCreature.HasPower<UltimateFormPower>();
+        if (ownerCreature != null && Owner?.Character is Character.Sora sora && !hasUltimate)
+        {
+                AudioHelper.PlayRandomFormchange();
+                sora.PlayAnimation(ownerCreature, "ultimate_form");
+                SfxCmd.Play("res://Sora/sfx/ultimate_form.mp3");
+                PowerCmd.Apply<UltimateFormPower>(
+                    choiceContext,
+                    ownerCreature,
+                    DynamicVars["Turns"].BaseValue,
+                    ownerCreature,
+                    this);
+                await Task.Delay(2265);
+                sora.PlayAnimation(ownerCreature, "idle_ultimate");
+        }
+        else
+        {
+            await PowerCmd.Apply<UltimateFormPower>(
+                choiceContext,
+                ownerCreature,
+                DynamicVars["Turns"].BaseValue - 1,
+                ownerCreature,
+                this);
+        }
     }
 
     protected override void OnUpgrade()

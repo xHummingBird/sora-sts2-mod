@@ -12,7 +12,7 @@ public class SituationBoostPower : SoraPower
 
     public override PowerType Type => PowerType.Buff;
 
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override async Task AfterEnergySpent(CardModel card, int amount)
     {
@@ -26,7 +26,7 @@ public class SituationBoostPower : SoraPower
 
         if (relic != null)
         {
-            relic.GainSituationPoints(SpGain);
+            relic.GainSituationPoints(SpGain * Amount);
             Flash();
         }
 

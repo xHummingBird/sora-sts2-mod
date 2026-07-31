@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
+using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Basic;
 
@@ -30,25 +31,36 @@ public class SonicStrike() : SoraCard(0, CardType.Attack,
         CardPlay play)
     {
         var ownerCreature = Owner?.Creature;
+        string hitSfx = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "res://Sora/sfx/ultimate_hit_1.wav"
+            : "res://Sora/sfx/hit_medium.wav";
+
+        string attackAnim = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "attack_ultimate_2"
+            : "sonic_strike";
+        
+        string attackVfx = base.Owner.Creature.HasPower<UltimateFormPower>()
+            ? "hit_ultimate"
+            : "atk_vfx";
 
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             AudioHelper.PlayRandomAttack();
             
-            sora.PlayAnimation(ownerCreature, "sonic_strike");
+            sora.PlayAnimation(ownerCreature, attackAnim);
             
-            await Task.Delay((int)(0.1f * 1000f));
+            await Task.Delay((int)(0.15f * 1000f));
             
             SfxCmd.Play("res://Sora/sfx/swing_down.wav");
             
             sora.PlayVfxOnTarget(
                 play.Target,
                 "res://Sora/scenes/vfx.tscn",
-                "atk_vfx"
+                attackVfx
             );
         }
         await CommonActions.CardAttack(this, play.Target)
-            .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_medium.wav")
+            .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, base.DynamicVars.Vulnerable.BaseValue,
             base.Owner.Creature, this);

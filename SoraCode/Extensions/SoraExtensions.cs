@@ -103,9 +103,6 @@ public class SoraExtensions
             if (creature.HasPower<KairiPower>())
                 count++;
             
-            if (creature.HasPower<CloudPower>())
-                count++;
-            
             if (creature.HasPower<MickeyPower>())
                 count++;
             
