@@ -210,5 +210,11 @@
   "SORA-STRIKE_SHIFT.title": "Strike Shift",
 
   "SORA-SPIRAL_BLOOM.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold]. \nGain [gold]Kairi's Link[/gold].",
-  "SORA-SPIRAL_BLOOM.title": "Spiral Bloom"
+  "SORA-SPIRAL_BLOOM.title": "Spiral Bloom",
+
+  "SORA-WATER.description": "Deal {Damage:diff()} damage.",
+  "SORA-WATER.title": "Water",
+
+  "SORA-WATERGA.description": "Deal {Damage:diff()} damage.",
+  "SORA-WATERGA.title": "Waterga"
 }

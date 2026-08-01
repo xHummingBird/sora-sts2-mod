@@ -117,6 +117,12 @@ public static class AudioHelper
         "res://Sora/sounds/thunder_1.wav",
         "res://Sora/sounds/thunder_2.wav",
     };
+    
+    private static readonly string[] waterSfx =
+    {
+        "res://Sora/sounds/sora_water (1).wav",
+        "res://Sora/sounds/sora_water (2).wav",
+    };
 
     private static readonly string[] victorySfx =
     {
@@ -212,6 +218,11 @@ public static class AudioHelper
     public static void PlayRandomThunder()
     {
         PlayRandom(thunderSfx);
+    }
+    
+    public static void PlayRandomWater()
+    {
+        PlayRandom(waterSfx);
     }
 
     public static void PlayRandomVictory()

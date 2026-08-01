@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://jrdiwbm4me1k"]
+[gd_scene load_steps=105 format=3 uid="uid://jrdiwbm4me1k"]
 
 [ext_resource type="Texture2D" uid="uid://cvw4k6v4gam4k" path="res://Sora/images/spritesheets/vfx/atk/01_atk_vfx.png" id="1_va35b"]
 [ext_resource type="Texture2D" uid="uid://bf4viu6ced27c" path="res://Sora/images/spritesheets/vfx/atk/02_atk_vfx.png" id="2_xbqf5"]
@@ -41,6 +41,59 @@
 [ext_resource type="Texture2D" uid="uid://d3ti2tvvg37f3" path="res://Sora/images/spritesheets/vfx/true_end/Genesis-Tile-2-16.png" id="39_vnoq1"]
 [ext_resource type="Texture2D" uid="uid://do3q2fpihnx1j" path="res://Sora/images/spritesheets/vfx/true_end/Genesis-Tile-2-17.png" id="40_8fcqj"]
 [ext_resource type="Texture2D" uid="uid://bcsb3ku16k1vt" path="res://Sora/images/spritesheets/vfx/true_end/Genesis-Tile-2-18.png" id="41_622vc"]
+[ext_resource type="Texture2D" uid="uid://j8150vhxya2b" path="res://Sora/images/spritesheets/vfx/waterga/02_flood.png" id="42_42ttr"]
+[ext_resource type="Texture2D" uid="uid://ccic63b8aijas" path="res://Sora/images/spritesheets/vfx/water/01_water.png" id="42_622vc"]
+[ext_resource type="Texture2D" uid="uid://c3v4b44xurw8v" path="res://Sora/images/spritesheets/vfx/water/02_water.png" id="43_g6wlg"]
+[ext_resource type="Texture2D" uid="uid://drfireuw6lnyn" path="res://Sora/images/spritesheets/vfx/waterga/03_flood.png" id="43_ushym"]
+[ext_resource type="Texture2D" uid="uid://dgso087fxyu5e" path="res://Sora/images/spritesheets/vfx/water/03_water.png" id="44_hlxkh"]
+[ext_resource type="Texture2D" uid="uid://bth7m2wwhoctq" path="res://Sora/images/spritesheets/vfx/waterga/04_flood.png" id="44_vf80q"]
+[ext_resource type="Texture2D" uid="uid://deuyc7p6bm42d" path="res://Sora/images/spritesheets/vfx/waterga/05_flood.png" id="45_665tp"]
+[ext_resource type="Texture2D" uid="uid://bm5wdm2lqbsl8" path="res://Sora/images/spritesheets/vfx/water/04_water.png" id="45_xhmbi"]
+[ext_resource type="Texture2D" uid="uid://cnq7i122e56n4" path="res://Sora/images/spritesheets/vfx/water/05_water.png" id="46_j2yok"]
+[ext_resource type="Texture2D" uid="uid://f1gvfhcyuegq" path="res://Sora/images/spritesheets/vfx/waterga/06_flood.png" id="46_yrgpt"]
+[ext_resource type="Texture2D" uid="uid://574ilt6qrbua" path="res://Sora/images/spritesheets/vfx/waterga/07_flood.png" id="47_h1c30"]
+[ext_resource type="Texture2D" uid="uid://dvmot4pirqqmy" path="res://Sora/images/spritesheets/vfx/water/06_water.png" id="47_j3c5r"]
+[ext_resource type="Texture2D" uid="uid://80l5cvnq1lj7" path="res://Sora/images/spritesheets/vfx/water/07_water.png" id="48_58cul"]
+[ext_resource type="Texture2D" uid="uid://chrj4um46wkst" path="res://Sora/images/spritesheets/vfx/waterga/08_flood.png" id="48_fq8nb"]
+[ext_resource type="Texture2D" uid="uid://l82lhqydoghv" path="res://Sora/images/spritesheets/vfx/waterga/09_flood.png" id="49_330w1"]
+[ext_resource type="Texture2D" uid="uid://ccsebs8mj2t7k" path="res://Sora/images/spritesheets/vfx/water/08_water.png" id="49_ukd88"]
+[ext_resource type="Texture2D" uid="uid://cgwhtwj68nacl" path="res://Sora/images/spritesheets/vfx/waterga/10_flood.png" id="50_8yjij"]
+[ext_resource type="Texture2D" uid="uid://d36tfvs8rsol0" path="res://Sora/images/spritesheets/vfx/water/09_water.png" id="50_pv6to"]
+[ext_resource type="Texture2D" uid="uid://c88tfhgaps2bi" path="res://Sora/images/spritesheets/vfx/waterga/11_flood.png" id="51_nsvpi"]
+[ext_resource type="Texture2D" uid="uid://b08t3r7ugi0h2" path="res://Sora/images/spritesheets/vfx/water/10_water.png" id="51_on2ll"]
+[ext_resource type="Texture2D" uid="uid://bcx0uhxs4w4lb" path="res://Sora/images/spritesheets/vfx/water/11_water.png" id="52_321po"]
+[ext_resource type="Texture2D" uid="uid://b7i3skn2xb7bb" path="res://Sora/images/spritesheets/vfx/waterga/12_flood.png" id="52_m4uki"]
+[ext_resource type="Texture2D" uid="uid://cookqm70h80f0" path="res://Sora/images/spritesheets/vfx/waterga/13_flood.png" id="53_5ha55"]
+[ext_resource type="Texture2D" uid="uid://c1ll3fpxin7up" path="res://Sora/images/spritesheets/vfx/water/12_water.png" id="53_fwo7i"]
+[ext_resource type="Texture2D" uid="uid://cnhl18sdtf6oq" path="res://Sora/images/spritesheets/vfx/waterga/14_flood.png" id="54_noy7v"]
+[ext_resource type="Texture2D" uid="uid://b54glktykrx0q" path="res://Sora/images/spritesheets/vfx/water/13_water.png" id="54_ouejb"]
+[ext_resource type="Texture2D" uid="uid://babwltxmmnq45" path="res://Sora/images/spritesheets/vfx/water/14_water.png" id="55_inh8i"]
+[ext_resource type="Texture2D" uid="uid://bx6v6satghyjs" path="res://Sora/images/spritesheets/vfx/waterga/15_flood.png" id="55_m4tpn"]
+[ext_resource type="Texture2D" uid="uid://cqid5cnel8nbl" path="res://Sora/images/spritesheets/vfx/water/15_water.png" id="56_00eeq"]
+[ext_resource type="Texture2D" uid="uid://demdgjumtqmj1" path="res://Sora/images/spritesheets/vfx/waterga/16_flood.png" id="56_hyyy5"]
+[ext_resource type="Texture2D" uid="uid://bkkfakah6d3rd" path="res://Sora/images/spritesheets/vfx/waterga/17_flood.png" id="57_6mrvs"]
+[ext_resource type="Texture2D" uid="uid://bl1t0ijeomc4f" path="res://Sora/images/spritesheets/vfx/water/16_water.png" id="57_cjm5n"]
+[ext_resource type="Texture2D" uid="uid://bpn22nr1j8fu6" path="res://Sora/images/spritesheets/vfx/water/17_water.png" id="58_gpp2f"]
+[ext_resource type="Texture2D" uid="uid://c5qeobjar0p0w" path="res://Sora/images/spritesheets/vfx/waterga/18_flood.png" id="58_mljug"]
+[ext_resource type="Texture2D" uid="uid://t6jt3puf6tj" path="res://Sora/images/spritesheets/vfx/waterga/19_flood.png" id="59_40g71"]
+[ext_resource type="Texture2D" uid="uid://5ekfvxb4glto" path="res://Sora/images/spritesheets/vfx/waterga/20_flood.png" id="60_dwomf"]
+[ext_resource type="Texture2D" uid="uid://bucmf6exl8d3l" path="res://Sora/images/spritesheets/vfx/waterga/21_flood.png" id="61_0fe32"]
+[ext_resource type="Texture2D" uid="uid://micolq0x04uy" path="res://Sora/images/spritesheets/vfx/waterga/22_flood.png" id="62_62ly4"]
+[ext_resource type="Texture2D" uid="uid://ca8c636fhy007" path="res://Sora/images/spritesheets/vfx/waterga/23_flood.png" id="63_5es1f"]
+[ext_resource type="Texture2D" uid="uid://djb7qi3maonke" path="res://Sora/images/spritesheets/vfx/waterga/24_flood.png" id="64_jf6nd"]
+[ext_resource type="Texture2D" uid="uid://d2ujibp7xcuth" path="res://Sora/images/spritesheets/vfx/waterga/25_flood.png" id="65_0ijxf"]
+[ext_resource type="Texture2D" uid="uid://hwsp3j3u0oeg" path="res://Sora/images/spritesheets/vfx/waterga/26_flood.png" id="66_14jg4"]
+[ext_resource type="Texture2D" uid="uid://cl2ewmn6bsmlm" path="res://Sora/images/spritesheets/vfx/waterga/27_flood.png" id="67_42ibb"]
+[ext_resource type="Texture2D" uid="uid://dc5p5cyefb016" path="res://Sora/images/spritesheets/vfx/waterga/28_flood.png" id="68_lgsf2"]
+[ext_resource type="Texture2D" uid="uid://dtkhf67aehdxd" path="res://Sora/images/spritesheets/vfx/waterga/29_flood.png" id="69_l7wjr"]
+[ext_resource type="Texture2D" uid="uid://b5sp2sojyq5j7" path="res://Sora/images/spritesheets/vfx/waterga/30_flood.png" id="70_e62ow"]
+[ext_resource type="Texture2D" uid="uid://civigr32pssp8" path="res://Sora/images/spritesheets/vfx/waterga/31_flood.png" id="71_lavse"]
+[ext_resource type="Texture2D" uid="uid://dpajox8p7rngt" path="res://Sora/images/spritesheets/vfx/waterga/32_flood.png" id="72_olmgo"]
+[ext_resource type="Texture2D" uid="uid://ddikf4lag33ec" path="res://Sora/images/spritesheets/vfx/waterga/33_flood.png" id="73_1pj36"]
+[ext_resource type="Texture2D" uid="uid://dtb0muj3g462u" path="res://Sora/images/spritesheets/vfx/waterga/34_flood.png" id="74_cfe0f"]
+[ext_resource type="Texture2D" uid="uid://dc3k30y1mb1d6" path="res://Sora/images/spritesheets/vfx/waterga/35_flood.png" id="75_e8j7u"]
+[ext_resource type="Texture2D" uid="uid://dcbmdk2d623wc" path="res://Sora/images/spritesheets/vfx/waterga/36_flood.png" id="76_1vjng"]
+[ext_resource type="Texture2D" uid="uid://c4nnme3vn5jo5" path="res://Sora/images/spritesheets/vfx/waterga/37_flood.png" id="77_s57fg"]
 
 [sub_resource type="Animation" id="Animation_0uvb6"]
 length = 0.001
@@ -836,6 +889,158 @@ tracks/15/keys = {
 "values": [true, false, false, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_wv51v"]
+resource_name = "waterga"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.7252903e-08, 0.06666674, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.669815, 0.7364816, 0.8031483, 0.86981493, 0.93648165, 1.0015742, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334, 1.4, 1.4666667, 1.5333333, 1.6, 1.6666666, 1.7333333, 1.8, 1.8666667, 1.9333333, 2, 2.0666666, 2.1333334, 2.2, 2.2666667, 2.3333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("42_42ttr"), ExtResource("43_ushym"), ExtResource("44_vf80q"), ExtResource("45_665tp"), ExtResource("46_yrgpt"), ExtResource("47_h1c30"), ExtResource("48_fq8nb"), ExtResource("49_330w1"), ExtResource("50_8yjij"), ExtResource("51_nsvpi"), ExtResource("52_m4uki"), ExtResource("53_5ha55"), ExtResource("54_noy7v"), ExtResource("55_m4tpn"), ExtResource("56_hyyy5"), ExtResource("57_6mrvs"), ExtResource("58_mljug"), ExtResource("59_40g71"), ExtResource("60_dwomf"), ExtResource("61_0fe32"), ExtResource("62_62ly4"), ExtResource("63_5es1f"), ExtResource("64_jf6nd"), ExtResource("65_0ijxf"), ExtResource("66_14jg4"), ExtResource("67_42ibb"), ExtResource("68_lgsf2"), ExtResource("69_l7wjr"), ExtResource("70_e62ow"), ExtResource("71_lavse"), ExtResource("72_olmgo"), ExtResource("73_1pj36"), ExtResource("74_cfe0f"), ExtResource("75_e8j7u"), ExtResource("76_1vjng"), ExtResource("77_s57fg")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -188)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xj1hf"]
+resource_name = "water"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.7252903e-08, 0.033333376, 0.06666669, 0.10000004, 0.13333337, 0.1666667, 0.2, 0.26666668, 0.33333337, 0.3666667, 0.43333334, 0.5, 0.56666666, 0.6333333, 0.7, 0.76666665, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("42_622vc"), ExtResource("43_g6wlg"), ExtResource("44_hlxkh"), ExtResource("45_xhmbi"), ExtResource("46_j2yok"), ExtResource("47_j3c5r"), ExtResource("48_58cul"), ExtResource("49_ukd88"), ExtResource("50_pv6to"), ExtResource("51_on2ll"), ExtResource("52_321po"), ExtResource("53_fwo7i"), ExtResource("54_ouejb"), ExtResource("55_inh8i"), ExtResource("56_00eeq"), ExtResource("57_cjm5n"), ExtResource("58_gpp2f")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(120, -223)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewmcm"]
 _data = {
 &"RESET": SubResource("Animation_0uvb6"),
@@ -844,7 +1049,9 @@ _data = {
 &"kairi_hit": SubResource("Animation_lyvgs"),
 &"ragnarok": SubResource("Animation_kb3qy"),
 &"riku_atk_vfx": SubResource("Animation_4jybi"),
-&"true_end": SubResource("Animation_xhmbi")
+&"true_end": SubResource("Animation_xhmbi"),
+&"water": SubResource("Animation_xj1hf"),
+&"waterga": SubResource("Animation_wv51v")
 }
 
 [node name="Vfx" type="Node2D"]

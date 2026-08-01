@@ -42,7 +42,6 @@ public class OneHeart() : SoraCard(1, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Block.UpgradeValueBy(1m);
         DynamicVars["VigorPerLink"].UpgradeValueBy(1m);
     }
 }

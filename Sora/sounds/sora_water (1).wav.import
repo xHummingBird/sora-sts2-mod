@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btg6pflg3tabh"
+path="res://.godot/imported/sora_water (1).wav-a4f7c609aebf37f376d2bf3b1759eef8.sample"
+
+[deps]
+
+source_file="res://Sora/sounds/sora_water (1).wav"
+dest_files=["res://.godot/imported/sora_water (1).wav-a4f7c609aebf37f376d2bf3b1759eef8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

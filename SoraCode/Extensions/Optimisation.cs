@@ -51,7 +51,7 @@ public static class Optimisation
     {
         get
         {
-            _soraScene = LoadOrReload(_rikuScene, RikuScenePath, "Riku scene");
+            _rikuScene = LoadOrReload(_rikuScene, RikuScenePath, "Riku scene");
             return _rikuScene;
         }
     }
@@ -60,7 +60,7 @@ public static class Optimisation
     {
         get
         {
-            _soraScene = LoadOrReload(_rikuScene, KairiScenePath, "Kairi scene");
+            _kairiScene = LoadOrReload(_kairiScene, KairiScenePath, "Kairi scene");
             return _kairiScene;
         }
     }
