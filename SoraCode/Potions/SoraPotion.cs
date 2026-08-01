@@ -1,7 +1,10 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
+using BaseLib.Utils;
+using Sora.SoraCode.Character;
 using Sora.SoraCode.Extensions;
 
+[Pool(typeof(SoraPotionPool))]
 public abstract class SoraPotion : CustomPotionModel
 {
     protected string PotionFileName =>
