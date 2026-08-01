@@ -20,7 +20,7 @@ public class Waterga() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(12m, ValueProp.Move),
+        new DamageVar(11m, ValueProp.Move),
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

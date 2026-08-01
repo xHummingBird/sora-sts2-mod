@@ -62,7 +62,7 @@
   "SORA-SONIC_BLADE.description": "Deal {Damage:diff()} damage to ALL enemies. \nConsume 30 [gold]SP[/gold].",
   "SORA-SONIC_BLADE.title": "Sonic Blade",
 
-  "SORA-ULTIMATE_FINISHER.description": " \nConsume 30 [gold]SP[/gold].",
+  "SORA-ULTIMATE_FINISHER.description": "Deal {Damage:diff()} damage to ALL enemies. \nConsume 30 [gold]SP[/gold].",
   "SORA-ULTIMATE_FINISHER.title": "Ultimate Finisher",
 
   "SORA-SITUATION_COMMAND.description": "Perform a [gold]Situation Command[/gold].",

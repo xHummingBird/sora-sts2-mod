@@ -65,7 +65,7 @@
 
   "SORA-YENSID_POWER.description": "At the start of your turn, upgrade a random card in your hand.",
   "SORA-YENSID_POWER.smartDescription": "At the start of your turn, upgrade {Amount} {Amount:plural:random card|random cards} in your hand.",
-  "SORA-YENSID_POWER.title": "Yensid's Link",
+  "SORA-YENSID_POWER.title": "Yen Sid's Link",
 
   "SORA-SECOND_CHANCE_POWER.description": "The first time you gain [gold]Block[/gold] from a card each turn, double the amount gained.",
   "SORA-SECOND_CHANCE_POWER.smartDescription": "The first {Amount:plural:time|[blue]{}[/blue] times} you gain [gold]Block[/gold] from a card each turn, double the amount gained.",

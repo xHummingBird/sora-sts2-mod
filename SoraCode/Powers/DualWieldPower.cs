@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using Sora.SoraCode.Mechanics.SituationCommand;
 
 namespace Sora.SoraCode.Powers;
 
@@ -26,11 +27,15 @@ public class DualWieldPower : SoraPower
         if (card.Type is not CardType.Attack)
             return playCount;
 
+        if (card is ISituationCard)
+            return playCount;
+
         int numAttackPlayedThisTurn = CombatManager.Instance.History.CardPlaysStarted.Count(
             e =>
                 e.Actor == base.Owner &&
                 e.CardPlay.IsFirstInSeries &&
                 e.HappenedThisTurn(base.CombatState) &&
+                e.CardPlay.Card is not ISituationCard &&
                 e.CardPlay.Card.Type is CardType.Attack
         );
 

@@ -18,8 +18,8 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class UltimateFinisher() : SoraCard(3, CardType.Attack,
-    CardRarity.Ancient, TargetType.AllEnemies)
+public class UltimateFinisher() : SoraCard(1, CardType.Attack,
+    CardRarity.Ancient, TargetType.AllEnemies), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
@@ -102,7 +102,7 @@ public class UltimateFinisher() : SoraCard(3, CardType.Attack,
             SfxCmd.Play("res://Sora/sfx/ultimate_finish_finish.wav");
             SfxCmd.Play("res://Sora/sounds/finalhit2_6.wav");
             
-            await Task.Delay((int)(0.7f * 1000f));
+            await Task.Delay((int)(0.3f * 1000f));
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitVfxSpawnedAtBase()
                 .BeforeDamage(async delegate

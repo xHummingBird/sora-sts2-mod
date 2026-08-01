@@ -25,11 +25,6 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
         new PowerVar<WeakPower>(1),
     ];
     
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-    [
-        CardKeyword.Exhaust
-    ];
-    
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)

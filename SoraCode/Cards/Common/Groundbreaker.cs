@@ -11,7 +11,7 @@ using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class Groundbreaker() : SoraCard(1, CardType.Attack,
+public class Groundbreaker() : SoraCard(2, CardType.Attack,
     CardRarity.Common, TargetType.RandomEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
