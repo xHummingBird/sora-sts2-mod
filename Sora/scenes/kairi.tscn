@@ -1,0 +1,377 @@
+[gd_scene load_steps=50 format=3 uid="uid://bggemmjfci8w6"]
+
+[ext_resource type="Texture2D" uid="uid://bviroqhhp7or8" path="res://Sora/images/spritesheets/attack/kairi_attack/27_kairi_atk.png" id="1_atoqr"]
+[ext_resource type="Texture2D" uid="uid://bg36c72tw2du8" path="res://Sora/images/spritesheets/attack/kairi_attack/03_kairi_atk.png" id="1_uafvp"]
+[ext_resource type="Texture2D" uid="uid://b14324lntx771" path="res://Sora/images/spritesheets/attack/kairi_attack/28_kairi_atk.png" id="2_84vef"]
+[ext_resource type="Texture2D" uid="uid://e8qnd8ulgftv" path="res://Sora/images/spritesheets/attack/kairi_attack/04_kairi_atk.png" id="2_h7jyv"]
+[ext_resource type="Texture2D" uid="uid://c83nnimwvvs11" path="res://Sora/images/spritesheets/attack/kairi_attack/05_kairi_atk.png" id="3_3347k"]
+[ext_resource type="Texture2D" uid="uid://c3qyh1cwyd7i7" path="res://Sora/images/spritesheets/attack/kairi_attack/29_kairi_atk.png" id="3_dbk0i"]
+[ext_resource type="Texture2D" uid="uid://dyq4lp8flegid" path="res://Sora/images/spritesheets/attack/kairi_attack/30_kairi_atk.png" id="4_gleq1"]
+[ext_resource type="Texture2D" uid="uid://dgp7nrvl1mkvh" path="res://Sora/images/spritesheets/attack/kairi_attack/06_kairi_atk.png" id="4_hsbi3"]
+[ext_resource type="Texture2D" uid="uid://bv1bjhm2npkbx" path="res://Sora/images/spritesheets/attack/kairi_attack/07_kairi_atk.png" id="5_3fwxy"]
+[ext_resource type="Texture2D" uid="uid://bgjn8kdtdhh4k" path="res://Sora/images/spritesheets/attack/kairi_attack/31_kairi_atk.png" id="5_ayps8"]
+[ext_resource type="Texture2D" uid="uid://bq4kj4qdafmm6" path="res://Sora/images/spritesheets/attack/kairi_attack/32_kairi_atk.png" id="6_4id7u"]
+[ext_resource type="Texture2D" uid="uid://bfd6euka3hmfi" path="res://Sora/images/spritesheets/attack/kairi_attack/08_kairi_atk.png" id="6_vlex3"]
+[ext_resource type="Texture2D" uid="uid://bn1l5oj663xj6" path="res://Sora/images/spritesheets/attack/kairi_attack/33_kairi_atk.png" id="7_hkuoq"]
+[ext_resource type="Texture2D" uid="uid://d1rqwe8rmmnwl" path="res://Sora/images/spritesheets/attack/kairi_attack/09_kairi_atk.png" id="7_kb4ef"]
+[ext_resource type="Texture2D" uid="uid://drqgyr7jvq4sx" path="res://Sora/images/spritesheets/attack/kairi_attack/34_kairi_atk.png" id="8_4vhki"]
+[ext_resource type="Texture2D" uid="uid://dv12oo1k5dk63" path="res://Sora/images/spritesheets/attack/kairi_attack/10_kairi_atk.png" id="8_gl0vr"]
+[ext_resource type="Texture2D" uid="uid://dypwpdp6uidmu" path="res://Sora/images/spritesheets/attack/kairi_attack/35_kairi_atk.png" id="9_jdyc5"]
+[ext_resource type="Texture2D" uid="uid://x3c5g4ki0ev3" path="res://Sora/images/spritesheets/attack/kairi_attack/11_kairi_atk.png" id="9_qnpek"]
+[ext_resource type="Texture2D" uid="uid://cem4hdn2umsyp" path="res://Sora/images/spritesheets/attack/kairi_attack/12_kairi_atk.png" id="10_atoqr"]
+[ext_resource type="Texture2D" uid="uid://bcsuwfrut860y" path="res://Sora/images/spritesheets/attack/kairi_attack/36_kairi_atk.png" id="10_greid"]
+[ext_resource type="Texture2D" uid="uid://bkn082f4syf4" path="res://Sora/images/spritesheets/attack/kairi_attack/13_kairi_atk.png" id="11_84vef"]
+[ext_resource type="Texture2D" uid="uid://o2yneypeel15" path="res://Sora/images/spritesheets/attack/kairi_attack/37_kairi_atk.png" id="11_v7gf2"]
+[ext_resource type="Texture2D" uid="uid://drxc0t1nvkixl" path="res://Sora/images/spritesheets/attack/kairi_attack/14_kairi_atk.png" id="12_dbk0i"]
+[ext_resource type="Texture2D" uid="uid://d241tonfvtc2k" path="res://Sora/images/spritesheets/attack/kairi_attack/38_kairi_atk.png" id="12_nfal1"]
+[ext_resource type="Texture2D" uid="uid://djn6mae7qcgrs" path="res://Sora/images/spritesheets/attack/kairi_attack/39_kairi_atk.png" id="13_0vqaj"]
+[ext_resource type="Texture2D" uid="uid://cruvfhvjr8klm" path="res://Sora/images/spritesheets/attack/kairi_attack/15_kairi_atk.png" id="13_gleq1"]
+[ext_resource type="Texture2D" uid="uid://ba2vlgr5ww28g" path="res://Sora/images/spritesheets/attack/kairi_attack/16_kairi_atk.png" id="14_ayps8"]
+[ext_resource type="Texture2D" uid="uid://bpr4t5p3j67ot" path="res://Sora/images/spritesheets/attack/kairi_attack/40_kairi_atk.png" id="14_tbrnb"]
+[ext_resource type="Texture2D" uid="uid://hf37wwx8l8w3" path="res://Sora/images/spritesheets/attack/kairi_attack/17_kairi_atk.png" id="15_4id7u"]
+[ext_resource type="Texture2D" uid="uid://chvyuersrb6dt" path="res://Sora/images/spritesheets/attack/kairi_attack/41_kairi_atk.png" id="15_bwpwx"]
+[ext_resource type="Texture2D" uid="uid://cai0q26c0huaq" path="res://Sora/images/spritesheets/attack/kairi_attack/18_kairi_atk.png" id="16_hkuoq"]
+[ext_resource type="Texture2D" uid="uid://dpjnxg3jv7i7w" path="res://Sora/images/spritesheets/attack/kairi_attack/42_kairi_atk.png" id="16_qw74b"]
+[ext_resource type="Texture2D" uid="uid://b7lcuv5i6w17j" path="res://Sora/images/spritesheets/attack/kairi_attack/19_kairi_atk.png" id="17_4vhki"]
+[ext_resource type="Texture2D" uid="uid://ckt6hiedbw2k5" path="res://Sora/images/spritesheets/attack/kairi_attack/43_kairi_atk.png" id="17_ayt4h"]
+[ext_resource type="Texture2D" uid="uid://dg654wwkv33dm" path="res://Sora/images/spritesheets/attack/kairi_attack/20_kairi_atk.png" id="18_jdyc5"]
+[ext_resource type="Texture2D" uid="uid://lcm1p1ctasjy" path="res://Sora/images/spritesheets/attack/kairi_attack/44_kairi_atk.png" id="18_pqh2x"]
+[ext_resource type="Texture2D" uid="uid://8s0eatibbgqi" path="res://Sora/images/spritesheets/attack/kairi_attack/21_kairi_atk.png" id="19_greid"]
+[ext_resource type="Texture2D" uid="uid://bee7hqlv2vkq5" path="res://Sora/images/spritesheets/attack/kairi_attack/45_kairi_atk.png" id="19_m5or1"]
+[ext_resource type="Texture2D" uid="uid://dxt8rufjwow54" path="res://Sora/images/spritesheets/attack/kairi_attack/46_kairi_atk.png" id="20_58yws"]
+[ext_resource type="Texture2D" uid="uid://c0aix65ffldr5" path="res://Sora/images/spritesheets/attack/kairi_attack/22_kairi_atk.png" id="20_v7gf2"]
+[ext_resource type="Texture2D" uid="uid://dyf02paxqoup2" path="res://Sora/images/spritesheets/attack/kairi_attack/23_kairi_atk.png" id="21_nfal1"]
+[ext_resource type="Texture2D" uid="uid://c50dll7ybr0xf" path="res://Sora/images/spritesheets/attack/kairi_attack/47_kairi_atk.png" id="21_sfm82"]
+[ext_resource type="Texture2D" uid="uid://c25ix0ahn35tq" path="res://Sora/images/spritesheets/attack/kairi_attack/24_kairi_atk.png" id="22_0vqaj"]
+[ext_resource type="Texture2D" uid="uid://c3ltq23t61dux" path="res://Sora/images/spritesheets/attack/kairi_attack/25_kairi_atk.png" id="23_tbrnb"]
+[ext_resource type="Texture2D" uid="uid://e58a70uabdnq" path="res://Sora/images/spritesheets/idle/idle_normal/00_sora_idle.png" id="39_1sm5a"]
+
+[sub_resource type="Animation" id="Animation_58a00"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-384, -240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("reference:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/attack:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/cast:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ctxmh"]
+resource_name = "spiral_bloom"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-354, -186)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.20000002, 1.2, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.6666667, 0.73333335, 0.8, 0.8666667, 0.93333334, 1, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("1_atoqr"), ExtResource("2_84vef"), ExtResource("3_dbk0i"), ExtResource("4_gleq1"), ExtResource("5_ayps8"), ExtResource("6_4id7u"), ExtResource("7_hkuoq"), ExtResource("8_4vhki"), ExtResource("9_jdyc5"), ExtResource("10_greid"), ExtResource("11_v7gf2"), ExtResource("12_nfal1"), ExtResource("13_0vqaj"), ExtResource("14_tbrnb"), ExtResource("15_bwpwx"), ExtResource("16_qw74b"), ExtResource("17_ayt4h"), ExtResource("18_pqh2x"), ExtResource("19_m5or1"), ExtResource("20_58yws"), ExtResource("21_sfm82")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("reference:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/attack:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/cast:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wsht0"]
+resource_name = "strike_shift"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/fullcombo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-275, -195), Vector2(-390, -144)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/fullcombo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/fullcombo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/fullcombo:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/fullcombo:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333319, 0.19999984, 0.26666665, 0.3333332, 0.39999986, 0.4666667, 0.5333332, 0.5999999, 0.6666665, 0.73333323, 0.79999995, 0.8666667, 0.9333333, 1, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334, 1.4, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [ExtResource("1_uafvp"), ExtResource("2_h7jyv"), ExtResource("3_3347k"), ExtResource("4_hsbi3"), ExtResource("5_3fwxy"), ExtResource("6_vlex3"), ExtResource("7_kb4ef"), ExtResource("8_gl0vr"), ExtResource("9_qnpek"), ExtResource("10_atoqr"), ExtResource("11_84vef"), ExtResource("12_dbk0i"), ExtResource("13_gleq1"), ExtResource("14_ayps8"), ExtResource("15_4id7u"), ExtResource("16_hkuoq"), ExtResource("17_4vhki"), ExtResource("18_jdyc5"), ExtResource("19_greid"), ExtResource("20_v7gf2"), ExtResource("21_nfal1"), ExtResource("22_0vqaj"), ExtResource("23_tbrnb")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("reference:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/attack:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/cast:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaol8"]
+_data = {
+&"RESET": SubResource("Animation_58a00"),
+&"spiral_bloom": SubResource("Animation_ctxmh"),
+&"strike_shift": SubResource("Animation_wsht0")
+}
+
+[node name="Kairi" type="Node2D"]
+
+[node name="Visuals" type="Sprite2D" parent="."]
+
+[node name="attack" type="Sprite2D" parent="Visuals"]
+visible = false
+
+[node name="cast" type="Sprite2D" parent="Visuals"]
+visible = false
+
+[node name="fullcombo" type="Sprite2D" parent="Visuals"]
+position = Vector2(-384, -240)
+scale = Vector2(-1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xaol8")
+}
+
+[node name="reference" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(26, -107)
+texture = ExtResource("39_1sm5a")

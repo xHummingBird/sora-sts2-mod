@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csyfx0y50lym8"
+path="res://.godot/imported/kairi_keyblade_hit (1).wav-63669e0bc96d283ce994347ec5d6236a.sample"
+
+[deps]
+
+source_file="res://Sora/sfx/kairi/kairi_keyblade_hit (1).wav"
+dest_files=["res://.godot/imported/kairi_keyblade_hit (1).wav-63669e0bc96d283ce994347ec5d6236a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

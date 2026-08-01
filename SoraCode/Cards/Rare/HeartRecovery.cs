@@ -5,12 +5,13 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using Sora.SoraCode.Extensions;
+using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Rare;
 
 public class HeartRecovery() : SoraCard(1, CardType.Skill,
-    CardRarity.Rare, TargetType.Self)
+    CardRarity.Rare, TargetType.Self), ICompanionCard
 {
     private const int LinkTurns = 3;
 

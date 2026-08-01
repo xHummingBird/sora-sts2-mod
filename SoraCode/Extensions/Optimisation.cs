@@ -12,11 +12,13 @@ public static class Optimisation
     private static PackedScene? _iceScene;
     private static PackedScene? _vfxScene;
     private static PackedScene? _rikuScene;
+    private static PackedScene? _kairiScene;
     
     private const string SoraScenePath = "res://Sora/scenes/sora.tscn";
     private const string IceVfxPath = "res://Sora/scenes/ice_vfx.tscn";
     private const string VfxPath = "res://Sora/scenes/vfx.tscn";
     private const string RikuScenePath = "res://Sora/scenes/riku.tscn";
+    private const string KairiScenePath = "res://Sora/scenes/kairi.tscn";
     
     public static PackedScene? SoraScene
     {
@@ -50,7 +52,16 @@ public static class Optimisation
         get
         {
             _soraScene = LoadOrReload(_rikuScene, RikuScenePath, "Riku scene");
-            return _soraScene;
+            return _rikuScene;
+        }
+    }
+    
+    public static PackedScene? KairiScene
+    {
+        get
+        {
+            _soraScene = LoadOrReload(_rikuScene, KairiScenePath, "Kairi scene");
+            return _kairiScene;
         }
     }
     
@@ -79,6 +90,7 @@ public static class Optimisation
         _ = IceScene;
         _ = VfxScene;
         _ = RikuScene;
+        _ = KairiScene;
 
         GD.Print("SoraAssets: EnsurePreloaded finished");
     }

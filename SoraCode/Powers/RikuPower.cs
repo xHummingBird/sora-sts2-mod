@@ -17,22 +17,6 @@ public class RikuPower : SoraPower
     protected override string IconSuffix => "_small";
     
     public override bool AllowNegative => false;
-
-    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer,
-        CardModel? cardSource, CardPlay? cardPlay)
-    {
-        if (base.Owner != dealer)
-        {
-            return 0m;
-        }
-
-        if (!props.IsPoweredAttack())
-        {
-            return 0m;
-        }
-
-        return 2m;
-    }
     
     public override async Task AfterSideTurnStartLate(CombatSide side, IReadOnlyList<Creature> participants,
         ICombatState combatState)

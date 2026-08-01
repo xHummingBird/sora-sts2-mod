@@ -408,39 +408,41 @@ public partial class SituationCommandDisplay : Control
 
     if (relic.SituationPoints >= 60)
     {
-        if (hasRiku && hasKairi)
-        {
-            commands[0] =
-                RikuKairiCommandKey;
+        // Default
+        commands[0] = SonicBladeKey;
+        _command1HoverTip =
+            HoverTipFactory.FromCard<SonicBlade>();
 
-            _command1HoverTip =
-                HoverTipFactory.FromCard<RikuKairiLimit>();
-        }
-        else if (hasRiku)
-        {
-            commands[0] =
-                RikuCommandKey;
+        commands[1] = ArsArcanumKey;
+        _command2HoverTip =
+            HoverTipFactory.FromCard<ArsArcanum>();
 
-            _command1HoverTip =
-                HoverTipFactory.FromCard<RikuLimit>();
-        }
-        else if (hasKairi)
+        if (hasKairi)
         {
-            commands[0] =
-                KairiCommandKey;
-
-            _command1HoverTip =
+            commands[1] = KairiCommandKey;
+            _command2HoverTip =
                 HoverTipFactory.FromCard<KairiLimit>();
         }
-        else
-        {
-            commands[0] =
-                SonicBladeKey;
 
+        if (hasRiku)
+        {
+            commands[1] = RikuCommandKey;
+            _command2HoverTip =
+                HoverTipFactory.FromCard<RikuLimit>();
+        }
+
+        if (hasRiku && hasKairi)
+        {
+            commands[0] = RikuCommandKey;
             _command1HoverTip =
-                HoverTipFactory.FromCard<SonicBlade>();
+                HoverTipFactory.FromCard<RikuLimit>();
+
+            commands[1] = RikuKairiCommandKey;
+            _command2HoverTip =
+                HoverTipFactory.FromCard<RikuKairiLimit>();
         }
     }
+    
     else if (relic.SituationPoints >= 30)
     {
         if (ultimateForm)
@@ -460,16 +462,7 @@ public partial class SituationCommandDisplay : Control
                 HoverTipFactory.FromCard<SonicBlade>();
         }
     }
-
-    if (relic.SituationPoints >= 60)
-    {
-            commands[1] =
-                ArsArcanumKey;
-
-            _command2HoverTip =
-                HoverTipFactory.FromCard<ArsArcanum>();
-    }
-
+    
     if (!ultimateForm &&
         relic.UltimateFormUnlocked)
     {
@@ -539,9 +532,6 @@ public partial class SituationCommandDisplay : Control
             if (command.Visible &&
                 command.Modulate.A > 0.99f)
             {
-                SfxCmd.Play(
-                    "res://Sora/sfx/formchange.wav");
-
                 PlayDisappearAnimation(
                     command,
                     label,

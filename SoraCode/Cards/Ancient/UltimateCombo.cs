@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Runs;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Powers;
+using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
@@ -28,17 +29,37 @@ public class UltimateCombo() : SoraCard(1, CardType.Attack,
     [
         HoverTipFactory.FromPower<UltimateFormPower>(),
     ];
+    
+    private IEnumerable<CardModel> GetSituationCommandCard()
+    {
+        var pile = PileType.Hand.GetPile(base.Owner);
+        return pile.Cards.OfType<SituationCommand>();
+    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
         var ownerCreature = Owner?.Creature;
         bool hasUltimate = ownerCreature.HasPower<UltimateFormPower>();
         
+        var relic = Owner.Relics
+            .OfType<SituationRelicBase>()
+            .FirstOrDefault();
+        
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
             if (!hasUltimate)
             {
+                if (ownerCreature.HasPower<SituationReadyPower>())
+                {
+                    foreach (var card in GetSituationCommandCard().ToList())
+                    {
+                        await CardCmd.Exhaust(choiceContext, card);
+                    }
+                    await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
+                    SfxCmd.Play("res://Sora/sfx/formchange.wav");
+                }
+                relic.SetSituationPoints(0);
                 AudioHelper.PlayRandomFormchange();
                 sora.PlayAnimation(ownerCreature, "ultimate_form");
                 SfxCmd.Play("res://Sora/sfx/ultimate_form.mp3");
@@ -57,6 +78,7 @@ public class UltimateCombo() : SoraCard(1, CardType.Attack,
                 DynamicVars["Turns"].BaseValue - 1,
                 ownerCreature,
                 this);
+            
             await sora.DashTo(ownerCreature, play.Target, distance: 350f);
             AudioHelper.PlayRandomAttack();
             sora.PlayAnimation(ownerCreature, "ultimate_combo");

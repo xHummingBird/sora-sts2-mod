@@ -20,6 +20,12 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
         CardKeyword.Retain,
         CardKeyword.Exhaust
     ];
+    
+    private IEnumerable<CardModel> GetUltimateFormCard()
+    {
+        var pile = PileType.Hand.GetPile(base.Owner);
+        return pile.Cards.OfType<UltimateForm>();
+    }
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -29,6 +35,10 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
             .OfType<SituationRelicBase>()
             .FirstOrDefault();
 
+        foreach (var card in GetUltimateFormCard().ToList())
+        {
+            await CardCmd.Exhaust(choiceContext, card);
+        }
         await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
 
         relic?.MarkSituationReadyConsumedThisTurn();
@@ -40,28 +50,30 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
         {
             CardModel finisher =
                 base.CombatState.CreateCard<SonicBlade>(Owner);
-
+            
             // Companion replacements
             if (Owner.Creature.HasPower<RikuPower>())
             {
                 finisher =
                     base.CombatState.CreateCard<RikuLimit>(Owner);
             }
-
-            // Future companions
-            // else if (Owner.Creature.HasPower<KairiPower>())
-            // {
-            //     finisher =
-            //         base.CombatState.CreateCard<KairiLimit>(Owner);
-            // }
-
-            var arsArcanum =
+            
+            CardModel finisher2 =
                 base.CombatState.CreateCard<ArsArcanum>(Owner);
+            
+            if (Owner.Creature.HasPower<RikuPower>() && Owner.Creature.HasPower<KairiPower>())
+                finisher2 = base.CombatState.CreateCard<RikuKairiLimit>(Owner);
+            
+            else if (Owner.Creature.HasPower<KairiPower>())
+            {
+                finisher2 =
+                    base.CombatState.CreateCard<KairiLimit>(Owner);
+            }
 
             var cards = new List<CardModel>
             {
                 finisher,
-                arsArcanum
+                finisher2
             };
 
             var selectedCard =
@@ -73,6 +85,7 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
 
             if (selectedCard is SonicBlade)
             {
+                SfxCmd.Play("res://Sora/sfx/formchange.wav");
                 relic.SpendSituationPoints(30);
 
                 await CardCmd.AutoPlay(
@@ -82,6 +95,7 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
             }
             else
             {
+                SfxCmd.Play("res://Sora/sfx/formchange.wav");
                 relic.SpendSituationPoints(60);
 
                 await CardCmd.AutoPlay(
@@ -93,6 +107,7 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
         else if (relic.SituationPoints >= 30)
         {
             relic.SpendSituationPoints(30);
+            SfxCmd.Play("res://Sora/sfx/formchange.wav");
 
             var sonicBlade =
                 base.CombatState.CreateCard<SonicBlade>(Owner);

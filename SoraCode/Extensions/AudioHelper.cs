@@ -25,7 +25,12 @@ public static class AudioHelper
         "res://Sora/sounds/riku/riku_atk (4).wav",
         "res://Sora/sounds/riku/riku_atk (5).wav",
         "res://Sora/sounds/riku/riku_atk (6).wav"
-        
+    };
+    
+    private static readonly string[] kairiAttackSfx =
+    {
+        "res://Sora/sounds/kairi/kairi_hit_1.wav",
+        "res://Sora/sounds/kairi/kairi_hit_2.wav",
     };
     
     private static readonly string[] finalAttackSfx =
@@ -59,6 +64,12 @@ public static class AudioHelper
         "res://Sora/sounds/finalhit2_3.wav",
         "res://Sora/sounds/finalhit2_4.wav",
         "res://Sora/sounds/finalhit2_6.wav",
+    };
+
+    private static readonly string[] trueEndSfx =
+    {
+        "res://Sora/sounds/trinity_limit.wav",
+        "res://Sora/sounds/trinity_limit_2.wav",
     };
     
     private static readonly string[] formchangeSfx =
@@ -137,6 +148,11 @@ public static class AudioHelper
     {
         PlayRandom(finalAttackSfx2);
     }
+
+    public static void PlayRandomTrueEnd()
+    {
+        PlayRandom(trueEndSfx);
+    }
     
     public static void PlayRandomGameover()
     {
@@ -156,6 +172,11 @@ public static class AudioHelper
     public static void PlayRandomKairi()
     {
         PlayRandom(callKairiSfx);
+    }
+    
+    public static void PlayRandomKairiAtk()
+    {
+        PlayRandom(kairiAttackSfx);
     }
     
     public static void PlayRandomFormchange()

@@ -12,17 +12,17 @@ public class MyFriendsAreMyPower() : SoraCard(1, CardType.Power,
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.FromPower<FriendshipPower>()
+        HoverTipFactory.FromPower<Powers.FriendshipPower>()
     ];
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<FriendshipPower>(1m)
+        new PowerVar<Powers.FriendshipPower>(1m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
-        await PowerCmd.Apply<FriendshipPower>(choiceContext, base.Owner.Creature, DynamicVars["FriendshipPower"].BaseValue, base.Owner.Creature, this);
+        await PowerCmd.Apply<Powers.FriendshipPower>(choiceContext, base.Owner.Creature, 1, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()
