@@ -29,15 +29,11 @@ public class OneHeart() : SoraCard(1, CardType.Skill,
         int activeLinks = SoraExtensions.CombatHelpers.CountActiveLinks(creature);
 
         decimal vigor =
-            DynamicVars.Block.BaseValue +
+            DynamicVars["VigorPower"].BaseValue +
             activeLinks * DynamicVars["VigorPerLink"].BaseValue;
 
-        await CreatureCmd.GainBlock(
-            creature,
-            vigor,
-            ValueProp.Move,
-            play,
-            false);
+        await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, vigor,
+            base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

@@ -14,7 +14,7 @@ using Sora.SoraCode.Powers;
 namespace Sora.SoraCode.Cards.Uncommon;
 
 public class SpiralBloom() : SoraCard(2, CardType.Attack,
-    CardRarity.Common, TargetType.AnyEnemy), ICompanionCard
+    CardRarity.Uncommon, TargetType.AnyEnemy), ICompanionCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

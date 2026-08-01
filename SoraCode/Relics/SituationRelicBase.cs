@@ -34,6 +34,11 @@ public abstract class SituationRelicBase : SoraRelic
     private bool _situationReadyConsumedThisTurn;
 
     public override RelicRarity Rarity => RelicRarity.Starter;
+    
+    private bool ShouldUpgradeGeneratedSituationCards()
+    {
+        return base.Owner.GetRelic<Wayfinder>() != null;
+    }
 
     public override bool ShowCounter => CombatManager.Instance.IsInProgress;
 
@@ -285,6 +290,12 @@ public abstract class SituationRelicBase : SoraRelic
          * create a new generated card.
          */
         var newCard = base.Owner.Creature.CombatState.CreateCard<TCard>(base.Owner);
+
+        if (ShouldUpgradeGeneratedSituationCards() &&
+            !newCard.IsUpgraded)
+        {
+            CardCmd.Upgrade(newCard);
+        }
 
         await CardPileCmd.AddGeneratedCardToCombat(
             newCard,

@@ -10,7 +10,7 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class SituationCommand() : SoraCard(1, CardType.Attack,
+public class SituationCommand() : SoraCard(1, CardType.Skill,
     CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
     protected override bool IsPlayable => base.Owner.HasPower<SituationReadyPower>();
@@ -35,6 +35,8 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
             .OfType<SituationRelicBase>()
             .FirstOrDefault();
 
+        Wayfinder? wayfinder = base.Owner.GetRelic<Wayfinder>();
+        
         foreach (var card in GetUltimateFormCard().ToList())
         {
             await CardCmd.Exhaust(choiceContext, card);
@@ -42,7 +44,7 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
         await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
 
         relic?.MarkSituationReadyConsumedThisTurn();
-
+        
         if (relic == null)
             return;
 
@@ -70,6 +72,12 @@ public class SituationCommand() : SoraCard(1, CardType.Attack,
                     base.CombatState.CreateCard<KairiLimit>(Owner);
             }
 
+            if (wayfinder != null)
+            {
+                CardCmd.Upgrade(finisher);
+                CardCmd.Upgrade(finisher2);
+            }
+            
             var cards = new List<CardModel>
             {
                 finisher,

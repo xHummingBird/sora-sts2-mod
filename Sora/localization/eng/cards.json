@@ -17,7 +17,7 @@
   "SORA-HEART_RECOVERY.description": "All [gold]Skills[/gold] in your hand cost 0 this turn. \nGain [gold]Kairi's Link[/gold].",
   "SORA-HEART_RECOVERY.title": "Heart Recovery",
 
-  "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold]. \nGain {Sp:diff()} [gold]SP[/gold].",
+  "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold]. \nGain {Sp:diff()} [gold]SP[/gold] at the start of each turn.",
   "SORA-KINGS_GUIDANCE.title": "King's Guidance",
 
   "SORA-NEGATIVE_COMBO.description": "Reduce [gold]SP[/gold] gained per turn by 1. \nGain {NegativeComboPower:diff()} [gold]Strength[/gold] each turn.",
