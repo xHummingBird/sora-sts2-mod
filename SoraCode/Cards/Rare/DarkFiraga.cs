@@ -84,6 +84,7 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
         await PowerCmd.Apply<VulnerablePower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue,
             base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
+        await SoraExtensions.CombatHelpers.RefreshLink<RikuPower>(choiceContext, base.Owner.Creature, this);
     }
 
     protected override void OnUpgrade()

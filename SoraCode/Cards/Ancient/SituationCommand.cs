@@ -126,5 +126,4 @@ public class SituationCommand() : SoraCard(1, CardType.Skill,
                 null);
         }
     }
-    
 }

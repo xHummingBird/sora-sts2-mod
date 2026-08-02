@@ -3,6 +3,7 @@ using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
+using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Mechanics.Companion;
@@ -18,6 +19,11 @@ public class HeartRecovery() : SoraCard(1, CardType.Skill,
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
         CardKeyword.Exhaust
+    ];
+    
+    protected override IEnumerable<DynamicVar> CanonicalVars => 
+    [
+        new EnergyVar(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

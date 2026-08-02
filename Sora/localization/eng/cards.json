@@ -14,7 +14,7 @@
   "SORA-ULTIMATE_COMBO.description": "Consume all [gold]SP[/gold]. \nDeal {Damage:diff()} damage. \nGain [gold]Ultimate Form[/gold] for 2 turns. \nIf already in [gold]Ultimate Form[/gold], extend it by 1 turn without consuming [gold]SP[/gold].",
   "SORA-ULTIMATE_COMBO.title": "Ultimate Combo",
 
-  "SORA-HEART_RECOVERY.description": "All [gold]Skills[/gold] in your hand cost 0 this turn. \nGain [gold]Kairi's Link[/gold].",
+  "SORA-HEART_RECOVERY.description": "All [gold]Skills[/gold] in your hand cost 0 {Energy:energyIcons()} this turn. \nGain [gold]Kairi's Link[/gold].",
   "SORA-HEART_RECOVERY.title": "Heart Recovery",
 
   "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold]. \nGain {Sp:diff()} [gold]SP[/gold] at the start of each turn.",
@@ -23,7 +23,7 @@
   "SORA-NEGATIVE_COMBO.description": "Reduce [gold]SP[/gold] gained per turn by 1. \nGain {NegativeComboPower:diff()} [gold]Strength[/gold] each turn.",
   "SORA-NEGATIVE_COMBO.title": "Negative Combo",
 
-  "SORA-SEVEN_LIGHTS.description": "The first time you play a [gold]Companion[/gold] card each turn, gain 1 [gold]Energy[/gold].",
+  "SORA-SEVEN_LIGHTS.description": "The first time you play a [gold]Companion[/gold] card each turn, gain {Energy:energyIcons()}.",
   "SORA-SEVEN_LIGHTS.title": "Seven Lights",
 
   "SORA-SYNCH_BLADE.description": "Whenever you play an [gold]Attack[/gold], deal {SynchBladePower:diff()} damage to a random enemy.",
@@ -35,13 +35,13 @@
   "SORA-FINISH_BOOST.description": "The third [gold]Attack[/gold] you play each turn deals {FinishBoostPower:diff()}% more damage.",
   "SORA-FINISH_BOOST.title": "Finish Boost",
 
-  "SORA-ONE_HEART.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold] and {VigorPerLink:diff()} [gold]Vigor[/gold] for each active [gold]Link[/gold].",
+  "SORA-ONE_HEART.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nGain {VigorPerLink:diff()} [gold]Vigor[/gold] for each active [gold]Link[/gold].",
   "SORA-ONE_HEART.title": "Dive To The Heart",
 
   "SORA-YENSIDS_BLESSING.description": "At the start of your turn, upgrade a random card in your hand.",
   "SORA-YENSIDS_BLESSING.title": "Yen Sid's Blessing",
 
-  "SORA-SITUATION_BOOST.description": "Whenever you play a card that costs 2 or more [gold]Energy[/gold], gain 5 [gold]SP[/gold].",
+  "SORA-SITUATION_BOOST.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain 5 [gold]SP[/gold].",
   "SORA-SITUATION_BOOST.title": "Situation Boost",
 
   "SORA-BOND_OF_LIGHT.description": "Each time you play a [gold]Companion[/gold] card, draw 1 card.",
@@ -107,7 +107,7 @@
   "SORA-COMBO_PLUS.description": "Deal {Damage:diff()} damage for each Attack already played this turn.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "SORA-COMBO_PLUS.title": "Combo Plus",
 
-  "SORA-SPEED_SLASH.description": "Deal {Damage:diff()} damage. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
+  "SORA-SPEED_SLASH.description": "Deal {Damage:diff()} damage. \nIf this is the first card you play, draw {Cards:diff()} {Cards:plural:card|cards}.",
   "SORA-SPEED_SLASH.title": "Speed Slash",
 
   "SORA-AERIAL_DODGE.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
@@ -155,7 +155,7 @@
   "SORA-FALLING_SLASH.description": "Deal {Damage:diff()} damage. \nPlay a random Attack from your Draw Pile.",
   "SORA-FALLING_SLASH.title": "Falling Slash",
 
-  "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
+  "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
   "SORA-DODGE_SLASH.title": "Dodge Slash",
 
   "SORA-DAMAGE_SYPHON.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
@@ -164,25 +164,25 @@
   "SORA-ZANTETSUKEN.description": "Deal {Damage:diff()} damage. \nKill the enemy if it has [gold]{hpPercent:diff()}%[/gold] HP or less.",
   "SORA-ZANTETSUKEN.title": "Zantetsuken",
 
-  "SORA-KAIRI_LIMIT.description": "Deal {Damage:diff()} damage. \nHeal {Heal:diff()} [gold]HP[/gold].",
+  "SORA-KAIRI_LIMIT.description": "Deal {Damage:diff()} damage. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 60 [gold]SP[/gold].",
   "SORA-KAIRI_LIMIT.title": "Seven Wishes",
 
   "SORA-RIKU_LIMIT.description": "Deal {Damage:diff()} damage. \nDouble the enemy's [gold]Vulnerable[/gold]. \nConsume 60 [gold]SP[/gold].",
   "SORA-RIKU_LIMIT.title": "Eternal Session",
   
-  "SORA-RIKU_KAIRI_LIMIT.description": "Deal {Damage:diff()} damage to ALL enemies. \nHeal {Heal:diff()} [gold]HP[/gold].",
+  "SORA-RIKU_KAIRI_LIMIT.description": "Deal {Damage:diff()} damage to ALL enemies. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 60 [gold]SP[/gold].",
   "SORA-RIKU_KAIRI_LIMIT.title": "True End",
 
-  "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold]. \nGain [gold]Riku's Link[/gold].",
+  "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-SHADOW_STRIKE.title": "Shadow Strike",
 
   "SORA-DARK_FIRAGA.description": "Deal {Damage:diff()} damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_FIRAGA.title": "Dark Firaga",
 
-  "SORA-RAGNAROK.description": "Deal {Damage:diff()} damage and apply {WeakPower:diff()} [gold]Weak[/gold] to ALL enemies.",
+  "SORA-RAGNAROK.description": "Deal {Damage:diff()} damage to ALL enemies [gold]{Repeat:diff()}[/gold] times. Costs 1 less {Energy:energyIcons()} for each Attack played this turn.",
   "SORA-RAGNAROK.title": "Ragnarok",
 
-  "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold]. \nGain [gold]Riku's Link[/gold].",
+  "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_SONIC.title": "Dark Sonic",
 
   "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
@@ -212,9 +212,9 @@
   "SORA-SPIRAL_BLOOM.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold]. \nGain [gold]Kairi's Link[/gold].",
   "SORA-SPIRAL_BLOOM.title": "Spiral Bloom",
 
-  "SORA-WATER.description": "Deal {Damage:diff()} damage.",
+  "SORA-WATER.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
   "SORA-WATER.title": "Water",
 
-  "SORA-WATERGA.description": "Deal {Damage:diff()} damage.",
+  "SORA-WATERGA.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
   "SORA-WATERGA.title": "Waterga"
 }

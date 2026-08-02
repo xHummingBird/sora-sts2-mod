@@ -13,6 +13,7 @@ public class SevenLights() : SoraCard(2, CardType.Power,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<SevenLightsPower>(1),
+        new EnergyVar(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

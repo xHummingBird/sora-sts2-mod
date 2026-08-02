@@ -11,12 +11,13 @@ using Sora.SoraCode.Extensions;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class Water() : SoraCard(0, CardType.Attack,
+public class Water() : SoraCard(1, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(6m, ValueProp.Move)
+        new DamageVar(5m, ValueProp.Move),
+        new BlockVar(5, ValueProp.Move)
     ];
 
     protected override async Task OnPlay(
@@ -48,11 +49,13 @@ public class Water() : SoraCard(0, CardType.Attack,
                 SfxCmd.Play("event:/sfx/characters/attack_fire");
             })
             .Execute(choiceContext);
+        await CommonActions.CardBlock(this, play);
         await Task.Delay((int)(0.4f * 1000f));
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2m);
+        DynamicVars.Block.UpgradeValueBy(2m);
     }
 }

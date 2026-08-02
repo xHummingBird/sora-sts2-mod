@@ -1,10 +1,13 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Combat.History.Entries;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Helpers;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Nodes.Vfx;
@@ -21,8 +24,9 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(15, ValueProp.Move),
-        new PowerVar<WeakPower>(1),
+        new DamageVar(3, ValueProp.Move),
+        new RepeatVar(4),
+        new EnergyVar(1)
     ];
     
     protected override async Task OnPlay(
@@ -52,7 +56,7 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
             SfxCmd.Play("res://Sora/sfx/ragnarok_shoot.wav");
             await Task.Delay((int)(0.6f * 1000f));
         }
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play.Target, 4)
             .WithHitVfxSpawnedAtBase()
             .BeforeDamage(async delegate
             {
@@ -69,14 +73,45 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
                 }
             })
             .Execute(choiceContext);
-        await PowerCmd.Apply<WeakPower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Weak.BaseValue,
-            base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(5m);
-        DynamicVars.Weak.UpgradeValueBy(1m);
+        DynamicVars.Damage.UpgradeValueBy(1m);
+    }
+    
+    public override Task AfterCardEnteredCombat(CardModel card)
+    {
+        if (card != this)
+        {
+            return Task.CompletedTask;
+        }
+        if (base.IsClone)
+        {
+            return Task.CompletedTask;
+        }
+        int amount = CombatManager.Instance.History.CardPlaysFinished.Count((CardPlayFinishedEntry e) => e.CardPlay.Card.Type == CardType.Attack && e.CardPlay.Player == base.Owner && e.HappenedThisTurn(base.CombatState));
+        ReduceCostBy(amount);
+        return Task.CompletedTask;
+    }
+
+    public override Task BeforeCardPlayed(CardPlay cardPlay)
+    {
+        if (cardPlay.Card.Owner != base.Owner)
+        {
+            return Task.CompletedTask;
+        }
+        if (cardPlay.Card.Type != CardType.Attack)
+        {
+            return Task.CompletedTask;
+        }
+        ReduceCostBy(1);
+        return Task.CompletedTask;
+    }
+
+    private void ReduceCostBy(int amount)
+    {
+        base.EnergyCost.AddThisTurn(-amount);
     }
 }

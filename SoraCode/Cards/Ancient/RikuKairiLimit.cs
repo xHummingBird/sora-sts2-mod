@@ -21,7 +21,7 @@ public class RikuKairiLimit() : SoraCard(0, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(36, ValueProp.Move),
+        new DamageVar(40, ValueProp.Move),
         new HealVar(7m)
     ];
     

@@ -6,12 +6,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
+using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Uncommon;
 
 public class ShadowBarrier() : SoraCard(2, CardType.Skill,
-    CardRarity.Uncommon, TargetType.Self)
+    CardRarity.Uncommon, TargetType.Self), ICompanionCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
         new BlockVar(10m, ValueProp.Move),

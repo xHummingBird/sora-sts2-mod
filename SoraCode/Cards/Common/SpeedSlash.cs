@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -10,12 +11,20 @@ using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class SpeedSlash() : SoraCard(1, CardType.Attack,
+public class SpeedSlash() : SoraCard(0, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
+    private int PlayCountThisTurn =>
+        CombatManager.Instance.History.CardPlaysFinished
+            .Count(e =>
+                e.HappenedThisTurn(base.CombatState) &&
+                e.CardPlay.Player == base.Owner);
+    
+    protected override bool ShouldGlowGoldInternal => PlayCountThisTurn == 0;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(7, ValueProp.Move),
+        new DamageVar(5, ValueProp.Move),
         new CardsVar(1)
     ];
 
@@ -56,12 +65,17 @@ public class SpeedSlash() : SoraCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
-        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, base.Owner);
+        if (PlayCountThisTurn == 1)
+        {
+            await CardPileCmd.Draw(
+                choiceContext,
+                base.DynamicVars.Cards.BaseValue,
+                base.Owner);
+        }
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
-        DynamicVars.Cards.UpgradeValueBy(1);
+        DynamicVars.Damage.UpgradeValueBy(1);
     }
 }

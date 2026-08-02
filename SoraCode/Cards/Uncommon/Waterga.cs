@@ -15,12 +15,13 @@ using Sora.SoraCode.Extensions;
 
 namespace Sora.SoraCode.Cards.Uncommon;
 
-public class Waterga() : SoraCard(1, CardType.Attack,
+public class Waterga() : SoraCard(2, CardType.Attack,
     CardRarity.Uncommon, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(11m, ValueProp.Move),
+        new DamageVar(10m, ValueProp.Move),
+        new BlockVar(10m, ValueProp.Move)
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -52,11 +53,12 @@ public class Waterga() : SoraCard(1, CardType.Attack,
                 SfxCmd.Play("event:/sfx/characters/attack_fire");
             })
             .Execute(choiceContext);
+        await CommonActions.CardBlock(this, play);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Block.UpgradeValueBy(4m);
     }
 }

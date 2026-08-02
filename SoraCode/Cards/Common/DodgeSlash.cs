@@ -16,8 +16,8 @@ public class DodgeSlash() : SoraCard(1, CardType.Attack,
     
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5, ValueProp.Move),
-        new BlockVar(5, ValueProp.Move)
+        new DamageVar(9, ValueProp.Move),
+        new CardsVar(1)
     ];
 
     protected override async Task OnPlay(
@@ -57,11 +57,12 @@ public class DodgeSlash() : SoraCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
-        await CommonActions.CardBlock(this, play);
+        await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.BaseValue, base.Owner);
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
+        DynamicVars.Damage.UpgradeValueBy(1);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

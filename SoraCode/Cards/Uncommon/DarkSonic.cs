@@ -19,8 +19,8 @@ public class DarkSonic() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<SituationReadyPower>(3),
         new DamageVar(11, ValueProp.Move),
+        new PowerVar<VulnerablePower>(1)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -31,6 +31,7 @@ public class DarkSonic() : SoraCard(1, CardType.Attack,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<RikuPower>(),
+        HoverTipFactory.FromPower<VulnerablePower>(),
     ];
     
     protected override async Task OnPlay(
@@ -60,18 +61,15 @@ public class DarkSonic() : SoraCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx(null, "res://Sora/sfx/riku/riku_hit_hard (2).wav")
             .Execute(choiceContext);
+        await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, base.DynamicVars.Vulnerable.BaseValue,
+            base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
-        SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
-        if (relic != null)
-        {
-            relic.GainSituationPoints((int)DynamicVars["SituationReadyPower"].BaseValue);
-        }
         await SoraExtensions.CombatHelpers.RefreshLink<RikuPower>(choiceContext, base.Owner.Creature, this);
-        
     }
 
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }

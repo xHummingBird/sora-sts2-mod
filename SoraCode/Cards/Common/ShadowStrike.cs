@@ -10,6 +10,7 @@ using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Powers;
+using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
@@ -19,13 +20,12 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(5, ValueProp.Move),
-        new PowerVar<VulnerablePower>(1),
+        new PowerVar<SituationReadyPower>(3),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<RikuPower>(),
-        HoverTipFactory.FromPower<VulnerablePower>(),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -57,10 +57,12 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx(null, "res://Sora/sfx/riku/riku_hit_hard (2).wav")
             .Execute(choiceContext);
-        await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, base.DynamicVars.Vulnerable.BaseValue,
-            base.Owner.Creature, this);
         CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
-        
+        SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
+        if (relic != null)
+        {
+            relic.GainSituationPoints((int)DynamicVars["SituationReadyPower"].BaseValue);
+        }
         await SoraExtensions.CombatHelpers.RefreshLink<RikuPower>(choiceContext, base.Owner.Creature, this);
     }
 

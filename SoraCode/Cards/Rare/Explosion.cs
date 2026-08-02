@@ -16,7 +16,7 @@ public class Explosion() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [
-            new DamageVar(4, ValueProp.Move),
+            new DamageVar(5, ValueProp.Move),
             new RepeatVar(4)
         ];
 

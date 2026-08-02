@@ -16,11 +16,6 @@ public class SecondChance() : SoraCard(2, CardType.Power,
     [
         new PowerVar<SecondChancePower>(1m)
     ];
-    
-    public override IEnumerable<CardKeyword> CanonicalKeywords =>
-    [
-        CardKeyword.Exhaust
-    ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
