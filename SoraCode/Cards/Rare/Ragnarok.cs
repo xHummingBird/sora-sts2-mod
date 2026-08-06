@@ -17,10 +17,10 @@ using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Powers;
 
-namespace Sora.SoraCode.Cards.Uncommon;
+namespace Sora.SoraCode.Cards.Rare;
 
 public class Ragnarok() : SoraCard(3, CardType.Attack,
-    CardRarity.Uncommon, TargetType.AllEnemies)
+    CardRarity.Rare, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [

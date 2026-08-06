@@ -65,7 +65,7 @@ public class SpeedSlash() : SoraCard(0, CardType.Attack,
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
-        if (PlayCountThisTurn == 1)
+        if (PlayCountThisTurn == 0)
         {
             await CardPileCmd.Draw(
                 choiceContext,

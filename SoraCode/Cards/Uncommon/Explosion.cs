@@ -9,10 +9,10 @@ using MegaCrit.Sts2.Core.Nodes.Vfx;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 
-namespace Sora.SoraCode.Cards.Rare;
+namespace Sora.SoraCode.Cards.Uncommon;
 
 public class Explosion() : SoraCard(2, CardType.Attack,
-    CardRarity.Rare, TargetType.RandomEnemy)
+    CardRarity.Uncommon, TargetType.RandomEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
         [

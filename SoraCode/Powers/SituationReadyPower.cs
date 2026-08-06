@@ -1,4 +1,5 @@
-﻿using MegaCrit.Sts2.Core.Commands;
+﻿using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
@@ -28,5 +29,30 @@ public class SituationReadyPower : SoraPower
         await Task.Delay((int)(0.50f * 1000f));
         await CardPileCmd.AddGeneratedCardToCombat(card, PileType.Hand, base.Owner.Player);
         Flash();
+    }
+    
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants,
+        ICombatState combatState)
+    {
+        if (side != base.Owner.Side)
+            return;
+
+        var player = Owner.Player;
+        var playerState = player.PlayerCombatState;
+
+        if (playerState == null)
+            return;
+        
+        if (playerState.AllCards
+            .OfType<SituationCommand>()
+            .Any(c => c.Pile?.Type == PileType.Hand))
+        {
+            return;
+        }
+
+        var cards = playerState.AllCards
+            .OfType<SituationCommand>()
+            .Where(c => c.Pile == null || c.Pile.Type != PileType.Hand);
+        await CardPileCmd.Add(cards, PileType.Hand);
     }
 }

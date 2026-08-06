@@ -99,7 +99,7 @@ public class UltimateFinisher() : SoraCard(1, CardType.Attack,
 
             
             await Task.Delay((int)(0.7f * 1000f));
-            SfxCmd.Play("res://Sora/sfx/ultimate_finish_finish.wav");
+            SfxCmd.Play("res://Sora/sfx/ultimate_finish.wav");
             SfxCmd.Play("res://Sora/sounds/finalhit2_6.wav");
             
             await Task.Delay((int)(0.3f * 1000f));

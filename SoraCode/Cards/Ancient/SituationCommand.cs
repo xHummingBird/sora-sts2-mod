@@ -26,6 +26,12 @@ public class SituationCommand() : SoraCard(1, CardType.Skill,
         var pile = PileType.Hand.GetPile(base.Owner);
         return pile.Cards.OfType<UltimateForm>();
     }
+    
+    private IEnumerable<CardModel> GetSituationCommandCard()
+    {
+        var pile = PileType.Hand.GetPile(base.Owner);
+        return pile.Cards.OfType<SituationCommand>();
+    }
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
@@ -42,7 +48,12 @@ public class SituationCommand() : SoraCard(1, CardType.Skill,
             await CardCmd.Exhaust(choiceContext, card);
         }
         await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
-
+            
+        foreach (var card in GetSituationCommandCard().ToList())
+        {
+            await CardCmd.Exhaust(choiceContext, card);
+        }
+        
         relic?.MarkSituationReadyConsumedThisTurn();
         
         if (relic == null)

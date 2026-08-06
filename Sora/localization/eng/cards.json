@@ -77,10 +77,10 @@
   "SORA-JACKPOT.description": "Gain {Energy:energyIcons()}. \nDraw {Cards:diff()} {Cards:plural:card|cards}. \n Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
   "SORA-JACKPOT.title": "Jackpot",
 
-  "SORA-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. Blocked damage is reflected back to the attacker for 1 turn.",
+  "SORA-REFLECT.description": "Gain {Block:diff()} [gold]Block[/gold]. \nBlocked damage is reflected back to the attacker for 1 turn.",
   "SORA-REFLECT.title": "Reflect",
 
-  "SORA-REFLEGA.description": "Gain {Block:diff()} [gold]Block[/gold]. Blocked damage is reflected back to the attacker for 1 turn.",
+  "SORA-REFLEGA.description": "Gain {Block:diff()} [gold]Block[/gold]. \nBlocked damage is reflected back to the attacker for 1 turn.",
   "SORA-REFLEGA.title": "Reflega",
 
   "SORA-COUNTERGUARD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {VigorPower:diff()} [gold]Vigor[/gold].",
@@ -179,13 +179,13 @@
   "SORA-DARK_FIRAGA.description": "Deal {Damage:diff()} damage and apply {VulnerablePower:diff()} [gold]Vulnerable[/gold] to ALL enemies. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_FIRAGA.title": "Dark Firaga",
 
-  "SORA-RAGNAROK.description": "Deal {Damage:diff()} damage to ALL enemies [gold]{Repeat:diff()}[/gold] times. Costs 1 less {Energy:energyIcons()} for each Attack played this turn.",
+  "SORA-RAGNAROK.description": "Deal {Damage:diff()} damage to ALL enemies [gold]{Repeat:diff()}[/gold] times. \nCosts 1 less {Energy:energyIcons()} for each Attack played this turn.",
   "SORA-RAGNAROK.title": "Ragnarok",
 
   "SORA-DARK_SONIC.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-DARK_SONIC.title": "Dark Sonic",
 
-  "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. Next turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
+  "SORA-SHADOW_BARRIER.description": "Gain {Block:diff()} [gold]Block[/gold]. \nNext turn, gain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Riku's Link[/gold].",
   "SORA-SHADOW_BARRIER.title": "Shadow Barrier",
 
   "SORA-KEYBLADE_MASTERY.description": "Gain {StrengthPower:diff()} [gold]Strength[/gold].",
@@ -212,9 +212,9 @@
   "SORA-SPIRAL_BLOOM.description": "Deal {Damage:diff()} damage. \nApply {WeakPower:diff()} [gold]Weak[/gold]. \nGain [gold]Kairi's Link[/gold].",
   "SORA-SPIRAL_BLOOM.title": "Spiral Bloom",
 
-  "SORA-WATER.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-WATER.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
   "SORA-WATER.title": "Water",
 
-  "SORA-WATERGA.description": "Deal {Damage:diff()} damage. Gain {Block:diff()} [gold]Block[/gold].",
+  "SORA-WATERGA.description": "Deal {Damage:diff()} damage. \nGain {Block:diff()} [gold]Block[/gold].",
   "SORA-WATERGA.title": "Waterga"
 }

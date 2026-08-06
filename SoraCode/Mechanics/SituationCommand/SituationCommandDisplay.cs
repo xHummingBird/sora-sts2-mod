@@ -291,7 +291,7 @@ public partial class SituationCommandDisplay : Control
 
         label.Position =
             new Vector2(
-                90,
+                70,
                 -2);
     }
 

@@ -47,7 +47,7 @@ public class Guardbreak() : SoraCard(2, CardType.Attack,
                 sora.PlayAnimation(ownerCreature, "attack");
 
                 await Task.Delay((int)(0.2f * 1000f));
-                sora.DashPast(base.Owner.Creature, play.Target, null, 200f);
+                sora.DashPast(base.Owner.Creature, play.Target, null, 0.19f);
                 SfxCmd.Play("res://Sora/sfx/swing_down.wav");
                 
                 sora.PlayVfxOnTarget(
@@ -60,6 +60,7 @@ public class Guardbreak() : SoraCard(2, CardType.Attack,
                     .Targeting(play.Target)
                     .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_hard.wav")
                     .Execute(choiceContext);
+                await Task.Delay((int)(0.2f * 1000f));
                 sora.Retreat(ownerCreature);
             }
             else

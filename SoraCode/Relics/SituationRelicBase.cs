@@ -39,7 +39,7 @@ public abstract class SituationRelicBase : SoraRelic
     {
         return base.Owner.GetRelic<Wayfinder>() != null;
     }
-
+    
     public override bool ShowCounter => CombatManager.Instance.IsInProgress;
 
     public int SituationPoints => _situationPoints;
@@ -69,6 +69,7 @@ public abstract class SituationRelicBase : SoraRelic
     public bool UltimateFormUnlocked =>
         CanGenerateUltimateForm &&
         SituationPoints >= UltimateFormThreshold;
+    
 
     public override int DisplayAmount => SituationPoints;
 
@@ -137,11 +138,6 @@ public abstract class SituationRelicBase : SoraRelic
             return;
 
         CardModel card = cardPlay.Card;
-
-        if (card is ICompanionCard)
-        {
-            
-        }
         
         if (ShouldGainSpFromCard(card))
         {
@@ -191,7 +187,7 @@ public abstract class SituationRelicBase : SoraRelic
         }
 
         await CheckSituationCommands(
-            null,
+            new ThrowingPlayerChoiceContext(),
             base.Owner.Creature,
             null
         );
@@ -268,27 +264,9 @@ public abstract class SituationRelicBase : SoraRelic
     private async Task EnsureGeneratedCardInHand<TCard>(PlayerChoiceContext? choiceContext)
         where TCard : CardModel
     {
-        
         if (HasCardInHand<TCard>())
             return;
-        
-        var existing = FindCardOutsideHand<TCard>();
 
-        if (existing != null)
-        {
-            await CardPileCmd.AddGeneratedCardToCombat(
-                existing,
-                PileType.Hand,
-                base.Owner
-            );
-
-            return;
-        }
-
-        /*
-         * If it truly does not exist anywhere,
-         * create a new generated card.
-         */
         var newCard = base.Owner.Creature.CombatState.CreateCard<TCard>(base.Owner);
 
         if (ShouldUpgradeGeneratedSituationCards() &&
@@ -313,17 +291,7 @@ public abstract class SituationRelicBase : SoraRelic
             .OfType<TCard>()
             .Any(c => c.Pile?.Type == PileType.Hand);
     }
-
-    private TCard? FindCardOutsideHand<TCard>()
-        where TCard : CardModel
-    {
-        var playerState = base.Owner.Creature.Player.PlayerCombatState;
-
-        return playerState.AllCards
-            .OfType<TCard>()
-            .FirstOrDefault(c => c.Pile == null || c.Pile.Type != PileType.Hand);
-    }
-
+    
     public void GainSituationPoints(int amount)
     {
         if (amount <= 0)
