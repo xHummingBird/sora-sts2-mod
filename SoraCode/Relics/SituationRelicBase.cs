@@ -144,15 +144,15 @@ public abstract class SituationRelicBase : SoraRelic
         
         if (ShouldGainSpFromCard(card))
         {
-            GainSituationPoints(AttackSpGain);
-            //+ (card.Owner.HasPower<RikuPower>() ? 1 : 0));
+            GainSituationPoints(AttackSpGain
+            + (card.Owner.HasPower<RikuPower>() ? 1 : 0));
         }
 
-        // if (card.Type is CardType.Skill &&
-        //     card.Owner.HasPower<KairiPower>())
-        // {
-        //     GainSituationPoints(1);
-        // }
+        if (card.Type is CardType.Skill &&
+            card.Owner.HasPower<KairiPower>())
+        {
+            GainSituationPoints(1);
+        }
 
         await CheckSituationCommands(
             choiceContext,
