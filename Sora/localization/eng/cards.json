@@ -11,7 +11,7 @@
   "SORA-FORMCHANGE.description": "Consume all [gold]SP[/gold]. \nGain {Block:diff()} [gold]Block[/gold]. \nGain [gold]Ultimate Form[/gold] for 3 turns. \nIf already in [gold]Ultimate Form[/gold], extend it by 2 turns without consuming [gold]SP[/gold].",
   "SORA-FORMCHANGE.title": "Formchange",
 
-  "SORA-ULTIMATE_COMBO.description": "Consume all [gold]SP[/gold]. \nDeal {Damage:diff()} damage. \nGain [gold]Ultimate Form[/gold] for 2 turns. \nIf already in [gold]Ultimate Form[/gold], extend it by 1 turn without consuming [gold]SP[/gold].",
+  "SORA-ULTIMATE_COMBO.description": "Consume all [gold]SP[/gold]. \nGain [gold]Ultimate Form[/gold] for 2 turns. \nDeal {Damage:diff()} damage 3 times. \nIf already in [gold]Ultimate Form[/gold], extend it by 1 turn without consuming [gold]SP[/gold].",
   "SORA-ULTIMATE_COMBO.title": "Ultimate Combo",
 
   "SORA-HEART_RECOVERY.description": "All [gold]Skills[/gold] in your hand cost 0 {Energy:energyIcons()} this turn. \nGain [gold]Kairi's Link[/gold].",
