@@ -25,7 +25,7 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new DamageVar(3, ValueProp.Move),
-        new RepeatVar(4),
+        new RepeatVar(6),
         new EnergyVar(1)
     ];
     

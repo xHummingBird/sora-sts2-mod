@@ -16,7 +16,8 @@ public class AerialSweep() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5m, ValueProp.Move),
+        new DamageVar(2m, ValueProp.Move),
+        new RepeatVar(3)
     ];
 
     protected override async Task OnPlay(
@@ -48,28 +49,29 @@ public class AerialSweep() : SoraCard(1, CardType.Attack,
             await Task.Delay((int)(0.133f * 1000f));
             
             SfxCmd.Play("res://Sora/sfx/swing_down.wav");
-            foreach (var target in targets)
-            {
-                sora.PlayVfxOnTarget(
-                    target,
-                    "res://Sora/scenes/vfx.tscn",
-                    attackVfx
-                );
-            }
+            await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars.Repeat.IntValue)
+                .WithHitFx("vfx/vfx_attack_slash", hitSfx)
+                .BeforeDamage(async delegate
+                {
+                    foreach (var target in targets)
+                    {
+                        sora.PlayVfxOnTarget(
+                            target,
+                            "res://Sora/scenes/vfx.tscn",
+                            attackVfx
+                        );
+                    }
+                })
+                .Execute(choiceContext);
         }
-        await CommonActions.CardAttack(this, play.Target)
+        else await CommonActions.CardAttack(this, play.Target).WithHitCount(DynamicVars.Repeat.IntValue)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
-
-        if (enemiesHit > 0)
-        {
-            SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
-            relic?.GainSituationPoints(enemiesHit);
-        }
+        
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Repeat.UpgradeValueBy(1m);
     }
 }

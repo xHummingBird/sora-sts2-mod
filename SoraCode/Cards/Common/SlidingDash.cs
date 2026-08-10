@@ -14,7 +14,7 @@ public class SlidingDash() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(9, ValueProp.Move),
+        new DamageVar(10, ValueProp.Move),
         new EnergyVar(1)
     ];
 

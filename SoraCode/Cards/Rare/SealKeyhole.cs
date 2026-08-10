@@ -12,7 +12,7 @@ public class SealKeyhole() : SoraCard(0, CardType.Skill, CardRarity.Rare, Target
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<SituationReadyPower>(15)
+        new PowerVar<SituationReadyPower>(25)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

@@ -15,7 +15,7 @@ public class Slapshot() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(5m, ValueProp.Move),
+        new DamageVar(7m, ValueProp.Move),
         new DynamicVar("BlockPerEnemy", 2),
     ];
 

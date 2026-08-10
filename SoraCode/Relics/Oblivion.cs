@@ -1,6 +1,9 @@
 ﻿using System.Threading.Tasks;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Relics;
@@ -12,13 +15,17 @@ public class Oblivion : SoraRelic
 
     public override RelicRarity Rarity => RelicRarity.Rare;
 
-    public override async Task BeforeCombatStart()
+    public override async Task AfterSideTurnStart(CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
     {
-        await PowerCmd.Apply<RikuPower>(
-            null,
-            base.Owner.Creature,
-            LinkTurns,
-            base.Owner.Creature,
-            null);
+        if (side == base.Owner.Creature.Side && combatState.RoundNumber <= 1)
+        {
+            Flash();
+            await PowerCmd.Apply<RikuPower>(
+                new ThrowingPlayerChoiceContext(),
+                base.Owner.Creature,
+                LinkTurns,
+                base.Owner.Creature,
+                null);
+        }
     }
 }

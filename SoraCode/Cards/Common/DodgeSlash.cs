@@ -12,8 +12,6 @@ namespace Sora.SoraCode.Cards.Common;
 public class DodgeSlash() : SoraCard(1, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
-    public override bool GainsBlock => true;
-    
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(9, ValueProp.Move),

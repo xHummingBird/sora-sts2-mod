@@ -1,5 +1,5 @@
 {
-  "SORA-AERIAL_SWEEP.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain 1 [gold]SP[/gold] for each enemy hit.",
+  "SORA-AERIAL_SWEEP.description": "Deal {Damage:diff()} damage [gold]{Repeat:diff()}[/gold] times to ALL enemies.",
   "SORA-AERIAL_SWEEP.title": "Aerial Sweep",
 
   "SORA-SLAPSHOT.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {BlockPerEnemy:diff()} [gold]Block[/gold] for each enemy hit.",
@@ -23,7 +23,7 @@
   "SORA-NEGATIVE_COMBO.description": "Reduce [gold]SP[/gold] gained per turn by 1. \nGain {NegativeComboPower:diff()} [gold]Strength[/gold] each turn.",
   "SORA-NEGATIVE_COMBO.title": "Negative Combo",
 
-  "SORA-SEVEN_LIGHTS.description": "The first time you play a [gold]Companion[/gold] card each turn, gain {Energy:energyIcons()}.",
+  "SORA-SEVEN_LIGHTS.description": "The first time you play a [gold]Link[/gold] card each turn, gain {Energy:energyIcons()}.",
   "SORA-SEVEN_LIGHTS.title": "Seven Lights",
 
   "SORA-SYNCH_BLADE.description": "Whenever you play an [gold]Attack[/gold], deal {SynchBladePower:diff()} damage to a random enemy.",
@@ -38,19 +38,19 @@
   "SORA-ONE_HEART.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nGain {VigorPerLink:diff()} [gold]Vigor[/gold] for each active [gold]Link[/gold].",
   "SORA-ONE_HEART.title": "Dive To The Heart",
 
-  "SORA-YENSIDS_BLESSING.description": "At the start of your turn, upgrade a random card in your hand.",
+  "SORA-YENSIDS_BLESSING.description": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
   "SORA-YENSIDS_BLESSING.title": "Yen Sid's Blessing",
 
   "SORA-SITUATION_BOOST.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain 5 [gold]SP[/gold].",
   "SORA-SITUATION_BOOST.title": "Situation Boost",
 
-  "SORA-BOND_OF_LIGHT.description": "Each time you play a [gold]Companion[/gold] card, draw 1 card.",
+  "SORA-BOND_OF_LIGHT.description": "Each time you play a [gold]Link[/gold] card, draw 1 card.",
   "SORA-BOND_OF_LIGHT.title": "Bond of Light",
 
   "SORA-STRIKE_SORA.description": "Deal {Damage:diff()} damage.",
   "SORA-STRIKE_SORA.title": "Strike",
 
-  "SORA-FULL_COMBO.description": "Deal {Damage:diff()} damage. \nGain 4 [gold]SP[/gold].",
+  "SORA-FULL_COMBO.description": "Deal {Damage:diff()} damage [gold]{Repeat:diff()}[/gold] times. \nGain 4 [gold]SP[/gold].",
   "SORA-FULL_COMBO.title": "Full Combo",
 
   "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage. \nConsume 60 [gold]SP[/gold].",
@@ -122,7 +122,7 @@
   "SORA-GUARDBREAK.description": "Deal {Damage:diff()} damage. \nDeal [gold]50%[/gold] more damage to [gold]Vulnerable[/gold] enemies. ",
   "SORA-GUARDBREAK.title": "Guard Break",
 
-  "SORA-POWER_OF_WAKING.description": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
+  "SORA-POWER_OF_WAKING.description": "At the start of your turn, add 1 random card into your Hand.",
   "SORA-POWER_OF_WAKING.title": "Power Of Waking",
 
   "SORA-THUNDAGA.description": "Deal {Damage:diff()} damage to ALL enemies.",

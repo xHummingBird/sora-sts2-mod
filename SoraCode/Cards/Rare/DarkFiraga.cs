@@ -21,7 +21,7 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(14, ValueProp.Move),
+        new DamageVar(16, ValueProp.Move),
         new PowerVar<VulnerablePower>(1),
     ];
     

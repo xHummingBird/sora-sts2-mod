@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Random;
 
 namespace Sora.SoraCode.Powers;
 
@@ -20,16 +21,24 @@ public class PowerOfWakingPower : SoraPower
 
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override async Task BeforeSideTurnStart(PlayerChoiceContext choiceContext, CombatSide side, IReadOnlyList<Creature> participants, ICombatState combatState)
+    public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
-        if (!participants.Contains(base.Owner))
+        if (player != base.Owner.Player)
         {
             return;
         }
-        CardPile pile = PileType.Discard.GetPile(base.Owner.Player);
-        IEnumerable<CardModel> source = pile.Cards.Where((CardModel c) => c.Type == CardType.Attack);
-        IEnumerable<CardModel> enumerable = source.ToList().UnstableShuffle(base.Owner.Player.RunState.Rng.CombatCardSelection).Take(base.Amount);
-        foreach (CardModel card in enumerable)
-            await CardPileCmd.Add(card, PileType.Hand);
+        IReadOnlyList<CardModel> readOnlyList = base.Owner.Player.Character.CardPool.GetUnlockedCards(player.UnlockState, player.RunState.CardMultiplayerConstraint).Where(delegate(CardModel c)
+        {
+            CardRarity rarity = c.Rarity;
+            bool flag = ((rarity == CardRarity.Basic || rarity == CardRarity.Ancient) ? true : false);
+            return !flag;
+        }).ToList();
+        if (readOnlyList.Count > 0)
+        {
+            CardModel[] array = new CardModel[base.Amount];
+            Rng combatCardGeneration = base.Owner.Player.RunState.Rng.CombatCardGeneration;
+            Flash();
+            await CardPileCmd.AddGeneratedCardsToCombat(array, PileType.Hand, base.Owner.Player);
+        }
     }
 }

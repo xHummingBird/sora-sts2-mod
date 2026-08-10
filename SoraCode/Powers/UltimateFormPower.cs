@@ -18,7 +18,7 @@ public class UltimateFormPower : SoraPower
     private const string _damageIncrease = "DamageIncrease";
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("DamageIncrease", 1.50m),
+        new DynamicVar("DamageIncrease", 1.75m),
     ];
     public override PowerType Type => PowerType.Buff;
 
