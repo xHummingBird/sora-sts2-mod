@@ -10,7 +10,7 @@ public class UltimaWeapon() : SituationRelicBase
 
     protected override int AttackSpGain => 4;
 
-    protected override int TurnSpGain => 2;
+    protected override int TurnSpGain => 3;
 
     protected override bool CanGenerateUltimateForm => true;
 }
