@@ -1,6 +1,7 @@
 using Godot;
 using HarmonyLib;
 using MegaCrit.Sts2.Core.Modding;
+using System.Reflection;
 
 namespace Sora.SoraCode;
 
@@ -17,6 +18,6 @@ public partial class MainFile : Node
     {
         Harmony harmony = new(ModId);
 
-        harmony.PatchAll();
+        harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 }
