@@ -18,7 +18,7 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class UltimateFinisher() : SoraCard(1, CardType.Attack,
+public class UltimateFinisher() : SoraCard(0, CardType.Attack,
     CardRarity.Ancient, TargetType.AllEnemies), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 

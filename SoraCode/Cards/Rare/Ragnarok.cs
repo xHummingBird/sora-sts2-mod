@@ -56,7 +56,7 @@ public class Ragnarok() : SoraCard(3, CardType.Attack,
             SfxCmd.Play("res://Sora/sfx/ragnarok_shoot.wav");
             await Task.Delay((int)(0.6f * 1000f));
         }
-        await CommonActions.CardAttack(this, play.Target, 4)
+        await CommonActions.CardAttack(this, play.Target, 6)
             .WithHitVfxSpawnedAtBase()
             .BeforeDamage(async delegate
             {

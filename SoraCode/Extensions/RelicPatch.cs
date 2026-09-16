@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Relics;
 using Sora.SoraCode.Cards.Ancient;
@@ -27,6 +28,19 @@ internal static class SoraArchaicToothTranscendencePatch
     private static void Postfix(ref Dictionary<ModelId, CardModel> __result)
     {
         __result[ModelDb.Card<FullCombo>().Id] = ModelDb.Card<UltimateCombo>();
+    }
+}
+
+[HarmonyPatch(typeof(DustyTome), nameof(DustyTome.SetupForPlayer))]
+public static class DustyTomeSetupPatch
+{
+    [HarmonyPostfix]
+    public static void Postfix(DustyTome __instance, Player player)
+    {
+        if (player.Character is not Character.Sora)
+            return;
+
+        __instance.AncientCard = ModelDb.Card<Formchange>().Id;
     }
 }
 

@@ -7,6 +7,7 @@ using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.Extensions;
+using MegaCrit.Sts2.Core.Factories;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Random;
@@ -37,6 +38,10 @@ public class PowerOfWakingPower : SoraPower
         {
             CardModel[] array = new CardModel[base.Amount];
             Rng combatCardGeneration = base.Owner.Player.RunState.Rng.CombatCardGeneration;
+            for (int num = 0; num < base.Amount; num++)
+            {
+                CardCmd.ApplyKeyword(array[num] = CardFactory.GetDistinctForCombat(player, readOnlyList, 1, combatCardGeneration).First());
+            }
             Flash();
             await CardPileCmd.AddGeneratedCardsToCombat(array, PileType.Hand, base.Owner.Player);
         }
