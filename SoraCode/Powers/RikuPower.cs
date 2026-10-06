@@ -26,4 +26,17 @@ public class RikuPower : SoraPower
         
         await PowerCmd.Decrement(this);
     }
+    
+    public override decimal ModifyDamageAdditive(Creature? target, decimal amount, ValueProp props, Creature? dealer, CardModel? cardSource, CardPlay? cardPlay)
+    {
+        if (base.Owner != dealer)
+        {
+            return 0m;
+        }
+        if (!props.IsPoweredAttack())
+        {
+            return 0m;
+        }
+        return 2;
+    }
 }

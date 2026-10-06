@@ -17,8 +17,8 @@ public class Zantetsuken() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(18, ValueProp.Move),
-        new DynamicVar("hpPercent", 10)
+        new DamageVar(22, ValueProp.Move),
+        new DynamicVar("hpPercent", 6)
     ];
 
     protected override async Task OnPlay(
@@ -89,7 +89,7 @@ public class Zantetsuken() : SoraCard(2, CardType.Attack,
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(5);
-        DynamicVars["hpPercent"].UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(8);
+        DynamicVars["hpPercent"].UpgradeValueBy(2m);
     }
 }

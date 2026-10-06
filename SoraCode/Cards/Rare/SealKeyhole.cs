@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using Sora.SoraCode.Powers;
 using Sora.SoraCode.Relics;
 
@@ -12,7 +13,8 @@ public class SealKeyhole() : SoraCard(0, CardType.Skill, CardRarity.Rare, Target
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new PowerVar<SituationReadyPower>(25)
+        new PowerVar<SituationReadyPower>(10),
+        new EnergyVar(2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -34,6 +36,12 @@ public class SealKeyhole() : SoraCard(0, CardType.Skill, CardRarity.Rare, Target
         {
             relic.GainSituationPoints((int)DynamicVars["SituationReadyPower"].BaseValue);
         }
+        await PowerCmd.Apply<EnergyNextTurnPower>(
+            choiceContext,
+            Owner.Creature,
+            2,
+            Owner.Creature,
+            this);
     }
     
     protected override void OnUpgrade()

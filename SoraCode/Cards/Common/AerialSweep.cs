@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Powers;
@@ -17,13 +18,19 @@ public class AerialSweep() : SoraCard(1, CardType.Attack,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DamageVar(2m, ValueProp.Move),
-        new RepeatVar(3)
+        new RepeatVar(3),
     ];
 
     protected override async Task OnPlay(
         PlayerChoiceContext choiceContext,
         CardPlay play)
     {
+        int spGain =
+            CombatState.HittableEnemies.Count();
+        
+        SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
+        relic?.GainSituationPoints(spGain);
+        
         var ownerCreature = Owner?.Creature;
         int enemiesHit = base.CombatState.HittableEnemies.Count(e => e.IsAlive);
         var targets = base.CombatState.HittableEnemies;

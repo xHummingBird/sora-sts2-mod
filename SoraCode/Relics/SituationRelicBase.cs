@@ -16,6 +16,7 @@ using Sora.SoraCode.Cards;
 using Sora.SoraCode.Cards.Ancient;
 using Sora.SoraCode.Mechanics.Companion;
 using Sora.SoraCode.Mechanics.SituationCommand;
+using Sora.SoraCode.Potions;
 using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Relics;
@@ -25,60 +26,47 @@ public abstract class SituationRelicBase : SoraRelic
     private int _situationPoints;
 
     /*
-     * This means:
-     * SituationCommand was used this turn,
-     * so SituationReadyPower cannot be re-applied until next turn.
+     * A standard Situation Command was used this turn,
+     * so SituationReadyPower cannot be reapplied until
+     * the next turn.
      *
-     * UltimateForm and UltimateFinisher ignore this.
+     * Ultimate Form and Ultimate Finisher ignore this.
      */
     private bool _situationReadyConsumedThisTurn;
 
-    public override RelicRarity Rarity => RelicRarity.Starter;
-    
-    private bool ShouldUpgradeGeneratedSituationCards()
-    {
-        return base.Owner.GetRelic<Wayfinder>() != null;
-    }
-    
-    public override bool ShowCounter => CombatManager.Instance.IsInProgress;
+    public override RelicRarity Rarity =>
+        RelicRarity.Starter;
 
-    public int SituationPoints => _situationPoints;
+    public override bool ShowCounter =>
+        CombatManager.Instance.IsInProgress;
 
-    public abstract int MaxSituationPoints { get; }
+    public override int DisplayAmount =>
+        SituationPoints;
 
-    protected virtual int AttackSpGain => 3;
+    public int SituationPoints =>
+        _situationPoints;
 
-    protected virtual int TurnSpGain => 2;
-
-    protected virtual bool CanGenerateUltimateForm => false;
-
+    public int MaxSituationPoints => 60;
+    protected virtual int AttackSpGain => 2;
+    protected virtual int CompanionSpGain => 3;
+    protected virtual int TurnSpGain => 1;
     protected virtual bool IgnoreRelicBecauseBetterVersionExists => false;
-
-    protected int SonicThreshold => 30;
-
-    protected int FinisherThreshold => 60;
-
-    protected int UltimateFormThreshold => 90;
-
+    protected int SituationCommandThreshold => 30;
+    protected int UltimateFormThreshold => 60;
     protected int UltimateFinisherThreshold => 30;
 
-    public bool SonicBladeUnlocked => SituationPoints >= SonicThreshold;
+    public bool SituationCommandsUnlocked => !base.Owner.Creature.HasPower<UltimateFormPower>() && SituationPoints >= SituationCommandThreshold;
 
-    public bool FinisherUnlocked => SituationPoints >= FinisherThreshold;
+    public bool UltimateFormUnlocked => !base.Owner.Creature.HasPower<UltimateFormPower>() && SituationPoints >= UltimateFormThreshold;
 
-    public bool UltimateFormUnlocked =>
-        CanGenerateUltimateForm &&
-        SituationPoints >= UltimateFormThreshold;
-    
-
-    public override int DisplayAmount => SituationPoints;
+    public bool UltimateFinisherUnlocked => base.Owner.Creature.HasPower<UltimateFormPower>() && SituationPoints >= UltimateFinisherThreshold;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new DynamicVar("AttackSpGain", AttackSpGain),
+        new DynamicVar("CompanionSpGain", CompanionSpGain),
         new DynamicVar("TurnSpGain", TurnSpGain),
-        new DynamicVar("SonicThreshold", SonicThreshold),
-        new DynamicVar("FinisherThreshold", FinisherThreshold),
+        new DynamicVar("SituationCommandThreshold", SituationCommandThreshold),
         new DynamicVar("UltimateFormThreshold", UltimateFormThreshold),
         new DynamicVar("UltimateFinisherThreshold", UltimateFinisherThreshold),
         new DynamicVar("MaxSp", MaxSituationPoints)
@@ -87,11 +75,15 @@ public abstract class SituationRelicBase : SoraRelic
     private int SituationPointsInternal
     {
         get => _situationPoints;
+
         set
         {
             AssertMutable();
 
-            int maxSp =
+            /*
+             * Ultimate Form uses a separate 30-SP gauge.
+             */
+            int maximum =
                 base.Owner.Creature.HasPower<UltimateFormPower>()
                     ? UltimateFinisherThreshold
                     : MaxSituationPoints;
@@ -100,7 +92,7 @@ public abstract class SituationRelicBase : SoraRelic
                 Math.Clamp(
                     value,
                     0,
-                    maxSp);
+                    maximum);
 
             UpdateDisplay();
         }
@@ -110,24 +102,45 @@ public abstract class SituationRelicBase : SoraRelic
     {
         SituationPointsInternal = 0;
         _situationReadyConsumedThisTurn = false;
-        base.Status = RelicStatus.Normal;
+
+        base.Status =
+            RelicStatus.Normal;
 
         return Task.CompletedTask;
     }
 
-    public override Task AfterCombatEnd(CombatRoom _)
+    public override Task AfterCombatEnd(
+        CombatRoom _)
     {
         SituationPointsInternal = 0;
         _situationReadyConsumedThisTurn = false;
-        base.Status = RelicStatus.Normal;
+
+        base.Status =
+            RelicStatus.Normal;
 
         return Task.CompletedTask;
     }
-    
+
     public void MarkSituationReadyConsumedThisTurn()
     {
         AssertMutable();
+
         _situationReadyConsumedThisTurn = true;
+    }
+
+    public override async Task AfterPotionUsed(PotionModel potion, Creature? target)
+    {
+        if (potion is not PaopuFruit)
+            return;
+
+        if (potion.Owner != base.Owner)
+            return;
+        
+        await CheckSituationUnlocks(
+            new ThrowingPlayerChoiceContext(),
+            base.Owner.Creature,
+            null,
+            canGenerateUltimateForm: true);
     }
 
     public override async Task AfterCardPlayed(
@@ -137,27 +150,36 @@ public abstract class SituationRelicBase : SoraRelic
         if (IgnoreRelicBecauseBetterVersionExists)
             return;
 
-        CardModel card = cardPlay.Card;
-        
+        CardModel card =
+            cardPlay.Card;
+
         if (card.Owner != base.Owner)
             return;
-        
-        if (ShouldGainSpFromCard(card))
-        {
-            GainSituationPoints(AttackSpGain
-            + (card.Owner.HasPower<RikuPower>() ? 1 : 0));
-        }
 
-        if (card.Type is CardType.Skill &&
-            card.Owner.HasPower<KairiPower>())
-        {
-            GainSituationPoints(1);
-        }
+        int relicSpGain =
+            GetRelicSpGainFromCard(card);
 
-        await CheckSituationCommands(
+        GainSituationPointsFromRelic(
+            relicSpGain);
+
+        /*
+         * This runs after the played card has resolved and
+         * after that card's relic-generated SP was awarded.
+         */
+        await CheckSituationUnlocks(
             choiceContext,
             base.Owner.Creature,
-            card);
+            card,
+            canGenerateUltimateForm: true);
+        
+        UltimateFormPower? ultimateFormPower =
+            base.Owner.Creature.GetPower<UltimateFormPower>();
+
+        if (ultimateFormPower != null)
+        {
+            await ultimateFormPower.CheckUltimateFinisher(
+                choiceContext);
+        }
     }
 
     public override async Task AfterSideTurnStart(
@@ -170,67 +192,133 @@ public abstract class SituationRelicBase : SoraRelic
 
         if (side != base.Owner.Creature.Side)
             return;
-        
+
+        /*
+         * A new turn allows another standard
+         * Situation Command to be used.
+         */
         _situationReadyConsumedThisTurn = false;
 
-        int turnSpGain = TurnSpGain;
+        int turnSpGain =
+            TurnSpGain;
 
-        // Negative Combo reduces the SP gained per turn by 1.
+        /*
+         * Negative Combo reduces turn-start SP by 1.
+         * With the current base gain, this reduces it
+         * from 1 to 0.
+         */
         if (base.Owner.Creature.HasPower<NegativeComboPower>())
         {
             turnSpGain -= 1;
         }
 
-        GainSituationPoints(turnSpGain);
+        GainSituationPointsFromRelic(
+            turnSpGain);
+        
+        UltimateFormPower? ultimateFormPower =
+            base.Owner.Creature
+                .GetPower<UltimateFormPower>();
 
-        if (base.Owner.Creature.HasPower<MickeyPower>())
+        if (ultimateFormPower != null)
         {
-            GainSituationPoints(2 * base.Owner.Creature.GetPowerAmount<MickeyPower>());
+            await ultimateFormPower.CheckUltimateFinisher(
+                new ThrowingPlayerChoiceContext());
         }
-
-        await CheckSituationCommands(
+        
+        await CheckSituationUnlocks(
             new ThrowingPlayerChoiceContext(),
             base.Owner.Creature,
-            null
-        );
+            null,
+            canGenerateUltimateForm: true);
     }
 
-    private bool ShouldGainSpFromCard(CardModel card)
+    private int GetRelicSpGainFromCard(
+        CardModel card)
     {
         if (card.Owner != base.Owner)
-            return false;
+            return 0;
 
         if (!CombatManager.Instance.IsInProgress)
-            return false;
+            return 0;
         
         if (card is ISituationCard)
-            return false;
+            return 0;
 
-        if (card.Type != CardType.Attack)
-            return false;
-
-        return true;
-    }
-
-    private async Task CheckSituationCommands(
-        PlayerChoiceContext? choiceContext,
-        Creature source,
-        CardModel? card)
-    {
-        Creature creature = base.Owner.Creature;
+        int amount = 0;
         
-        if (creature.HasPower<UltimateFormPower>())
+        if (card is ICompanionCard)
         {
-            if (SituationPoints >= UltimateFinisherThreshold)
-            {
-                await EnsureUltimateFinisherExists(choiceContext);
-            }
-
-            return;
+            amount += CompanionSpGain;
+        }
+        else if (card.Type == CardType.Attack)
+        {
+            amount += AttackSpGain;
         }
         
-        if (SituationPoints >= SonicThreshold &&
-            SituationPoints <= UltimateFormThreshold &&
+        return amount;
+    }
+
+    /*
+     * SP managed by this relic is doubled while
+     * SituationReadyPower is active.
+     *
+     * This includes:
+     *
+     * - Turn-start SP
+     * - Attack SP
+     * - Companion card SP
+     */
+    private void GainSituationPointsFromRelic(
+        int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        int bonus =
+            base.Owner.Creature
+                .GetPowerAmount<SituationBoostPower>();
+
+        if (base.Owner.Creature.HasPower<SituationReadyPower>() ||
+            base.Owner.Creature.HasPower<UltimateFormPower>())
+        {
+            amount *= 2;
+        }
+
+        SituationPointsInternal +=
+            amount + bonus;
+    }
+
+    private async Task CheckSituationUnlocks(
+        PlayerChoiceContext? choiceContext,
+        Creature source,
+        CardModel? card,
+        bool canGenerateUltimateForm)
+    {
+        Creature creature =
+            base.Owner.Creature;
+
+        /*
+         * Standard Situation Commands and Ultimate Form
+         * are unavailable while Ultimate Form is active.
+         *
+         * UltimateFinisher generation is handled by
+         * UltimateFormPower.
+         */
+        if (creature.HasPower<UltimateFormPower>())
+            return;
+
+        /*
+         * At 30 SP, apply SituationReadyPower.
+         *
+         * After a standard Situation Command is used,
+         * the consumed flag prevents this from returning
+         * during the same turn.
+         *
+         * The flag resets at the start of the next turn,
+         * allowing the power to be reapplied if the player
+         * still has at least 30 SP.
+         */
+        if (SituationPoints >= SituationCommandThreshold &&
             !_situationReadyConsumedThisTurn &&
             !creature.HasPower<SituationReadyPower>())
         {
@@ -239,62 +327,74 @@ public abstract class SituationRelicBase : SoraRelic
                 creature,
                 1,
                 source,
-                card
-            );
+                card);
         }
-        
-        if (CanGenerateUltimateForm &&
+
+        /*
+         * Generate the first Ultimate Form after a card
+         * has finished resolving and the gauge has reached
+         * 60 SP.
+         *
+         * SituationReadyPower is responsible for recovering
+         * an Ultimate Form that is later discarded or
+         * exhausted without being used.
+         */
+        if (canGenerateUltimateForm &&
             SituationPoints >= UltimateFormThreshold)
         {
-            await EnsureUltimateFormExists(choiceContext);
+            await GenerateInitialUltimateForm(
+                choiceContext);
         }
     }
 
-    private async Task EnsureUltimateFormExists(PlayerChoiceContext? choiceContext)
+    private async Task GenerateInitialUltimateForm(
+        PlayerChoiceContext? choiceContext)
     {
-        if (!CanGenerateUltimateForm)
-            return;
+        var playerState =
+            base.Owner.Creature.Player.PlayerCombatState;
 
-        await EnsureGeneratedCardInHand<UltimateForm>(choiceContext);
-    }
+        UltimateForm? existingForm =
+            playerState.AllCards
+                .OfType<UltimateForm>()
+                .FirstOrDefault();
 
-    private async Task EnsureUltimateFinisherExists(PlayerChoiceContext? choiceContext)
-    {
-        await EnsureGeneratedCardInHand<UltimateFinisher>(choiceContext);
-    }
-
-    private async Task EnsureGeneratedCardInHand<TCard>(PlayerChoiceContext? choiceContext)
-        where TCard : CardModel
-    {
-        if (HasCardInHand<TCard>())
-            return;
-
-        var newCard = base.Owner.Creature.CombatState.CreateCard<TCard>(base.Owner);
-
-        if (ShouldUpgradeGeneratedSituationCards() &&
-            !newCard.IsUpgraded)
+        if (existingForm != null)
         {
-            CardCmd.Upgrade(newCard);
+            if (existingForm.Pile?.Type != PileType.Hand)
+            {
+                await CardPileCmd.Add(
+                    [existingForm],
+                    PileType.Hand);
+            }
+
+            return;
+        }
+
+        UltimateForm ultimateForm =
+            base.Owner.Creature.CombatState
+                .CreateCard<UltimateForm>(base.Owner);
+
+        if (base.Owner.GetRelic<UltimaWeapon>() != null &&
+            !ultimateForm.IsUpgraded)
+        {
+            CardCmd.Upgrade(ultimateForm);
         }
 
         await CardPileCmd.AddGeneratedCardToCombat(
-            newCard,
+            ultimateForm,
             PileType.Hand,
-            base.Owner
-        );
+            base.Owner);
     }
 
-    private bool HasCardInHand<TCard>()
-        where TCard : CardModel
-    {
-        var playerState = base.Owner.Creature.Player.PlayerCombatState;
-
-        return playerState.AllCards
-            .OfType<TCard>()
-            .Any(c => c.Pile?.Type == PileType.Hand);
-    }
-    
-    public void GainSituationPoints(int amount)
+    /*
+     * Public SP gain is intended for explicit card effects
+     * and external sources.
+     *
+     * This method deliberately does not apply the
+     * SituationReadyPower multiplier.
+     */
+    public void GainSituationPoints(
+        int amount)
     {
         if (amount <= 0)
             return;
@@ -302,7 +402,8 @@ public abstract class SituationRelicBase : SoraRelic
         SituationPointsInternal += amount;
     }
 
-    public void ConsumeSituationPoints(int amount)
+    public void ConsumeSituationPoints(
+        int amount)
     {
         if (amount <= 0)
             return;
@@ -315,7 +416,8 @@ public abstract class SituationRelicBase : SoraRelic
         SituationPointsInternal = 0;
     }
 
-    public void SetSituationPoints(int amount)
+    public void SetSituationPoints(
+        int amount)
     {
         SituationPointsInternal = amount;
     }
@@ -328,39 +430,48 @@ public abstract class SituationRelicBase : SoraRelic
     public int GetMaxSituationPointsForUI()
     {
         if (base.Owner.Creature.HasPower<UltimateFormPower>())
+        {
             return UltimateFinisherThreshold;
+        }
 
         return MaxSituationPoints;
     }
 
+    /*
+     * Returns progress within the current 30-SP section.
+     *
+     * Normal:
+     * 0-29 SP  -> 0-29
+     * 30-60 SP -> 0-30
+     *
+     * Ultimate Form:
+     * 0-30 SP  -> 0-30
+     */
     public int GetArrowProgressForUI()
     {
         if (base.Owner.Creature.HasPower<UltimateFormPower>())
-            return Math.Clamp(SituationPoints, 0, 30);
-        
-        if (SituationPoints < SonicThreshold)
+        {
+            return Math.Clamp(
+                SituationPoints,
+                0,
+                UltimateFinisherThreshold);
+        }
+
+        if (SituationPoints < SituationCommandThreshold)
+        {
             return SituationPoints;
+        }
 
-        if (SituationPoints < FinisherThreshold)
-            return SituationPoints - SonicThreshold;
-
-        if (!CanGenerateUltimateForm)
-            return 30;
-
-        if (SituationPoints < UltimateFormThreshold)
-            return SituationPoints - FinisherThreshold;
-
-        return 30;
+        return Math.Clamp(
+            SituationPoints - SituationCommandThreshold,
+            0,
+            UltimateFormThreshold -
+            SituationCommandThreshold);
     }
 
-    public bool IsSonicBladeUnlockedForUI()
+    public bool AreSituationCommandsUnlockedForUI()
     {
-        return SonicBladeUnlocked;
-    }
-
-    public bool IsFinisherUnlockedForUI()
-    {
-        return FinisherUnlocked;
+        return SituationCommandsUnlocked;
     }
 
     public bool IsUltimateFormUnlockedForUI()
@@ -368,38 +479,43 @@ public abstract class SituationRelicBase : SoraRelic
         return UltimateFormUnlocked;
     }
 
-    public bool CanGenerateUltimateFormForUI()
+    public bool IsUltimateFinisherUnlockedForUI()
     {
-        return CanGenerateUltimateForm;
+        return UltimateFinisherUnlocked;
     }
 
     private void UpdateDisplay()
     {
-        if (UltimateFormUnlocked || FinisherUnlocked || SonicBladeUnlocked)
-        {
-            base.Status = RelicStatus.Active;
-        }
-        else
-        {
-            base.Status = RelicStatus.Normal;
-        }
+        bool commandAvailable =
+            SituationCommandsUnlocked ||
+            UltimateFormUnlocked ||
+            UltimateFinisherUnlocked;
+
+        base.Status =
+            commandAvailable
+                ? RelicStatus.Active
+                : RelicStatus.Normal;
 
         InvokeDisplayAmountChanged();
     }
-    
-    public bool HasSituationPoints(int amount)
+
+    public bool HasSituationPoints(
+        int amount)
     {
         return SituationPoints >= amount;
     }
 
-    public void SpendSituationPoints(int amount)
+    public void SpendSituationPoints(
+        int amount)
     {
-        ConsumeSituationPoints(amount);
+        ConsumeSituationPoints(
+            amount);
     }
-    
+
     public int SpendAllSituationPoints()
     {
-        int spent = SituationPoints;
+        int spent =
+            SituationPoints;
 
         ConsumeAllSituationPoints();
 

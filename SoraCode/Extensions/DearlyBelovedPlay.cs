@@ -24,7 +24,8 @@ public class DearlyBelovedPlay
     {
         // Always restart from the beginning
         Stop();
-
+        
+        GD.Print("SORA MUTE");
         NAudioManager.Instance?.SetBgmVol(0f);
 
         var stream = GD.Load<AudioStream>(MusicPath);
@@ -46,7 +47,11 @@ public class DearlyBelovedPlay
 
     public static void Stop()
     {
-        if (_player != null && GodotObject.IsInstanceValid(_player))
+        // If we never started music, do nothing.
+        if (_player == null)
+            return;
+
+        if (GodotObject.IsInstanceValid(_player))
         {
             _player.Stop();
             _player.QueueFree();
@@ -65,11 +70,11 @@ public class DearlyBelovedPlay
     }
 
 [HarmonyPatch(typeof(NCharacterSelectScreen))]
-public static class CharacterSelectMusicPatch
+public static class SoraCharacterSelectMusicPatch
 {
     [HarmonyPatch(nameof(NCharacterSelectScreen.SelectCharacter))]
     [HarmonyPostfix]
-    private static void SelectCharacter_Postfix(
+    private static void SoraSelectCharacter_Postfix(
         NCharacterSelectButton charSelectButton,
         CharacterModel characterModel)
     {
@@ -85,14 +90,14 @@ public static class CharacterSelectMusicPatch
 
     [HarmonyPatch(nameof(NCharacterSelectScreen.OnSubmenuClosed))]
     [HarmonyPrefix]
-    private static void OnSubmenuClosed_Prefix()
+    private static void SoraOnSubmenuClosed_Prefix()
     {
         DearlyBelovedPlay.Stop();
     }
 
     [HarmonyPatch(nameof(NCharacterSelectScreen.BeginRun))]
     [HarmonyPrefix]
-    private static void BeginRun_Prefix()
+    private static void SoraBeginRun_Prefix()
     {
         DearlyBelovedPlay.Stop();
     }

@@ -1,7 +1,10 @@
 ﻿using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace Sora.SoraCode.Powers;
 
@@ -22,5 +25,25 @@ public class KairiPower : SoraPower
             return;
         
         await PowerCmd.Decrement(this);
+    }
+    
+    public override decimal ModifyBlockAdditive(Creature target, decimal block, ValueProp props, CardModel? cardSource, CardPlay? cardPlay)
+    {
+        if (cardSource != null)
+        {
+            if (cardSource.Owner.Creature != base.Owner)
+            {
+                return 0m;
+            }
+        }
+        else if (base.Owner != target)
+        {
+            return 0m;
+        }
+        if (!props.IsPoweredCardOrMonsterMoveBlock())
+        {
+            return 0m;
+        }
+        return 2;
     }
 }

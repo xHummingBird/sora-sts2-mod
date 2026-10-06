@@ -19,6 +19,7 @@ public class PowerOfWaking() : SoraCard(1, CardType.Power,
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<PowerOfWakingPower>(),
+        HoverTipFactory.FromKeyword(CardKeyword.Ethereal)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

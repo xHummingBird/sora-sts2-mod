@@ -29,7 +29,7 @@ public class StrikeShift() : SoraCard(1, CardType.Attack,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override async Task OnPlay(
@@ -73,6 +73,5 @@ public class StrikeShift() : SoraCard(1, CardType.Attack,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(3m);
-        DynamicVars.Cards.UpgradeValueBy(1m);
     }
 }

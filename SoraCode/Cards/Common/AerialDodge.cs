@@ -9,15 +9,15 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class AerialDodge() : SoraCard(2, CardType.Skill,
+public class AerialDodge() : SoraCard(1, CardType.Skill,
     CardRarity.Common, TargetType.Self)
 {
     public override bool GainsBlock => true;
     
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(12, ValueProp.Move),
-        new PowerVar<SituationReadyPower>(3)
+        new BlockVar(9, ValueProp.Move),
+        new PowerVar<SituationReadyPower>(2)
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -39,5 +39,6 @@ public class AerialDodge() : SoraCard(2, CardType.Skill,
     protected override void OnUpgrade()
     {
         DynamicVars["Block"].UpgradeValueBy(4m);
+        DynamicVars["SituationReadyPower"].UpgradeValueBy(1m);
     }
 }

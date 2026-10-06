@@ -23,32 +23,32 @@
   "SORA-BOND_OF_LIGHT_POWER.smartDescription": "Each time you play a [gold]Link[/gold] card, draw {Amount} {Amount:plural:card|cards}.",
   "SORA-BOND_OF_LIGHT_POWER.title": "Bond of Light",
 
-  "SORA-SITUATION_BOOST_POWER.description": "Whenever you play a card that costs 2 or more Energy, gain 5 SP.",
-  "SORA-SITUATION_BOOST_POWER.smartDescription": "Whenever you play a card that costs 2 or more [gold]Energy[/gold], gain 5 [gold]SP[/gold].",
+  "SORA-SITUATION_BOOST_POWER.description": "Increase SP gained from attacks, [gold]Links[/gold], and turn start by 1.",
+  "SORA-SITUATION_BOOST_POWER.smartDescription": "Increase SP gained from attacks, [gold]Links[/gold], and turn start by {Amount}.",
   "SORA-SITUATION_BOOST_POWER.title": "Situation Boost",
 
-  "SORA-POWER_OF_WAKING_POWER.description": "At the start of your turn, add a random card into your Hand.",
-  "SORA-POWER_OF_WAKING_POWER.smartDescription": "At the start of your turn, return {Amount} {Amount:plural:random card|random cards} into your Hand.",
+  "SORA-POWER_OF_WAKING_POWER.description": "At the start of your turn, add a random card into your Hand. It gains [gold]Ethereal[/gold].",
+  "SORA-POWER_OF_WAKING_POWER.smartDescription": "At the start of your turn, add {Amount} {Amount:plural:random card|random cards} into your Hand. It gains [gold]Ethereal[/gold]",
   "SORA-POWER_OF_WAKING_POWER.title": "Power of Waking",
 
-  "SORA-ULTIMATE_FORM_POWER.description": "Attacks deal 75% more damage. Build SP to perform [gold]Ultimate Finisher[/gold].",
-  "SORA-ULTIMATE_FORM_POWER.smartDescription": "In [gold]Ultimate Form[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. Attacks deal [gold]75%[/gold] more damage.",
+  "SORA-ULTIMATE_FORM_POWER.description": "Attacks deal 50% more damage. Double SP gained from attacks, [gold]Links[/gold], and turn start. Build SP to perform [gold]Ultimate Finisher[/gold].",
+  "SORA-ULTIMATE_FORM_POWER.smartDescription": "In [gold]Ultimate Form[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. Double SP gained from attacks, [gold]Links[/gold], and turn start. Attacks deal [gold]50%[/gold] more damage.",
   "SORA-ULTIMATE_FORM_POWER.title": "Ultimate Form",
 
   "SORA-SITUATION_READY_POWER.description": "Gain Situation Points (SP) to perform Situation Commands.",
-  "SORA-SITUATION_READY_POWER.smartDescription": "You can now perform Situation Commands.",
+  "SORA-SITUATION_READY_POWER.smartDescription": "Double SP gained from attacks, [gold]Links[/gold], and turn start. You can now perform Situation Commands.",
   "SORA-SITUATION_READY_POWER.title": "Situation Command Ready",
 
   "SORA-DAMAGE_SYPHON_POWER.description": "Gain [gold]SP[/gold] equal to half of damage taken.",
   "SORA-DAMAGE_SYPHON_POWER.smartDescription": "Gain [gold]SP[/gold] equal to half of damage taken.",
   "SORA-DAMAGE_SYPHON_POWER.title": "Damage Syphon",
 
-  "SORA-KAIRI_POWER.description": "Gain 1 [gold]SP[/gold] from using [gold]Skills[/gold] for 3 turns. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]True End[/gold] instead.",
-  "SORA-KAIRI_POWER.smartDescription": "Gain 1 [gold]SP[/gold] from using [gold]Skills[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Riku's Link[/gold], add [gold]True End[/gold] instead.",
+  "SORA-KAIRI_POWER.description": "Playing a [gold]Link[/gold] card increases SP by 4. Increase [gold]Block[/gold] gain from cards by 2 for 3 turns. Re-applying [gold]Link[/gold] extends it by 2 turns. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Riku's Link[/gold], add [gold]True End[/gold].",
+  "SORA-KAIRI_POWER.smartDescription": "Increase [gold]Block[/gold] gain from cards for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Seven Wishes[/gold] to your command. \nIf you have [gold]Riku's Link[/gold], add [gold]True End[/gold] instead.",
   "SORA-KAIRI_POWER.title": "Kairi's Link",
   
-  "SORA-RIKU_POWER.description": "Gain 1 [gold]SP[/gold] from using [gold]Attacks[/gold] for 3 turns. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]True End[/gold] instead.",
-  "SORA-RIKU_POWER.smartDescription": "Gain 1 [gold]SP[/gold] from using [gold]Attacks[/gold] for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Riku's Link[/gold], add [gold]True End[/gold] instead.",
+  "SORA-RIKU_POWER.description": "Playing a [gold]Link[/gold] card increases SP by 4. Increase your [gold]Attack[/gold] damage by 2 for 3 turns. Re-applying [gold]Link[/gold] extends it by 2 turns. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]True End[/gold].",
+  "SORA-RIKU_POWER.smartDescription": "Increase your [gold]Attack[/gold] damage for [blue]{Amount}[/blue] {Amount:plural:turn|turns}. \nAdd [gold]Eternal Session[/gold] to your command. \nIf you have [gold]Kairi's Link[/gold], add [gold]True End[/gold] instead.",
   "SORA-RIKU_POWER.title": "Riku's Link",
   
   "SORA-REFLECT_SORA_POWER.description": "Blocked damage is reflected to your attacker for 1 turn.",
@@ -59,8 +59,8 @@
   "SORA-FRIENDSHIP_POWER.smartDescription": "Attacks deal {Amount} additional damage for each active [gold]Link[/gold].",
   "SORA-FRIENDSHIP_POWER.title": "Friendship",
 
-  "SORA-MICKEY_POWER.description": "Gain 1 extra Energy each turn. Gain additional SP at the start of your turn.",
-  "SORA-MICKEY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] extra Energy each turn. Gain additional [gold]SP[/gold] at the start of your turn.",
+  "SORA-MICKEY_POWER.description": "Gain 1 additional Energy each turn.",
+  "SORA-MICKEY_POWER.smartDescription": "Gain [blue]{Amount}[/blue] additional Energy each turn.",
   "SORA-MICKEY_POWER.title": "Mickey's Link",
 
   "SORA-YENSID_POWER.description": "At the start of your turn, return a random attack card from your discard pile to your hand.",

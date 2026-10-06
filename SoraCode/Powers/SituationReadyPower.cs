@@ -43,16 +43,41 @@ public class SituationReadyPower : SoraPower
         if (playerState == null)
             return;
         
-        if (playerState.AllCards
-            .OfType<SituationCommand>()
-            .Any(c => c.Pile?.Type == PileType.Hand))
+        if (playerState.AllCards.OfType<SituationCommand>().All(c => c.Pile?.Type != PileType.Hand))
         {
-            return;
-        }
+            var cards = playerState.AllCards
+                .OfType<SituationCommand>()
+                .Where(c =>
+                    c.Pile == null ||
+                    c.Pile.Type != PileType.Hand);
 
-        var cards = playerState.AllCards
-            .OfType<SituationCommand>()
-            .Where(c => c.Pile == null || c.Pile.Type != PileType.Hand);
-        await CardPileCmd.Add(cards, PileType.Hand);
+            await CardPileCmd.Add(
+                cards,
+                PileType.Hand);
+        }
+        
+        var relic =
+            player.GetRelic<SituationRelicBase>();
+
+        if (relic == null)
+            return;
+
+        if (relic.SituationPoints < 60)
+            return;
+
+        if (playerState.AllCards
+            .OfType<UltimateForm>()
+            .All(c => c.Pile?.Type != PileType.Hand))
+        {
+            var ultimateForms = playerState.AllCards
+                .OfType<UltimateForm>()
+                .Where(c =>
+                    c.Pile == null ||
+                    c.Pile.Type != PileType.Hand);
+
+            await CardPileCmd.Add(
+                ultimateForms,
+                PileType.Hand);
+        }
     }
 }

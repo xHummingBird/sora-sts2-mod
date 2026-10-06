@@ -20,8 +20,8 @@ namespace Sora.SoraCode.Cards.Ancient;
 public class KairiLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(30, ValueProp.Move),
-        new HealVar(5)
+        new DamageVar(23, ValueProp.Move),
+        new HealVar(2)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -131,7 +131,7 @@ public class KairiLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Tar
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6);
-        DynamicVars.Heal.UpgradeValueBy(2);
+        DynamicVars.Damage.UpgradeValueBy(5);
+        DynamicVars.Heal.UpgradeValueBy(1);
     }
 }

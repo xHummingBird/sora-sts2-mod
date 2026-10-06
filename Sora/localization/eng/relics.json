@@ -23,11 +23,11 @@
   "SORA-STARLIGHT.flavor": "A keyblade that shines with distant light.",
   "SORA-STARLIGHT.title": "Starlight",
 
-  "SORA-KINGDOM_KEY.description": "Gain 2 [gold]SP[/gold] at the start of your turn. Gain 3 [gold]SP[/gold] when you attack.",
+  "SORA-KINGDOM_KEY.description": "Gain 1 [gold]SP[/gold] at the start of your turn. Gain 2 [gold]SP[/gold] when you attack.",
   "SORA-KINGDOM_KEY.flavor": "May Your Heart Be Your Guiding Key",
   "SORA-KINGDOM_KEY.title": "Kingdom Key",
 
-  "SORA-ULTIMA_WEAPON.description": "Gain 3 [gold]SP[/gold] at the start of your turn. Gain 4 [gold]SP[/gold] when you attack. You can now gain up to [blue]90[/blue] [gold]SP[/gold]. Add [gold]Ultimate Form[/gold] to your hand when you reach 90 [gold]SP[/gold].",
+  "SORA-ULTIMA_WEAPON.description": "Gain 2 [gold]SP[/gold] at the start of your turn. Gain 3 [gold]SP[/gold] when you attack. Upgrade [gold]Ultimate Form[/gold] and [gold]Ultimate Finisher[/gold]. Ultimate Form deals 25% more damage.",
   "SORA-ULTIMA_WEAPON.flavor": "",
   "SORA-ULTIMA_WEAPON.title": "Ultima Weapon"
 }

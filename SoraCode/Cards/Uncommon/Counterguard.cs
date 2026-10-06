@@ -13,8 +13,8 @@ public class Counterguard() : SoraCard(1, CardType.Skill,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(5, ValueProp.Move),
-        new PowerVar<VigorPower>(5m)
+        new BlockVar(6, ValueProp.Move),
+        new PowerVar<VigorPower>(6m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
@@ -26,7 +26,7 @@ public class Counterguard() : SoraCard(1, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(2m);
-        DynamicVars["VigorPower"].UpgradeValueBy(2m);
+        DynamicVars["Block"].UpgradeValueBy(3m);
+        DynamicVars["VigorPower"].UpgradeValueBy(3m);
     }
 }

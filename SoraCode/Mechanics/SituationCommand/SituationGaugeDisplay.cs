@@ -171,7 +171,7 @@ public partial class SituationGaugeDisplay : Control
 
         tip.GlobalPosition =
             GlobalPosition +
-            new Vector2(-75f, -450f);
+            new Vector2(-75f, -500f);
 
         tip.MouseFilter =
             MouseFilterEnum.Ignore;

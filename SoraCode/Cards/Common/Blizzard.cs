@@ -13,12 +13,12 @@ using Sora.SoraCode.Extensions;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class Blizzard() : SoraCard(1, CardType.Attack,
+public class Blizzard() : SoraCard(0, CardType.Attack,
     CardRarity.Common, TargetType.AnyEnemy)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(5m, ValueProp.Move),
+        new DamageVar(4m, ValueProp.Move),
         new PowerVar<WeakPower>(1)
     ];
     
@@ -60,7 +60,7 @@ public class Blizzard() : SoraCard(1, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(2m);
         DynamicVars.Weak.UpgradeValueBy(1m);
     }
 }

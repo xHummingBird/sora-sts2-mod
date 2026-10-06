@@ -7,7 +7,7 @@ using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Rare;
 
-public class DamageSyphon() : SoraCard(2, CardType.Power, CardRarity.Rare, TargetType.Self)
+public class DamageSyphon() : SoraCard(1, CardType.Power, CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [

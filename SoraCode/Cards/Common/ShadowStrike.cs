@@ -19,8 +19,8 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(5, ValueProp.Move),
-        new PowerVar<SituationReadyPower>(3),
+        new DamageVar(6, ValueProp.Move),
+        new PowerVar<SituationReadyPower>(2),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -30,7 +30,7 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override async Task OnPlay(
@@ -69,6 +69,5 @@ public class ShadowStrike() : SoraCard(1, CardType.Attack,
     protected override void OnUpgrade()
     {
         DynamicVars.Damage.UpgradeValueBy(2m);
-        RemoveKeyword(CardKeyword.Exhaust);
     }
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://jrdiwbm4me1k"]
+[gd_scene load_steps=123 format=3 uid="uid://jrdiwbm4me1k"]
 
 [ext_resource type="Texture2D" uid="uid://cvw4k6v4gam4k" path="res://Sora/images/spritesheets/vfx/atk/01_atk_vfx.png" id="1_va35b"]
 [ext_resource type="Texture2D" uid="uid://bf4viu6ced27c" path="res://Sora/images/spritesheets/vfx/atk/02_atk_vfx.png" id="2_xbqf5"]
@@ -94,6 +94,22 @@
 [ext_resource type="Texture2D" uid="uid://dc3k30y1mb1d6" path="res://Sora/images/spritesheets/vfx/waterga/35_flood.png" id="75_e8j7u"]
 [ext_resource type="Texture2D" uid="uid://dcbmdk2d623wc" path="res://Sora/images/spritesheets/vfx/waterga/36_flood.png" id="76_1vjng"]
 [ext_resource type="Texture2D" uid="uid://c4nnme3vn5jo5" path="res://Sora/images/spritesheets/vfx/waterga/37_flood.png" id="77_s57fg"]
+[ext_resource type="Texture2D" uid="uid://2li8tj0rrfvu" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-1.png" id="95_8yjij"]
+[ext_resource type="Texture2D" uid="uid://bi44sdbhpdbge" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-2.png" id="96_nsvpi"]
+[ext_resource type="Texture2D" uid="uid://r5ipsxosa24b" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-3.png" id="97_m4uki"]
+[ext_resource type="Texture2D" uid="uid://cxwoem3k7tpje" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-4.png" id="98_5ha55"]
+[ext_resource type="Texture2D" uid="uid://xkoe5o8hpdd8" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-5.png" id="99_noy7v"]
+[ext_resource type="Texture2D" uid="uid://g2buhehiy8xv" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-6.png" id="100_m4tpn"]
+[ext_resource type="Texture2D" uid="uid://kb2gkltr05wm" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-7.png" id="101_hyyy5"]
+[ext_resource type="Texture2D" uid="uid://djl1konthd0an" path="res://Sora/images/spritesheets/vfx/fire/Flame-Vortex-Hit-8.png" id="102_6mrvs"]
+[ext_resource type="Texture2D" uid="uid://btkoqgw64in6d" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-1.png" id="103_mljug"]
+[ext_resource type="Texture2D" uid="uid://e3tos3fb602v" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-2.png" id="104_40g71"]
+[ext_resource type="Texture2D" uid="uid://dybnk5c7ddklq" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-3.png" id="105_dwomf"]
+[ext_resource type="Texture2D" uid="uid://blon8ikfu0snn" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-4.png" id="106_0fe32"]
+[ext_resource type="Texture2D" uid="uid://hcuu2kyqoqf8" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-5.png" id="107_62ly4"]
+[ext_resource type="Texture2D" uid="uid://dkflr2pq2bsu4" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-6.png" id="108_5es1f"]
+[ext_resource type="Texture2D" uid="uid://drefstivkpgeg" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-7.png" id="109_jf6nd"]
+[ext_resource type="Texture2D" uid="uid://br16lhh8nyojp" path="res://Sora/images/spritesheets/vfx/dark_firaga/Flame-Vortex-Hit-8.png" id="110_0ijxf"]
 
 [sub_resource type="Animation" id="Animation_0uvb6"]
 length = 0.001
@@ -889,82 +905,6 @@ tracks/15/keys = {
 "values": [true, false, false, true, false]
 }
 
-[sub_resource type="Animation" id="Animation_wv51v"]
-resource_name = "waterga"
-length = 2.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3.7252903e-08, 0.06666674, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.669815, 0.7364816, 0.8031483, 0.86981493, 0.93648165, 1.0015742, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334, 1.4, 1.4666667, 1.5333333, 1.6, 1.6666666, 1.7333333, 1.8, 1.8666667, 1.9333333, 2, 2.0666666, 2.1333334, 2.2, 2.2666667, 2.3333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("42_42ttr"), ExtResource("43_ushym"), ExtResource("44_vf80q"), ExtResource("45_665tp"), ExtResource("46_yrgpt"), ExtResource("47_h1c30"), ExtResource("48_fq8nb"), ExtResource("49_330w1"), ExtResource("50_8yjij"), ExtResource("51_nsvpi"), ExtResource("52_m4uki"), ExtResource("53_5ha55"), ExtResource("54_noy7v"), ExtResource("55_m4tpn"), ExtResource("56_hyyy5"), ExtResource("57_6mrvs"), ExtResource("58_mljug"), ExtResource("59_40g71"), ExtResource("60_dwomf"), ExtResource("61_0fe32"), ExtResource("62_62ly4"), ExtResource("63_5es1f"), ExtResource("64_jf6nd"), ExtResource("65_0ijxf"), ExtResource("66_14jg4"), ExtResource("67_42ibb"), ExtResource("68_lgsf2"), ExtResource("69_l7wjr"), ExtResource("70_e62ow"), ExtResource("71_lavse"), ExtResource("72_olmgo"), ExtResource("73_1pj36"), ExtResource("74_cfe0f"), ExtResource("75_e8j7u"), ExtResource("76_1vjng"), ExtResource("77_s57fg")]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(10, -188)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath(".:scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="Animation" id="Animation_xj1hf"]
 resource_name = "water"
 length = 0.9
@@ -1041,10 +981,216 @@ tracks/5/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_wv51v"]
+resource_name = "waterga"
+length = 2.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.7252903e-08, 0.06666674, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4, 0.46666667, 0.53333336, 0.6, 0.669815, 0.7364816, 0.8031483, 0.86981493, 0.93648165, 1.0015742, 1.0666667, 1.1333333, 1.2, 1.2666667, 1.3333334, 1.4, 1.4666667, 1.5333333, 1.6, 1.6666666, 1.7333333, 1.8, 1.8666667, 1.9333333, 2, 2.0666666, 2.1333334, 2.2, 2.2666667, 2.3333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("42_42ttr"), ExtResource("43_ushym"), ExtResource("44_vf80q"), ExtResource("45_665tp"), ExtResource("46_yrgpt"), ExtResource("47_h1c30"), ExtResource("48_fq8nb"), ExtResource("49_330w1"), ExtResource("50_8yjij"), ExtResource("51_nsvpi"), ExtResource("52_m4uki"), ExtResource("53_5ha55"), ExtResource("54_noy7v"), ExtResource("55_m4tpn"), ExtResource("56_hyyy5"), ExtResource("57_6mrvs"), ExtResource("58_mljug"), ExtResource("59_40g71"), ExtResource("60_dwomf"), ExtResource("61_0fe32"), ExtResource("62_62ly4"), ExtResource("63_5es1f"), ExtResource("64_jf6nd"), ExtResource("65_0ijxf"), ExtResource("66_14jg4"), ExtResource("67_42ibb"), ExtResource("68_lgsf2"), ExtResource("69_l7wjr"), ExtResource("70_e62ow"), ExtResource("71_lavse"), ExtResource("72_olmgo"), ExtResource("73_1pj36"), ExtResource("74_cfe0f"), ExtResource("75_e8j7u"), ExtResource("76_1vjng"), ExtResource("77_s57fg")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, -188)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mljug"]
+resource_name = "fire"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("95_8yjij"), ExtResource("96_nsvpi"), ExtResource("97_m4uki"), ExtResource("98_5ha55"), ExtResource("99_noy7v"), ExtResource("100_m4tpn"), ExtResource("101_hyyy5"), ExtResource("102_6mrvs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(4, -121), Vector2(12, -136)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_14jg4"]
+resource_name = "dark_firaga"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("103_mljug"), ExtResource("104_40g71"), ExtResource("105_dwomf"), ExtResource("106_0fe32"), ExtResource("107_62ly4"), ExtResource("108_5es1f"), ExtResource("109_jf6nd"), ExtResource("110_0ijxf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(4, -121), Vector2(12, -136)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 1.5)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewmcm"]
 _data = {
 &"RESET": SubResource("Animation_0uvb6"),
 &"atk_vfx": SubResource("Animation_tafwt"),
+&"dark_firaga": SubResource("Animation_14jg4"),
+&"fire": SubResource("Animation_mljug"),
 &"hit_ultimate": SubResource("Animation_slxtq"),
 &"kairi_hit": SubResource("Animation_lyvgs"),
 &"ragnarok": SubResource("Animation_kb3qy"),

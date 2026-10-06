@@ -76,18 +76,25 @@ public class SoraExtensions
             PlayerChoiceContext choiceContext,
             Creature target,
             CardModel source,
-            int turns = 3)
+            int initialTurns = 3,
+            int refreshTurns = 2)
             where T : PowerModel
         {
-            int amountToAdd =
-                Math.Max(0, turns - target.GetPowerAmount<T>());
-
-            if (amountToAdd > 0)
+            if (target.HasPower<T>())
             {
                 await PowerCmd.Apply<T>(
                     choiceContext,
                     target,
-                    amountToAdd,
+                    refreshTurns,
+                    target,
+                    source);
+            }
+            else
+            {
+                await PowerCmd.Apply<T>(
+                    choiceContext,
+                    target,
+                    initialTurns,
                     target,
                     source);
             }

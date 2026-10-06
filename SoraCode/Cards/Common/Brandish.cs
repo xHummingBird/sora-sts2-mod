@@ -16,7 +16,7 @@ public class Brandish() : SoraCard(0, CardType.Skill,
         new PowerVar<VigorPower>(3m),
     ];
     
-    private bool CanDrawCard
+    private bool DoubleVigor
     {
         get
         {
@@ -29,9 +29,10 @@ public class Brandish() : SoraCard(0, CardType.Skill,
     {
         await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, base.DynamicVars["VigorPower"].BaseValue,
             base.Owner.Creature, this);
-        if (CanDrawCard)
+        if (DoubleVigor)
         {
-            await CardPileCmd.Draw(choiceContext, 1, base.Owner);
+            await PowerCmd.Apply<VigorPower>(choiceContext, base.Owner.Creature, base.DynamicVars["VigorPower"].BaseValue,
+                base.Owner.Creature, this);
         }
     }
 

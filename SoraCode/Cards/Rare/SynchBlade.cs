@@ -12,7 +12,7 @@ public class SynchBlade() : SoraCard(2, CardType.Power,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<SynchBladePower>(5),
+        new PowerVar<SynchBladePower>(7),
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -32,6 +32,6 @@ public class SynchBlade() : SoraCard(2, CardType.Power,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["SynchBladePower"].UpgradeValueBy(2m);
+        AddKeyword(CardKeyword.Innate);
     }
 }

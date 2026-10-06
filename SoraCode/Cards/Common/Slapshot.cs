@@ -7,16 +7,17 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Powers;
+using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class Slapshot() : SoraCard(1, CardType.Attack,
+public class Slapshot() : SoraCard(2, CardType.Attack,
     CardRarity.Common, TargetType.AllEnemies)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(7m, ValueProp.Move),
-        new DynamicVar("BlockPerEnemy", 2),
+        new DamageVar(10m, ValueProp.Move),
+        new PowerVar<SituationReadyPower>(2m)
     ];
 
     protected override async Task OnPlay(
@@ -54,29 +55,23 @@ public class Slapshot() : SoraCard(1, CardType.Attack,
                 );
             }
         }
-
         
-
         await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
-
-        int block = enemiesHit * (int)DynamicVars["BlockPerEnemy"].BaseValue;
-
-        if (block > 0)
+        
+        SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
+            
+        if (relic != null)
         {
-            await CreatureCmd.GainBlock(
-                base.Owner.Creature,
-                block,
-                ValueProp.Move,
-                play,
-                false);
+            relic.GainSituationPoints((int)DynamicVars["SituationReadyPower"].BaseValue);
         }
+        
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
-        DynamicVars["BlockPerEnemy"].UpgradeValueBy(1m);
+        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars["SituationReadyPower"].UpgradeValueBy(1m);
     }
 }

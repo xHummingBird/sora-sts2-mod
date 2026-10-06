@@ -6,13 +6,18 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
-public class TreasureHunter() : SoraCard(1, CardType.Skill,
+public class TreasureHunter() : SoraCard(0, CardType.Skill,
     CardRarity.Common, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new CardsVar(1),
+        new CardsVar(2),
         new DynamicVar("Sp", 2),
+    ];
+    
+    public override IEnumerable<CardKeyword> CanonicalKeywords =>
+    [
+        CardKeyword.Exhaust
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

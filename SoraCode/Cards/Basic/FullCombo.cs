@@ -44,23 +44,23 @@ public class FullCombo() : SoraCard(2, CardType.Attack,
                 float duration = sora.PlayAnimation(ownerCreature, "full_combo").total;
 
                 await Task.Delay((int)(0.13f * 1000f));
-                DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
-                    .WithValueProp(ValueProp.Unpowered)
-                    .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/swing_down.wav")
-                    .Execute(choiceContext);
                 SfxCmd.Play("res://Sora/sfx/hit_down.wav");
                 sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-                await Task.Delay((int)(0.266f * 1000f));
-                SoraExtensions.CombatHelpers.FakeHit(play.Target);
-                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-                await Task.Delay((int)(0.3333f * 1000f));
-                DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+                await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
                     .WithValueProp(ValueProp.Unpowered)
                     .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/swing_down.wav")
                     .Execute(choiceContext);
+                await Task.Delay((int)(0.086f * 1000f));
+                SoraExtensions.CombatHelpers.FakeHit(play.Target);
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+                await Task.Delay((int)(0.333f * 1000f));
                 SfxCmd.Play("res://Sora/sfx/hit_medium.wav");
                 sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-                await Task.Delay((int)(0.4f * 1000f));
+                await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+                    .WithValueProp(ValueProp.Unpowered)
+                    .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/swing_down.wav")
+                    .Execute(choiceContext);
+                await Task.Delay((int)(0.220f * 1000f));
                 AudioHelper.PlayRandomFinalAttack();
                 await Task.Delay((int)(0.467f * 1000f));
                 sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
@@ -74,20 +74,20 @@ public class FullCombo() : SoraCard(2, CardType.Attack,
             {
                 sora.PlayAnimation(ownerCreature, "ultimate_combo");
                 await Task.Delay((int)(0.133f * 1000f));
-                DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+                SfxCmd.Play("res://Sora/sfx/ultimate_hit_1.wav");
+                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
+                await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
                     .WithValueProp(ValueProp.Unpowered)
                     .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/ultimate_swing_1.wav")
                     .Execute(choiceContext);
-                SfxCmd.Play("res://Sora/sfx/ultimate_hit_1.wav");
+                await Task.Delay((int)(0.086f * 1000f));
+                SfxCmd.Play("res://Sora/sfx/ultimate_hit_2.wav");
                 sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
-                await Task.Delay((int)(0.266f * 1000f));
-                DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+                await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
                     .WithValueProp(ValueProp.Unpowered)
                     .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/ultimate_swing_2.wav")
                     .Execute(choiceContext);
-                SfxCmd.Play("res://Sora/sfx/ultimate_hit_2.wav");
-                sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
-                await Task.Delay((int)(0.233f * 1000f));
+                await Task.Delay((int)(0.053f * 1000f));
                 AudioHelper.PlayRandomFinalAttack();
                 await Task.Delay((int)(0.3f * 1000f));
                 sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");

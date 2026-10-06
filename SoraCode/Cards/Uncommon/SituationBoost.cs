@@ -14,7 +14,6 @@ public class SituationBoost() : SoraCard(1, CardType.Power,
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new PowerVar<SituationBoostPower>(1),
-        new EnergyVar(2)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

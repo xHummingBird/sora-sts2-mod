@@ -15,7 +15,7 @@ public class ArsArcanum() : SoraCard(0, CardType.Attack,
     CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(30, ValueProp.Move)
+        new DamageVar(21, ValueProp.Move)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -32,53 +32,93 @@ public class ArsArcanum() : SoraCard(0, CardType.Attack,
         if (ownerCreature != null && Owner?.Character is Character.Sora sora)
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
-            await sora.DashTo(ownerCreature, play.Target, distance: 390f);
             AudioHelper.PlayRandomFormchange();
+            sora.PlayAnimation(ownerCreature, "ars_arcanum");
+            await Task.Delay((int)(0.2f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/formchange_3.wav");
+            await Task.Delay((int)(0.9f * 1000f));
             
-            float duration = sora.PlayAnimation(ownerCreature, "ars_arcanum").total;
-            if (duration > 0f)
-                await Task.Delay((int)(1.167f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await sora.DashTo(ownerCreature, play.Target, distance: 390f, durationSeconds: 0.067F, overrideAnim: "ars_arcanum");
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
             AudioHelper.PlayRandomAttack();
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            AudioHelper.PlayRandomAttack();
-            await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            AudioHelper.PlayRandomAttack();
-            await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.067f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.233f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.2f * 1000f));
-            AudioHelper.PlayRandomAttack();
-            await Task.Delay((int)(0.2f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.3f * 1000f));
-            SfxCmd.Play("res://Sora/sounds/finalhit_2.wav");
             await Task.Delay((int)(0.1f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit3_10.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            AudioHelper.PlayRandomAttack();
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.034f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            AudioHelper.PlayRandomAttack();
+            await Task.Delay((int)(0.033f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.034f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit6_9.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            AudioHelper.PlayRandomAttack();
+            await Task.Delay((int)(0.2f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit3_10.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            await Task.Delay((int)(0.2f * 1000f));
+            AudioHelper.PlayRandomAttack();
+            await Task.Delay((int)(0.167f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit7_12.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            await Task.Delay((int)(0.300f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.067f * 1000f));
+            
+            // await Task.Delay((int)(0.3f * 1000f));
+            SfxCmd.Play("res://Sora/sounds/finalhit_2.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
             await Task.Delay((int)(0.133f * 1000f));
             SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            
+            await Task.Delay((int)(0.033f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.034f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_2.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit8.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
+            
             await Task.Delay((int)(0.133f * 1000f));
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             await Task.Delay((int)(0.3f * 1000f));
             SfxCmd.Play("res://Sora/sounds/finalhit_6.wav");
@@ -101,6 +141,6 @@ public class ArsArcanum() : SoraCard(0, CardType.Attack,
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(6);
+        DynamicVars.Damage.UpgradeValueBy(4);
     }
 }

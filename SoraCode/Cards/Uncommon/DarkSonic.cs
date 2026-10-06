@@ -19,13 +19,13 @@ public class DarkSonic() : SoraCard(1, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(11, ValueProp.Move),
+        new DamageVar(10, ValueProp.Move),
         new PowerVar<VulnerablePower>(1)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

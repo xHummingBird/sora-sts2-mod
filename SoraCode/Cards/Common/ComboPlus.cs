@@ -9,6 +9,7 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 using Sora.SoraCode.Extensions;
 using Sora.SoraCode.Powers;
+using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Common;
 
@@ -53,6 +54,13 @@ public class ComboPlus() : SoraCard(0, CardType.Attack,
                 attackVfx
             );
         }
+        SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();
+            
+        if (relic != null)
+        {
+            relic.GainSituationPoints((int)((CalculatedVar)base.DynamicVars["CalculatedHits"]).Calculate(cardPlay.Target));
+        }
+        
         ArgumentNullException.ThrowIfNull(cardPlay.Target, "cardPlay.Target");
         await DamageCmd.Attack(base.DynamicVars.Damage.BaseValue).WithHitCount((int)((CalculatedVar)base.DynamicVars["CalculatedHits"]).Calculate(cardPlay.Target)).FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)

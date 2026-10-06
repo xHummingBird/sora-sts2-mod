@@ -14,7 +14,7 @@ public class ComboBoost() : SoraCard(1, CardType.Skill,
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
         new PowerVar<VigorPower>(6m),
-        new PowerVar<SituationReadyPower>(2m)
+        new PowerVar<SituationReadyPower>(3m)
     ];
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)

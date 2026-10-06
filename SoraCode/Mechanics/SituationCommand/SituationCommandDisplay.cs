@@ -381,99 +381,112 @@ public partial class SituationCommandDisplay : Control
         _command3.Scale = Vector2.One;
     }
 
-    private List<string> GetCurrentCommands(SituationRelicBase relic)
-{
-    List<string> commands =
-    [
-        string.Empty,
-        string.Empty,
-        string.Empty
-    ];
-
-    _command1HoverTip = null;
-    _command2HoverTip = null;
-    _command3HoverTip = null;
-
-    var creature =
-        relic.Owner.Creature;
-
-    bool hasRiku =
-        creature.HasPower<RikuPower>();
-
-    bool hasKairi =
-        creature.HasPower<KairiPower>();
-
-    bool ultimateForm =
-        creature.HasPower<UltimateFormPower>();
-
-    if (relic.SituationPoints >= 60)
+        private List<string> GetCurrentCommands(
+        SituationRelicBase relic)
     {
-        // Default
-        commands[0] = SonicBladeKey;
-        _command1HoverTip =
-            HoverTipFactory.FromCard<SonicBlade>();
+        List<string> commands =
+        [
+            string.Empty,
+            string.Empty,
+            string.Empty
+        ];
 
-        commands[1] = ArsArcanumKey;
-        _command2HoverTip =
-            HoverTipFactory.FromCard<ArsArcanum>();
+        _command1HoverTip = null;
+        _command2HoverTip = null;
+        _command3HoverTip = null;
 
-        if (hasKairi)
-        {
-            commands[1] = KairiCommandKey;
-            _command2HoverTip =
-                HoverTipFactory.FromCard<KairiLimit>();
-        }
+        var creature = relic.Owner.Creature;
 
-        if (hasRiku)
-        {
-            commands[1] = RikuCommandKey;
-            _command2HoverTip =
-                HoverTipFactory.FromCard<RikuLimit>();
-        }
+        bool hasRiku =
+            creature.HasPower<RikuPower>();
 
-        if (hasRiku && hasKairi)
-        {
-            commands[0] = RikuCommandKey;
-            _command1HoverTip =
-                HoverTipFactory.FromCard<RikuLimit>();
+        bool hasKairi =
+            creature.HasPower<KairiPower>();
 
-            commands[1] = RikuKairiCommandKey;
-            _command2HoverTip =
-                HoverTipFactory.FromCard<RikuKairiLimit>();
-        }
-    }
-    
-    else if (relic.SituationPoints >= 30)
-    {
+        bool ultimateForm =
+            creature.HasPower<UltimateFormPower>();
+
+        /*
+         * Ultimate Form uses a separate 0–30 SP gauge.
+         * Standard Situation Commands are unavailable.
+         */
         if (ultimateForm)
         {
-            commands[0] =
-                UltimateFinisherKey;
+           if (relic.SituationPoints >= 30)
+            {
+                commands[0] = UltimateFinisherKey;
 
-            _command1HoverTip =
-                HoverTipFactory.FromCard<UltimateFinisher>();
+                _command1HoverTip =
+                    HoverTipFactory.FromCard<UltimateFinisher>();
+            }
+
+            return commands;
         }
-        else
-        {
-            commands[0] =
-                SonicBladeKey;
 
+        /*
+         * All applicable standard Situation Commands
+         * become available at 30 SP.
+         */
+        if (relic.SituationPoints >= 30)
+        {
+            /*
+             * Default:
+             * Sonic Blade + Ars Arcanum
+             */
+            commands[0] = SonicBladeKey;
             _command1HoverTip =
                 HoverTipFactory.FromCard<SonicBlade>();
+
+            commands[1] = ArsArcanumKey;
+            _command2HoverTip =
+                HoverTipFactory.FromCard<ArsArcanum>();
+
+            /*
+             * Kairi replaces Ars Arcanum.
+             */
+            if (hasKairi)
+            {
+                 commands[1] = KairiCommandKey;
+                _command2HoverTip =
+                    HoverTipFactory.FromCard<KairiLimit>();
+            }
+
+            /*
+             * Riku replaces either Ars Arcanum
+             * or Kairi Limit.
+             */
+            if (hasRiku)
+            {
+                commands[1] = RikuCommandKey;
+                _command2HoverTip =
+                    HoverTipFactory.FromCard<RikuLimit>();
+            }
+
+            /*
+             * When both Links are active,
+             * Riku-Kairi Limit replaces Sonic Blade.
+             */
+            if (hasRiku && hasKairi)
+            {
+                commands[0] = RikuKairiCommandKey;
+                _command1HoverTip =
+                    HoverTipFactory.FromCard<RikuKairiLimit>();
+            }
         }
-    }
-    
-    if (!ultimateForm &&
-        relic.UltimateFormUnlocked)
-    {
-        commands[2] =
-            UltimateFormKey;
 
-        _command3HoverTip =
-            HoverTipFactory.FromCard<UltimateForm>();
-    }
+        /*
+         * Ultimate Form is added to the third slot
+         * when the normal gauge reaches 60 SP.
+         */
+        if (relic.UltimateFormUnlocked)
+        {
+            commands[2] = UltimateFormKey;
 
-    return commands;
+            _command3HoverTip =
+                HoverTipFactory.FromCard<UltimateForm>();
+        }
+
+        return commands;
     }
 
     private void ApplyCommands(

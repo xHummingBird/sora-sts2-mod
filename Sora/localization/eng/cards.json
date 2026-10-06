@@ -1,8 +1,8 @@
 {
-  "SORA-AERIAL_SWEEP.description": "Deal {Damage:diff()} damage [gold]{Repeat:diff()}[/gold] times to ALL enemies.",
+  "SORA-AERIAL_SWEEP.description": "Deal {Damage:diff()} damage [gold]{Repeat:diff()}[/gold] times to ALL enemies. \nGain 1 [gold]SP[/gold] for each enemy hit.",
   "SORA-AERIAL_SWEEP.title": "Aerial Sweep",
 
-  "SORA-SLAPSHOT.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {BlockPerEnemy:diff()} [gold]Block[/gold] for each enemy hit.",
+  "SORA-SLAPSHOT.description": "Deal {Damage:diff()} damage to ALL enemies. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
   "SORA-SLAPSHOT.title": "Slapshot",
 
   "SORA-TREASURE_HUNTER.description": "Draw {Cards:diff()} {Cards:plural:card|cards}. \nGain {Sp:diff()} [gold]SP[/gold].",
@@ -17,7 +17,7 @@
   "SORA-HEART_RECOVERY.description": "All [gold]Skills[/gold] in your hand cost 0 {Energy:energyIcons()} this turn. \nGain [gold]Kairi's Link[/gold].",
   "SORA-HEART_RECOVERY.title": "Heart Recovery",
 
-  "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold]. \nGain {Sp:diff()} [gold]SP[/gold] at the start of each turn.",
+  "SORA-KINGS_GUIDANCE.description": "Gain [gold]Mickey's Link[/gold].",
   "SORA-KINGS_GUIDANCE.title": "King's Guidance",
 
   "SORA-NEGATIVE_COMBO.description": "Reduce [gold]SP[/gold] gained per turn by 1. \nGain {NegativeComboPower:diff()} [gold]Strength[/gold] each turn.",
@@ -41,7 +41,7 @@
   "SORA-YENSIDS_BLESSING.description": "At the start of your turn, return a random [gold]Attack[/gold] card from your discard pile to your hand.",
   "SORA-YENSIDS_BLESSING.title": "Yen Sid's Blessing",
 
-  "SORA-SITUATION_BOOST.description": "Whenever you play a card that costs {Energy:energyIcons()} or more, gain 5 [gold]SP[/gold].",
+  "SORA-SITUATION_BOOST.description": "Increase SP gained from attacks, [gold]Links[/gold], and turn start by 1.",
   "SORA-SITUATION_BOOST.title": "Situation Boost",
 
   "SORA-BOND_OF_LIGHT.description": "Each time you play a [gold]Link[/gold] card, draw 1 card.",
@@ -53,7 +53,7 @@
   "SORA-FULL_COMBO.description": "Deal {Damage:diff()} damage [gold]{Repeat:diff()}[/gold] times. \nGain 4 [gold]SP[/gold].",
   "SORA-FULL_COMBO.title": "Full Combo",
 
-  "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage. \nConsume 60 [gold]SP[/gold].",
+  "SORA-ARS_ARCANUM.description": "Deal {Damage:diff()} damage. \nConsume 30 [gold]SP[/gold].",
   "SORA-ARS_ARCANUM.title": "Ars Arcanum",
   
   "SORA-DEFEND_SORA.description": "Gain {Block:diff()} [gold]Block[/gold].",
@@ -68,7 +68,7 @@
   "SORA-SITUATION_COMMAND.description": "Perform a [gold]Situation Command[/gold].",
   "SORA-SITUATION_COMMAND.title": "Situation Command",
 
-  "SORA-ULTIMATE_FORM.description": "Gain [gold]Ultimate Form[/gold] for {Turns:diff()} turns. \nConsume 90 [gold]SP[/gold].",
+  "SORA-ULTIMATE_FORM.description": "Gain [gold]Ultimate Form[/gold] for {Turns:diff()} turns. \nConsume 60 [gold]SP[/gold].",
   "SORA-ULTIMATE_FORM.title": "Ultimate Form",
 
   "SORA-FIRE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
@@ -86,7 +86,7 @@
   "SORA-COUNTERGUARD.description": "Gain {Block:diff()} [gold]Block[/gold]. \nGain {VigorPower:diff()} [gold]Vigor[/gold].",
   "SORA-COUNTERGUARD.title": "Counterguard",
 
-  "SORA-BLITZ.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-BLITZ.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold]. If this is the first card you play, deal damage another time.",
   "SORA-BLITZ.title": "Blitz",
 
   "SORA-SONIC_STRIKE.description": "Deal {Damage:diff()} damage. \nApply {VulnerablePower:diff()} [gold]Vulnerable[/gold].",
@@ -104,7 +104,7 @@
   "SORA-SLIDING_DASH.description": "Deal {Damage:diff()} damage. \nReduce this card's cost to 0 {Energy:energyIcons()}.",
   "SORA-SLIDING_DASH.title": "Sliding Dash",
 
-  "SORA-COMBO_PLUS.description": "Deal {Damage:diff()} damage for each Attack already played this turn.{InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
+  "SORA-COMBO_PLUS.description": "Deal {Damage:diff()} damage for each Attack already played this turn. \nGain [gold]SP[/gold] equal to number of hits. {InCombat:\n(Hits {CalculatedHits:diff()} {CalculatedHits:plural:time|times})|}",
   "SORA-COMBO_PLUS.title": "Combo Plus",
 
   "SORA-SPEED_SLASH.description": "Deal {Damage:diff()} damage. \nIf this is the first card you play, draw {Cards:diff()} {Cards:plural:card|cards}.",
@@ -122,7 +122,7 @@
   "SORA-GUARDBREAK.description": "Deal {Damage:diff()} damage. \nDeal [gold]50%[/gold] more damage to [gold]Vulnerable[/gold] enemies. ",
   "SORA-GUARDBREAK.title": "Guard Break",
 
-  "SORA-POWER_OF_WAKING.description": "At the start of your turn, add 1 random card into your Hand.",
+  "SORA-POWER_OF_WAKING.description": "At the start of your turn, add 1 random card into your Hand. It gains [gold]Ethereal[/gold].",
   "SORA-POWER_OF_WAKING.title": "Power Of Waking",
 
   "SORA-THUNDAGA.description": "Deal {Damage:diff()} damage to ALL enemies.",
@@ -143,16 +143,16 @@
   "SORA-BERSERK_CHARGE.description": "ALL Attack cards in your Hand are free to play this turn.",
   "SORA-BERSERK_CHARGE.title": "Berserk Charge",
 
-  "SORA-BRANDISH.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nIf you have played fewer than 3 cards this turn, draw 1 card.",
+  "SORA-BRANDISH.description": "Gain {VigorPower:diff()} [gold]Vigor[/gold]. \nIf you have played fewer than 3 cards this turn, double the amount of [gold]Vigor[/gold] gained.",
   "SORA-BRANDISH.title": "Brandish",
 
   "SORA-FLOW_MOTION.description": "Draw 2 cards. \nIf at least one is an Attack, gain {Energy:energyIcons()}.",
   "SORA-FLOW_MOTION.title": "Flow Motion",
 
-  "SORA-SEAL_KEYHOLE.description": "Gain {SituationReadyPower:diff()} [gold]SP[/gold].",
+  "SORA-SEAL_KEYHOLE.description": "Gain {SituationReadyPower:diff()} [gold]SP[/gold]. \nNext turn, gain {Energy:energyIcons()}.",
   "SORA-SEAL_KEYHOLE.title": "Seal The Keyhole",
 
-  "SORA-FALLING_SLASH.description": "Deal {Damage:diff()} damage. \nPlay a random Attack from your Draw Pile.",
+  "SORA-FALLING_SLASH.description": "Deal {Damage:diff()} damage. \nPlay a random{IfUpgraded:show: [gold]Upgraded[/gold]} Attack from your Draw Pile.",
   "SORA-FALLING_SLASH.title": "Falling Slash",
 
   "SORA-DODGE_SLASH.description": "Deal {Damage:diff()} damage. \nDraw {Cards:diff()} {Cards:plural:card|cards}.",
@@ -164,13 +164,13 @@
   "SORA-ZANTETSUKEN.description": "Deal {Damage:diff()} damage. \nKill the enemy if it has [gold]{hpPercent:diff()}%[/gold] HP or less.",
   "SORA-ZANTETSUKEN.title": "Zantetsuken",
 
-  "SORA-KAIRI_LIMIT.description": "Deal {Damage:diff()} damage. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 60 [gold]SP[/gold].",
+  "SORA-KAIRI_LIMIT.description": "Deal {Damage:diff()} damage. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 30 [gold]SP[/gold].",
   "SORA-KAIRI_LIMIT.title": "Seven Wishes",
 
-  "SORA-RIKU_LIMIT.description": "Deal {Damage:diff()} damage. \nDouble the enemy's [gold]Vulnerable[/gold]. \nConsume 60 [gold]SP[/gold].",
+  "SORA-RIKU_LIMIT.description": "Deal {CalculatedDamage:diff()} damage. \nDeal 50% more damage if the enemy is [gold]Vulnerable[/gold] or [gold]Weak[/gold]. \nConsume 30 [gold]SP[/gold].",
   "SORA-RIKU_LIMIT.title": "Eternal Session",
   
-  "SORA-RIKU_KAIRI_LIMIT.description": "Deal {Damage:diff()} damage to ALL enemies. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 60 [gold]SP[/gold].",
+  "SORA-RIKU_KAIRI_LIMIT.description": "Deal {Damage:diff()} damage to ALL enemies. \nHeal {Heal:diff()} [gold]HP[/gold]. \nConsume 30 [gold]SP[/gold].",
   "SORA-RIKU_KAIRI_LIMIT.title": "True End",
 
   "SORA-SHADOW_STRIKE.description": "Deal {Damage:diff()} damage. \nGain {SituationReadyPower:diff()} [gold]SP[/gold]. \nGain [gold]Riku's Link[/gold].",

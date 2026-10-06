@@ -23,7 +23,7 @@ public class UltimateFinisher() : SoraCard(0, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(45, ValueProp.Move),
+        new DamageVar(40, ValueProp.Move),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -152,6 +152,6 @@ public class UltimateFinisher() : SoraCard(0, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(10m);
+        DynamicVars.Damage.UpgradeValueBy(12m);
     }
 }

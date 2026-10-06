@@ -7,13 +7,13 @@ using Sora.SoraCode.Powers;
 
 namespace Sora.SoraCode.Cards.Rare;
 
-public class FinishBoost() : SoraCard(2, CardType.Power,
+public class FinishBoost() : SoraCard(1, CardType.Power,
     CardRarity.Rare, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         // 50 stacks = +50% damage on the third attack each turn.
-        new PowerVar<FinishBoostPower>(50),
+        new PowerVar<FinishBoostPower>(75),
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -33,6 +33,6 @@ public class FinishBoost() : SoraCard(2, CardType.Power,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["FinishBoostPower"].UpgradeValueBy(25m);
+        AddKeyword(CardKeyword.Innate);
     }
 }

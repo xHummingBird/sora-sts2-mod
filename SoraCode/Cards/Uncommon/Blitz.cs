@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -14,11 +15,20 @@ namespace Sora.SoraCode.Cards.Uncommon;
 public class Blitz() : SoraCard(1, CardType.Attack,
     CardRarity.Uncommon, TargetType.AnyEnemy)
 {
+    protected override bool ShouldGlowGoldInternal => PlayCountThisTurn == 0;
+    
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(10, ValueProp.Move),
-        new PowerVar<SituationReadyPower>(3)
+        new DamageVar(8, ValueProp.Move),
+        new PowerVar<SituationReadyPower>(2),
+        new RepeatVar(2)
     ];
+    
+    private int PlayCountThisTurn =>
+        CombatManager.Instance.History.CardPlaysFinished
+            .Count(e =>
+                e.HappenedThisTurn(base.CombatState) &&
+                e.CardPlay.Player == base.Owner);
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
@@ -30,6 +40,11 @@ public class Blitz() : SoraCard(1, CardType.Attack,
         CardPlay play)
     {
         var ownerCreature = Owner?.Creature;
+        int hitCount = 1;
+        if (PlayCountThisTurn == 0)
+        {
+            hitCount = 2;
+        }
         
         string hitSfx = base.Owner.Creature.HasPower<UltimateFormPower>()
             ? "res://Sora/sfx/ultimate_hit_1.wav"
@@ -59,7 +74,7 @@ public class Blitz() : SoraCard(1, CardType.Attack,
                 attackVfx
             );
         }
-        await CommonActions.CardAttack(this, play.Target)
+        await CommonActions.CardAttack(this, play.Target, hitCount: hitCount)
             .WithHitFx("vfx/vfx_attack_slash", hitSfx)
             .Execute(choiceContext);
         SituationRelicBase? relic = Owner.GetRelic<SituationRelicBase>();

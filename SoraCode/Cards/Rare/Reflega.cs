@@ -14,7 +14,7 @@ public class Reflega() : SoraCard(2, CardType.Skill, CardRarity.Rare,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(18m, ValueProp.Move),
+        new BlockVar(16m, ValueProp.Move),
         new PowerVar<ReflectSoraPower>(1m),
     ];
     

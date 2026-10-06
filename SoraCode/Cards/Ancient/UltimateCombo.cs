@@ -32,6 +32,15 @@ public class UltimateCombo() : SoraCard(2, CardType.Attack,
         HoverTipFactory.FromPower<UltimateFormPower>(),
     ];
     
+    private IEnumerable<CardModel> GetUltimateFormCards()
+    {
+        var hand =
+            PileType.Hand.GetPile(base.Owner);
+
+        return hand.Cards
+            .OfType<UltimateForm>();
+    }
+    
     private IEnumerable<CardModel> GetSituationCommandCard()
     {
         var pile = PileType.Hand.GetPile(base.Owner);
@@ -54,6 +63,14 @@ public class UltimateCombo() : SoraCard(2, CardType.Attack,
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
             if (!hasUltimate)
             {
+                foreach (CardModel card in
+                         GetUltimateFormCards().ToList())
+                {
+                    await CardCmd.Exhaust(
+                        choiceContext,
+                        card);
+                }
+                
                 if (ownerCreature.HasPower<SituationReadyPower>())
                 {
                     foreach (var card in GetSituationCommandCard().ToList())
@@ -88,20 +105,20 @@ public class UltimateCombo() : SoraCard(2, CardType.Attack,
             AudioHelper.PlayRandomAttack();
             sora.PlayAnimation(ownerCreature, "ultimate_combo");
             await Task.Delay((int)(0.133f * 1000f));
-            DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+            SfxCmd.Play("res://Sora/sfx/ultimate_hit_1.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
+            await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
                 .WithValueProp(ValueProp.Unpowered)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/ultimate_swing_1.wav")
                 .Execute(choiceContext);
-            SfxCmd.Play("res://Sora/sfx/ultimate_hit_1.wav");
+            await Task.Delay((int)(0.086f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/ultimate_hit_2.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
-            await Task.Delay((int)(0.266f * 1000f));
-            DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
+            await DamageCmd.Attack(damage).FromCard(this, play).Targeting(play.Target)
                 .WithValueProp(ValueProp.Unpowered)
                 .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/ultimate_swing_2.wav")
                 .Execute(choiceContext);
-            SfxCmd.Play("res://Sora/sfx/ultimate_hit_2.wav");
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");
-            await Task.Delay((int)(0.233f * 1000f));
+            await Task.Delay((int)(0.053f * 1000f));
             AudioHelper.PlayRandomFinalAttack();
             await Task.Delay((int)(0.3f * 1000f));
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "hit_ultimate");

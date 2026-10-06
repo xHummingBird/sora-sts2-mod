@@ -40,13 +40,11 @@ public class Firaga() : SoraCard(2, CardType.Attack,
             // Optional: delay to sync hit roughly mid animation
             if (duration > 0f)
                 await Task.Delay((int)(duration * 0.2f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/fire_impact (2).wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "fire");
+            
         }
         await CommonActions.CardAttack(this, play.Target)
-            .BeforeDamage(async delegate
-            {
-                NCombatRoom.Instance?.CombatVfxContainer.AddChildSafely(NGroundFireVfx.Create(play.Target));
-                SfxCmd.Play("event:/sfx/characters/attack_fire");
-            })
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, base.DynamicVars.Vulnerable.BaseValue,
             base.Owner.Creature, this);

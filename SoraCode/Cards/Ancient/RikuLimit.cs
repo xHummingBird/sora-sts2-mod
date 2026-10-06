@@ -18,8 +18,17 @@ namespace Sora.SoraCode.Cards.Ancient;
 
 public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, TargetType.AnyEnemy), ISituationCard
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new DamageVar(33, ValueProp.Move)
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new CalculationBaseVar(24m),
+        new ExtraDamageVar(12m),
+        new CalculatedDamageVar(ValueProp.Move)
+            .WithMultiplier((card, target) =>
+                target != null &&
+                (target.HasPower<VulnerablePower>() ||
+                 target.HasPower<WeakPower>())
+                    ? 1m
+                    : 0m)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -42,36 +51,44 @@ public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Targ
         {
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
             AudioHelper.PlayRandomRiku();
-            await sora.DashTo(ownerCreature, play.Target, distance: 390f);
             SfxCmd.Play("res://Sora/sounds/riku/riku_coop.wav");
             float duration = sora.PlayAnimation(ownerCreature, "dark_arcanum_2").total;
             
-            await Task.Delay((int)(1.167f * 1000f));
+            await Task.Delay((int)(0.2f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/formchange_3.wav");
+            await Task.Delay((int)(0.9f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await sora.DashTo(ownerCreature, play.Target, durationSeconds: 0.067F, distance: 390f, overrideAnim: "dark_arcanum_2");
             
             AudioHelper.PlayRandomAttack();
             AudioHelper.PlayRandomRikuAtk();
             SfxCmd.Play("res://Sora/sfx/riku/riku_thrust.wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_1.wav");
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.133f * 1000f));
-            
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.133f * 1000f));
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
             
             AudioHelper.PlayRandomAttack();
             AudioHelper.PlayRandomRikuAtk();
             SfxCmd.Play("res://Sora/sfx/riku/riku_swing_down.wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_hard (3).wav");
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit3_10.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.133f * 1000f));
+            await Task.Delay((int)(0.1f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
             
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
             await Task.Delay((int)(0.067f * 1000f));
@@ -81,24 +98,31 @@ public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Targ
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_1.wav");
             SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
             
-            await Task.Delay((int)(0.066f * 1000f));
-            
+            await Task.Delay((int)(0.034f * 1000f));
             AudioHelper.PlayRandomAttack();
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.067f * 1000f));
+            await Task.Delay((int)(0.034f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
             
             SfxCmd.Play("res://Sora/sfx/riku/riku_swing_up.wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_1.wav");
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit6_9.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.233f * 1000f));
+            AudioHelper.PlayRandomAttack();
+            AudioHelper.PlayRandomRikuAtk();
+            await Task.Delay((int)(0.2f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
             
             SfxCmd.Play("res://Sora/sfx/riku/riku_swing_down.wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_hard (3).wav");
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit3_10.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
             await Task.Delay((int)(0.2f * 1000f));
@@ -106,40 +130,46 @@ public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Targ
             AudioHelper.PlayRandomAttack();
             AudioHelper.PlayRandomRikuAtk();
             
-            await Task.Delay((int)(0.2f * 1000f));
+            await Task.Delay((int)(0.167f * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_3.wav");
+            await Task.Delay((int)(0.033f * 1000f));
             
             SfxCmd.Play("res://Sora/sfx/riku/riku_thrust.wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_hit_1.wav");
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit7_12.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.3f * 1000f));
+            await Task.Delay((int)(0.333f * 1000f));
             
             SfxCmd.Play("res://Sora/sounds/finalhit_2.wav");
             SfxCmd.Play("res://Sora/sounds/riku/riku_finisher (11).wav");
             SfxCmd.Play("res://Sora/sfx/riku/riku_3_swing.wav");
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
             
-            await Task.Delay((int)(0.1f * 1000f));
+            await Task.Delay((int)(0.034f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/hit_medium.wav");
+            SfxCmd.Play("res://Sora/sfx/riku/riku_hit_1.wav");
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            await Task.Delay((int)(0.067 * 1000f));
+            SfxCmd.Play("res://Sora/sfx/swing_1.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
             await Task.Delay((int)(0.133f * 1000f));
-            
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SfxCmd.Play("res://Sora/sfx/swing_2.wav");
+            await Task.Delay((int)(0.033f * 1000f));
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride: "res://Sora/sfx/ars_hit8.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.133f * 1000f));
+            await Task.Delay((int)(0.100f * 1000f));
             
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
+            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null, hitOverride:"res://Sora/sfx/ars_hit2_4.wav");
             sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
             
-            await Task.Delay((int)(0.133f * 1000f));
             
-            SoraExtensions.CombatHelpers.FakeHit(play.Target, null, null);
-            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "atk_vfx");
-            
-            await Task.Delay((int)(0.3f * 1000f));
+            await Task.Delay((int)(0.333f * 1000f));
             
             SfxCmd.Play("res://Sora/sounds/finalhit_6.wav");
             SfxCmd.Play("res://Sora/sounds/riku/riku_finisher (2).wav");
@@ -150,18 +180,10 @@ public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Targ
             
             SfxCmd.Play("res://Sora/sfx/riku/dark_firaga.wav");
             sora.DoScreenShake(ShakeStrength.Strong);
+            sora.PlayVfxOnTarget(play.Target, "res://Sora/scenes/vfx.tscn", "dark_firaga");
             await CommonActions.CardAttack(this, play.Target)
                 .WithHitFx("vfx/vfx_attack_slash")
                 .WithHitVfxSpawnedAtBase()
-                .BeforeDamage(async delegate
-                {
-                    var vfx = NGroundFireVfx.Create(play.Target, VfxColor.Purple);
-                        if (vfx != null)
-                        {
-                            NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(vfx);
-                            SfxCmd.Play("event:/sfx/characters/attack_fire");
-                        }
-                })
                 .Execute(choiceContext);
             await Task.Delay((int)(0.8f * 1000f));
             await sora.Retreat(ownerCreature);
@@ -171,15 +193,11 @@ public class RikuLimit() : SoraCard(0, CardType.Attack, CardRarity.Ancient, Targ
             await CommonActions.CardAttack(this, play.Target)
             .WithHitFx("vfx/vfx_attack_slash", "res://Sora/sfx/hit_hard.wav")
             .Execute(choiceContext);
-        int num = (play.Target.IsAlive ? play.Target.GetPowerAmount<VulnerablePower>() : 0);
-        if (num > 0)
-        {
-            await PowerCmd.Apply<VulnerablePower>(choiceContext, play.Target, num, base.Owner.Creature, this);
-        }
     }
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(7);
+        DynamicVars.CalculationBase.UpgradeValueBy(6);
+        DynamicVars.ExtraDamage.UpgradeValueBy(3);
     }
 }

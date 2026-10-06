@@ -18,7 +18,7 @@ public class SpiralBloom() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(15, ValueProp.Move),
+        new DamageVar(14, ValueProp.Move),
         new PowerVar<WeakPower>(1),
     ];
     
@@ -29,7 +29,7 @@ public class SpiralBloom() : SoraCard(2, CardType.Attack,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override async Task OnPlay(
@@ -72,7 +72,7 @@ public class SpiralBloom() : SoraCard(2, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(3m);
+        DynamicVars.Damage.UpgradeValueBy(2m);
         DynamicVars.Weak.UpgradeValueBy(1m);
     }
 }

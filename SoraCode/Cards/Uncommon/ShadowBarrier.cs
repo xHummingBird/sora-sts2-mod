@@ -15,7 +15,7 @@ public class ShadowBarrier() : SoraCard(2, CardType.Skill,
     CardRarity.Uncommon, TargetType.Self), ICompanionCard
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => [
-        new BlockVar(10m, ValueProp.Move),
+        new BlockVar(8m, ValueProp.Move),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -25,7 +25,7 @@ public class ShadowBarrier() : SoraCard(2, CardType.Skill,
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)

@@ -21,13 +21,13 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(16, ValueProp.Move),
+        new DamageVar(15, ValueProp.Move),
         new PowerVar<VulnerablePower>(1),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
-        CardKeyword.Exhaust
+        CardKeyword.Ethereal
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -63,23 +63,15 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
             await Task.Delay((int)(0.4f * 1000f));
             SfxCmd.Play("res://Sora/sfx/riku/dark_firaga.wav");
             await Task.Delay((int)(0.2f * 1000f));
+            var targets = base.CombatState.HittableEnemies;
+
+            foreach (var target in targets)
+            {
+                sora.PlayVfxOnTarget(target, "res://Sora/scenes/vfx.tscn", "dark_firaga");
+            }
         }
         await CommonActions.CardAttack(this, play.Target)
             .WithHitVfxSpawnedAtBase()
-            .BeforeDamage(async delegate
-            {
-                var targets = base.CombatState.HittableEnemies;
-
-                foreach (var target in targets)
-                {
-                    var vfx = NGroundFireVfx.Create(target, VfxColor.Purple);
-                    if (vfx != null)
-                    {
-                        NCombatRoom.Instance.CombatVfxContainer.AddChildSafely(vfx);
-                        SfxCmd.Play("event:/sfx/characters/attack_fire");
-                    }
-                }
-            })
             .Execute(choiceContext);
         await PowerCmd.Apply<VulnerablePower>(choiceContext, base.CombatState.HittableEnemies, base.DynamicVars.Vulnerable.BaseValue,
             base.Owner.Creature, this);
@@ -89,7 +81,7 @@ public class DarkFiraga() : SoraCard(2, CardType.Attack,
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4m);
+        DynamicVars.Damage.UpgradeValueBy(5m);
         DynamicVars.Vulnerable.UpgradeValueBy(1m);
     }
 }

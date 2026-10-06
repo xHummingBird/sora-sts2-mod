@@ -16,7 +16,7 @@ public class Guardbreak() : SoraCard(2, CardType.Attack,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new DamageVar(18, ValueProp.Move),
+        new DamageVar(20, ValueProp.Move),
     ];
     
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -90,6 +90,6 @@ public class Guardbreak() : SoraCard(2, CardType.Attack,
     
     protected override void OnUpgrade()
     {
-        DynamicVars.Damage.UpgradeValueBy(4);
+        DynamicVars.Damage.UpgradeValueBy(5);
     }
 }

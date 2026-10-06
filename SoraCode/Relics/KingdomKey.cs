@@ -2,17 +2,13 @@
 
 namespace Sora.SoraCode.Relics;
 
-public class KingdomKey() : SituationRelicBase
+public class KingdomKey : SituationRelicBase
 {
     public override RelicRarity Rarity => RelicRarity.Starter;
+    
+    protected override int AttackSpGain => 2;
 
-    public override int MaxSituationPoints => 60;
-
-    protected override int AttackSpGain => 3;
-
-    protected override int TurnSpGain => 2;
-
-    protected override bool CanGenerateUltimateForm => false;
+    protected override int TurnSpGain => 1;
 
     protected override bool IgnoreRelicBecauseBetterVersionExists
     {

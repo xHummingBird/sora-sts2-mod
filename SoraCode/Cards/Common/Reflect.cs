@@ -14,7 +14,7 @@ public class Reflect() : SoraCard(1, CardType.Skill, CardRarity.Common,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(6m, ValueProp.Move),
+        new BlockVar(7m, ValueProp.Move),
         new PowerVar<ReflectPower>(1m),
     ];
     
@@ -31,6 +31,6 @@ public class Reflect() : SoraCard(1, CardType.Skill, CardRarity.Common,
     
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(3m);
+        DynamicVars["Block"].UpgradeValueBy(4m);
     }
 }

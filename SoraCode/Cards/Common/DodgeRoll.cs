@@ -12,7 +12,7 @@ public class DodgeRoll() : SoraCard(1, CardType.Skill,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars => 
     [
-        new BlockVar(6, ValueProp.Move),
+        new BlockVar(8, ValueProp.Move),
         new CardsVar(1)
     ];
 
@@ -24,6 +24,7 @@ public class DodgeRoll() : SoraCard(1, CardType.Skill,
 
     protected override void OnUpgrade()
     {
-        DynamicVars["Block"].UpgradeValueBy(4m);
+        DynamicVars["Block"].UpgradeValueBy(2m);
+        DynamicVars.Cards.UpgradeValueBy(1);
     }
 }

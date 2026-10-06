@@ -12,13 +12,13 @@ using Sora.SoraCode.Relics;
 
 namespace Sora.SoraCode.Cards.Ancient;
 
-public class Formchange() : SoraCard(2, CardType.Skill,
+public class Formchange() : SoraCard(1, CardType.Skill,
     CardRarity.Ancient, TargetType.Self)
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new BlockVar(8m, ValueProp.Move),
-        new DynamicVar("Turns", 3),
+        new DynamicVar("Turns", 2),
     ];
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -36,6 +36,15 @@ public class Formchange() : SoraCard(2, CardType.Skill,
         var pile = PileType.Hand.GetPile(base.Owner);
         return pile.Cards.OfType<SituationCommand>();
     }
+    
+    private IEnumerable<CardModel> GetUltimateFormCards()
+    {
+        var hand =
+            PileType.Hand.GetPile(base.Owner);
+
+        return hand.Cards
+            .OfType<UltimateForm>();
+    }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay play)
     {
@@ -49,6 +58,13 @@ public class Formchange() : SoraCard(2, CardType.Skill,
         bool hasUltimate = ownerCreature.HasPower<UltimateFormPower>();
         if (ownerCreature != null && Owner?.Character is Character.Sora sora && !hasUltimate)
         {
+            foreach (CardModel card in
+                     GetUltimateFormCards().ToList())
+            {
+                await CardCmd.Exhaust(
+                    choiceContext,
+                    card);
+            }
             if (ownerCreature.HasPower<SituationReadyPower>())
             {
                 foreach (var card in GetSituationCommandCard().ToList())

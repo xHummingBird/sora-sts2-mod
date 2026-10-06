@@ -17,7 +17,7 @@ public class UltimateForm() : SoraCard(0, CardType.Skill,
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DynamicVar("Turns", 4),
+        new DynamicVar("Turns", 3),
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -30,6 +30,15 @@ public class UltimateForm() : SoraCard(0, CardType.Skill,
     {
         var pile = PileType.Hand.GetPile(base.Owner);
         return pile.Cards.OfType<SituationCommand>();
+    }
+    
+    private IEnumerable<CardModel> GetUltimateFormCards()
+    {
+        var hand =
+            PileType.Hand.GetPile(base.Owner);
+
+        return hand.Cards
+            .OfType<UltimateForm>();
     }
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -61,7 +70,17 @@ public class UltimateForm() : SoraCard(0, CardType.Skill,
                 await PowerCmd.Remove<SituationReadyPower>(Owner.Creature);
                 SfxCmd.Play("res://Sora/sfx/formchange.wav");
                 relic.SetSituationPoints(0);
+                
+                foreach (CardModel card in
+                         GetUltimateFormCards().ToList())
+                {
+                    await CardCmd.Exhaust(
+                        choiceContext,
+                        card);
+                }
             }
+            
+            
             
             AudioHelper.PlayRandomFormchange();
             sora.PlayAnimation(ownerCreature, "ultimate_form");

@@ -27,7 +27,7 @@ public class SonicBlade() : SoraCard(
 {
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(14m, ValueProp.Move)
+        new DamageVar(16m, ValueProp.Move)
     ];
     
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
@@ -158,11 +158,7 @@ public class SonicBlade() : SoraCard(
                 await Task.Delay((int)(0.133f * 1000f));
             }
             CenterCardCinematic.Start(RunManager.Instance.NetService.NetId);
-            await sora.DashToPosition(
-                ownerCreature,
-                leftSidePosition,
-                durationSeconds: 0.30f,
-                overrideAnim: null);
+            //await sora.DashToPosition(ownerCreature, leftSidePosition, durationSeconds: 0.30f, overrideAnim: null);
 
             sora.PlayAnimation(ownerCreature, "sonic_blade");
 
@@ -235,11 +231,17 @@ public class SonicBlade() : SoraCard(
                 .Execute(choiceContext);
 
             await finalDashTask;
-            await sora.Retreat(ownerCreature);
+            sora.PlayAnimation(ownerCreature,"retreat");
+            await TimedDashTo(
+                originalPosition,
+                0.25f);
+            sora.PlayAnimation(
+            ownerCreature, "idle");
             CenterCardCinematic.End(RunManager.Instance.NetService.NetId);
         }
     }
     protected override void OnUpgrade()
     {
+        DynamicVars.Damage.UpgradeValueBy(5);
     }
 }

@@ -66,6 +66,11 @@ public class FallingSlash() : SoraCard(2, CardType.Attack,
         }
         if (cardModel != null)
         {
+            if (IsUpgraded)
+            {
+                CardCmd.Upgrade(cardModel);
+            }
+            
             await CardCmd.AutoPlay(choiceContext, cardModel, null);
         }
     }

@@ -40,8 +40,15 @@ public class PowerOfWakingPower : SoraPower
             Rng combatCardGeneration = base.Owner.Player.RunState.Rng.CombatCardGeneration;
             for (int num = 0; num < base.Amount; num++)
             {
-                CardCmd.ApplyKeyword(array[num] = CardFactory.GetDistinctForCombat(player, readOnlyList, 1, combatCardGeneration).First());
+                CardCmd.ApplyKeyword(
+                    array[num] = CardFactory.GetDistinctForCombat(
+                        player,
+                        readOnlyList,
+                        1,
+                        combatCardGeneration).First(),
+                    CardKeyword.Ethereal);
             }
+
             Flash();
             await CardPileCmd.AddGeneratedCardsToCombat(array, PileType.Hand, base.Owner.Player);
         }
